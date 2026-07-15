@@ -1,0 +1,22 @@
+{
+  "description": "Copy this file to profiles.json. Values ending in _KEY are environment variable names, not credentials.",
+  "default_profile": "openai_compatible",
+  "profiles": {
+    "openai_compatible": {
+      "agent_model": "YOUR_AGENT_MODEL",
+      "agent_provider": "openai",
+      "agent_api_key": "OMNIABENCH_AGENT_API_KEY",
+      "agent_base_url": "OMNIABENCH_AGENT_BASE_URL",
+      "user_model": "YOUR_USER_SIMULATOR_MODEL",
+      "user_provider": "openai",
+      "user_api_key": "OMNIABENCH_USER_API_KEY",
+      "user_base_url": "OMNIABENCH_USER_BASE_URL",
+      "rubric_judge_model": "YOUR_JUDGE_MODEL",
+      "rubric_judge_provider": "openai",
+      "rubric_judge_api_key": "OMNIABENCH_JUDGE_API_KEY",
+      "rubric_judge_base_url": "OMNIABENCH_JUDGE_BASE_URL",
+      "infer_mode": "fc"
+    }
+  }
+}
+

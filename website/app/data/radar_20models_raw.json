@@ -1,0 +1,522 @@
+{
+  "caps": [
+    "Task Understanding",
+    "Information Gathering",
+    "Planning & Decision Making",
+    "State Management",
+    "Tool Use",
+    "Code & Programmatic Operations",
+    "Data Analysis",
+    "Office & Document Handling",
+    "Interactive Collaboration",
+    "Reliability & Safety"
+  ],
+  "models": [
+    "GPT-5.5",
+    "Claude-Opus-4.7",
+    "Kimi-K2.6-Thinking",
+    "Qwen3.7-Max",
+    "GLM-5.2",
+    "DeepSeek-V4-Pro",
+    "DeepSeek-V4-Flash",
+    "Qwen3.5-397B-A17B",
+    "Qwen3.6-27B",
+    "Gemini-3.5-Flash",
+    "GLM-5-Thinking",
+    "Gemini-3.1-Pro",
+    "Doubao-Seed-2.1-Pro",
+    "Qwen3.6-35B-A3B",
+    "Qwen3.5-35B-A3B",
+    "Doubao-Seed-2.0-Pro",
+    "Qwen3.5-9B",
+    "Qwen3-235B-A22B-Thinking",
+    "GPT-5.4-mini",
+    "Qwen3-30B-A3B-Thinking"
+  ],
+  "capability": {
+    "GPT-5.5": {
+      "Task Understanding": 56.15,
+      "Information Gathering": 51.2,
+      "Planning & Decision Making": 55.18,
+      "State Management": 52.41,
+      "Tool Use": 59.92,
+      "Code & Programmatic Operations": 55.68,
+      "Data Analysis": 56.28,
+      "Office & Document Handling": 55.41,
+      "Interactive Collaboration": 54.35,
+      "Reliability & Safety": 53.68
+    },
+    "Claude-Opus-4.7": {
+      "Task Understanding": 43.85,
+      "Information Gathering": 56.8,
+      "Planning & Decision Making": 54.52,
+      "State Management": 51.45,
+      "Tool Use": 57.81,
+      "Code & Programmatic Operations": 56.82,
+      "Data Analysis": 59.02,
+      "Office & Document Handling": 47.13,
+      "Interactive Collaboration": 52.17,
+      "Reliability & Safety": 52.94
+    },
+    "Qwen3.7-Max": {
+      "Task Understanding": 46.92,
+      "Information Gathering": 44.0,
+      "Planning & Decision Making": 47.49,
+      "State Management": 49.2,
+      "Tool Use": 48.95,
+      "Code & Programmatic Operations": 44.32,
+      "Data Analysis": 49.73,
+      "Office & Document Handling": 48.41,
+      "Interactive Collaboration": 50.0,
+      "Reliability & Safety": 47.06
+    },
+    "Gemini-3.5-Flash": {
+      "Task Understanding": 56.15,
+      "Information Gathering": 48.8,
+      "Planning & Decision Making": 55.18,
+      "State Management": 53.7,
+      "Tool Use": 55.7,
+      "Code & Programmatic Operations": 55.68,
+      "Data Analysis": 51.37,
+      "Office & Document Handling": 56.69,
+      "Interactive Collaboration": 55.98,
+      "Reliability & Safety": 52.57
+    },
+    "Gemini-3.1-Pro": {
+      "Task Understanding": 43.08,
+      "Information Gathering": 47.2,
+      "Planning & Decision Making": 50.5,
+      "State Management": 49.84,
+      "Tool Use": 53.59,
+      "Code & Programmatic Operations": 52.27,
+      "Data Analysis": 53.55,
+      "Office & Document Handling": 45.86,
+      "Interactive Collaboration": 50.54,
+      "Reliability & Safety": 51.1
+    },
+    "Doubao-Seed-2.1-Pro": {
+      "Task Understanding": 50.0,
+      "Information Gathering": 48.8,
+      "Planning & Decision Making": 57.19,
+      "State Management": 53.38,
+      "Tool Use": 60.76,
+      "Code & Programmatic Operations": 52.27,
+      "Data Analysis": 53.01,
+      "Office & Document Handling": 54.78,
+      "Interactive Collaboration": 56.52,
+      "Reliability & Safety": 54.04
+    },
+    "Doubao-Seed-2.0-Pro": {
+      "Task Understanding": 33.08,
+      "Information Gathering": 31.2,
+      "Planning & Decision Making": 35.12,
+      "State Management": 33.44,
+      "Tool Use": 36.71,
+      "Code & Programmatic Operations": 32.95,
+      "Data Analysis": 31.15,
+      "Office & Document Handling": 31.85,
+      "Interactive Collaboration": 36.41,
+      "Reliability & Safety": 31.25
+    },
+    "GPT-5.4-mini": {
+      "Task Understanding": 28.46,
+      "Information Gathering": 28.8,
+      "Planning & Decision Making": 29.1,
+      "State Management": 28.3,
+      "Tool Use": 31.22,
+      "Code & Programmatic Operations": 23.86,
+      "Data Analysis": 27.32,
+      "Office & Document Handling": 28.03,
+      "Interactive Collaboration": 29.89,
+      "Reliability & Safety": 27.94
+    },
+    "Kimi-K2.6-Thinking": {
+      "Task Understanding": 46.92,
+      "Information Gathering": 44.8,
+      "Planning & Decision Making": 51.51,
+      "State Management": 48.87,
+      "Tool Use": 54.43,
+      "Code & Programmatic Operations": 50.0,
+      "Data Analysis": 51.37,
+      "Office & Document Handling": 48.41,
+      "Interactive Collaboration": 48.37,
+      "Reliability & Safety": 48.16
+    },
+    "GLM-5.2": {
+      "Task Understanding": 53.85,
+      "Information Gathering": 48.8,
+      "Planning & Decision Making": 56.19,
+      "State Management": 54.98,
+      "Tool Use": 59.92,
+      "Code & Programmatic Operations": 52.27,
+      "Data Analysis": 53.01,
+      "Office & Document Handling": 49.68,
+      "Interactive Collaboration": 54.35,
+      "Reliability & Safety": 55.51
+    },
+    "DeepSeek-V4-Pro": {
+      "Task Understanding": 52.31,
+      "Information Gathering": 52.0,
+      "Planning & Decision Making": 54.18,
+      "State Management": 51.77,
+      "Tool Use": 54.43,
+      "Code & Programmatic Operations": 47.73,
+      "Data Analysis": 53.01,
+      "Office & Document Handling": 53.5,
+      "Interactive Collaboration": 53.8,
+      "Reliability & Safety": 51.47
+    },
+    "DeepSeek-V4-Flash": {
+      "Task Understanding": 46.15,
+      "Information Gathering": 48.0,
+      "Planning & Decision Making": 50.17,
+      "State Management": 50.8,
+      "Tool Use": 53.16,
+      "Code & Programmatic Operations": 55.68,
+      "Data Analysis": 50.27,
+      "Office & Document Handling": 49.04,
+      "Interactive Collaboration": 47.28,
+      "Reliability & Safety": 51.1
+    },
+    "Qwen3.5-397B-A17B": {
+      "Task Understanding": 49.23,
+      "Information Gathering": 52.0,
+      "Planning & Decision Making": 49.5,
+      "State Management": 49.84,
+      "Tool Use": 52.74,
+      "Code & Programmatic Operations": 52.27,
+      "Data Analysis": 52.46,
+      "Office & Document Handling": 49.04,
+      "Interactive Collaboration": 50.0,
+      "Reliability & Safety": 49.26
+    },
+    "Qwen3.6-27B": {
+      "Task Understanding": 44.62,
+      "Information Gathering": 42.4,
+      "Planning & Decision Making": 49.16,
+      "State Management": 48.55,
+      "Tool Use": 53.16,
+      "Code & Programmatic Operations": 47.73,
+      "Data Analysis": 47.54,
+      "Office & Document Handling": 40.13,
+      "Interactive Collaboration": 50.54,
+      "Reliability & Safety": 46.32
+    },
+    "GLM-5-Thinking": {
+      "Task Understanding": 45.38,
+      "Information Gathering": 47.2,
+      "Planning & Decision Making": 51.84,
+      "State Management": 49.52,
+      "Tool Use": 55.27,
+      "Code & Programmatic Operations": 47.73,
+      "Data Analysis": 55.74,
+      "Office & Document Handling": 45.22,
+      "Interactive Collaboration": 51.09,
+      "Reliability & Safety": 52.94
+    },
+    "Qwen3.6-35B-A3B": {
+      "Task Understanding": 42.31,
+      "Information Gathering": 41.6,
+      "Planning & Decision Making": 46.15,
+      "State Management": 41.8,
+      "Tool Use": 45.57,
+      "Code & Programmatic Operations": 42.05,
+      "Data Analysis": 44.26,
+      "Office & Document Handling": 42.68,
+      "Interactive Collaboration": 40.76,
+      "Reliability & Safety": 43.01
+    },
+    "Qwen3.5-35B-A3B": {
+      "Task Understanding": 33.85,
+      "Information Gathering": 38.4,
+      "Planning & Decision Making": 38.8,
+      "State Management": 37.62,
+      "Tool Use": 42.19,
+      "Code & Programmatic Operations": 43.18,
+      "Data Analysis": 37.7,
+      "Office & Document Handling": 36.94,
+      "Interactive Collaboration": 35.87,
+      "Reliability & Safety": 37.13
+    },
+    "Qwen3.5-9B": {
+      "Task Understanding": 40.77,
+      "Information Gathering": 35.2,
+      "Planning & Decision Making": 42.81,
+      "State Management": 41.8,
+      "Tool Use": 44.73,
+      "Code & Programmatic Operations": 40.91,
+      "Data Analysis": 44.81,
+      "Office & Document Handling": 40.13,
+      "Interactive Collaboration": 41.3,
+      "Reliability & Safety": 39.34
+    },
+    "Qwen3-235B-A22B-Thinking": {
+      "Task Understanding": 39.23,
+      "Information Gathering": 31.2,
+      "Planning & Decision Making": 35.79,
+      "State Management": 34.73,
+      "Tool Use": 37.13,
+      "Code & Programmatic Operations": 31.82,
+      "Data Analysis": 32.79,
+      "Office & Document Handling": 33.76,
+      "Interactive Collaboration": 40.22,
+      "Reliability & Safety": 34.56
+    },
+    "Qwen3-30B-A3B-Thinking": {
+      "Task Understanding": 9.23,
+      "Information Gathering": 16.0,
+      "Planning & Decision Making": 18.73,
+      "State Management": 15.76,
+      "Tool Use": 17.3,
+      "Code & Programmatic Operations": 23.86,
+      "Data Analysis": 21.86,
+      "Office & Document Handling": 14.65,
+      "Interactive Collaboration": 16.3,
+      "Reliability & Safety": 13.97
+    }
+  },
+  "split": {
+    "GPT-5.5": {
+      "tob": 58.2,
+      "toc": 53.02,
+      "toe": 58.49
+    },
+    "Claude-Opus-4.7": {
+      "tob": 56.66,
+      "toc": 51.63,
+      "toe": 51.89
+    },
+    "Qwen3.7-Max": {
+      "tob": 48.3,
+      "toc": 48.84,
+      "toe": 55.66
+    },
+    "Gemini-3.5-Flash": {
+      "tob": 46.75,
+      "toc": 46.98,
+      "toe": 39.62
+    },
+    "Gemini-3.1-Pro": {
+      "tob": 42.11,
+      "toc": 39.53,
+      "toe": 42.45
+    },
+    "Doubao-Seed-2.1-Pro": {
+      "tob": 43.03,
+      "toc": 40.93,
+      "toe": 45.28
+    },
+    "Doubao-Seed-2.0-Pro": {
+      "tob": 22.6,
+      "toc": 25.12,
+      "toe": 25.47
+    },
+    "GPT-5.4-mini": {
+      "tob": 15.48,
+      "toc": 18.14,
+      "toe": 20.75
+    },
+    "Kimi-K2.6-Thinking": {
+      "tob": 54.8,
+      "toc": 49.3,
+      "toe": 50.94
+    },
+    "GLM-5.2": {
+      "tob": 57.28,
+      "toc": 55.81,
+      "toe": 57.55
+    },
+    "DeepSeek-V4-Pro": {
+      "tob": 54.18,
+      "toc": 54.88,
+      "toe": 54.72
+    },
+    "DeepSeek-V4-Flash": {
+      "tob": 45.2,
+      "toc": 51.63,
+      "toe": 52.83
+    },
+    "Qwen3.5-397B-A17B": {
+      "tob": 44.27,
+      "toc": 35.35,
+      "toe": 43.4
+    },
+    "Qwen3.6-27B": {
+      "tob": 43.65,
+      "toc": 38.6,
+      "toe": 44.34
+    },
+    "GLM-5-Thinking": {
+      "tob": 47.68,
+      "toc": 37.67,
+      "toe": 41.51
+    },
+    "Qwen3.6-35B-A3B": {
+      "tob": 41.8,
+      "toc": 31.63,
+      "toe": 34.91
+    },
+    "Qwen3.5-35B-A3B": {
+      "tob": 29.41,
+      "toc": 21.4,
+      "toe": 36.79
+    },
+    "Qwen3.5-9B": {
+      "tob": 30.96,
+      "toc": 20.93,
+      "toe": 33.02
+    },
+    "Qwen3-235B-A22B-Thinking": {
+      "tob": 21.36,
+      "toc": 20.0,
+      "toe": 16.04
+    },
+    "Qwen3-30B-A3B-Thinking": {
+      "tob": 9.91,
+      "toc": 6.51,
+      "toe": 12.26
+    }
+  },
+  "leaderboard": {
+    "GPT-5.5": {
+      "R1": 54.8,
+      "R2": 38.33,
+      "R3": 60.0,
+      "R4": 64.5,
+      "Overall": 54.41
+    },
+    "Claude-Opus-4.7": {
+      "R1": 53.39,
+      "R2": 43.33,
+      "R3": 63.33,
+      "R4": 57.5,
+      "Overall": 54.39
+    },
+    "Qwen3.7-Max": {
+      "R1": 48.59,
+      "R2": 51.67,
+      "R3": 66.67,
+      "R4": 48.5,
+      "Overall": 53.86
+    },
+    "Gemini-3.5-Flash": {
+      "R1": 54.24,
+      "R2": 36.67,
+      "R3": 30.0,
+      "R4": 35.5,
+      "Overall": 39.1
+    },
+    "Gemini-3.1-Pro": {
+      "R1": 50.28,
+      "R2": 35.0,
+      "R3": 30.0,
+      "R4": 29.0,
+      "Overall": 36.07
+    },
+    "Doubao-Seed-2.1-Pro": {
+      "R1": 54.8,
+      "R2": 25.0,
+      "R3": 36.67,
+      "R4": 27.5,
+      "Overall": 35.99
+    },
+    "Doubao-Seed-2.0-Pro": {
+      "R1": 33.9,
+      "R2": 21.67,
+      "R3": 36.67,
+      "R4": 5.0,
+      "Overall": 24.31
+    },
+    "GPT-5.4-mini": {
+      "R1": 29.1,
+      "R2": 0.0,
+      "R3": 6.67,
+      "R4": 3.0,
+      "Overall": 9.69
+    },
+    "Kimi-K2.6-Thinking": {
+      "R1": 49.72,
+      "R2": 45.0,
+      "R3": 63.33,
+      "R4": 57.5,
+      "Overall": 53.89
+    },
+    "GLM-5.2": {
+      "R1": 54.8,
+      "R2": 26.67,
+      "R3": 60.0,
+      "R4": 69.0,
+      "Overall": 52.62
+    },
+    "DeepSeek-V4-Pro": {
+      "R1": 52.54,
+      "R2": 36.67,
+      "R3": 53.33,
+      "R4": 63.5,
+      "Overall": 51.51
+    },
+    "DeepSeek-V4-Flash": {
+      "R1": 51.13,
+      "R2": 28.33,
+      "R3": 43.33,
+      "R4": 51.0,
+      "Overall": 43.45
+    },
+    "Qwen3.5-397B-A17B": {
+      "R1": 50.56,
+      "R2": 31.67,
+      "R3": 50.0,
+      "R4": 26.0,
+      "Overall": 39.56
+    },
+    "Qwen3.6-27B": {
+      "R1": 48.02,
+      "R2": 28.33,
+      "R3": 46.67,
+      "R4": 35.0,
+      "Overall": 39.51
+    },
+    "GLM-5-Thinking": {
+      "R1": 50.85,
+      "R2": 10.0,
+      "R3": 53.33,
+      "R4": 38.5,
+      "Overall": 38.17
+    },
+    "Qwen3.6-35B-A3B": {
+      "R1": 43.22,
+      "R2": 20.0,
+      "R3": 36.67,
+      "R4": 32.0,
+      "Overall": 32.97
+    },
+    "Qwen3.5-35B-A3B": {
+      "R1": 38.7,
+      "R2": 25.0,
+      "R3": 30.0,
+      "R4": 9.5,
+      "Overall": 25.8
+    },
+    "Qwen3.5-9B": {
+      "R1": 41.53,
+      "R2": 16.67,
+      "R3": 23.33,
+      "R4": 8.0,
+      "Overall": 22.38
+    },
+    "Qwen3-235B-A22B-Thinking": {
+      "R1": 35.31,
+      "R2": 0.0,
+      "R3": 6.67,
+      "R4": 1.0,
+      "Overall": 10.74
+    },
+    "Qwen3-30B-A3B-Thinking": {
+      "R1": 16.67,
+      "R2": 0.0,
+      "R3": 0.0,
+      "R4": 0.0,
+      "Overall": 4.17
+    }
+  }
+}
