@@ -81,8 +81,8 @@ main > :where(*:not(.ambient)) { position: relative; z-index: 1; }
 .brand-icon { position: relative; width: 25px; height: 25px; flex: 0 0 auto; display: grid; place-items: center; }
 .brand-icon img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
 .brand-fallback { width: 100%; height: 100%; display: none; place-items: center; color: #40586e; font: 700 12px/1 var(--sans); }
-.huggingface-icon { width: 30px; height: 28px; flex: 0 0 auto; display: grid; place-items: center; overflow: hidden; transform: translateY(-1px); }
-.huggingface-icon img { width: 42px; height: 34px; max-width: none; object-fit: contain; mix-blend-mode: multiply; }
+.huggingface-icon { width: 32px; height: 30px; flex: 0 0 auto; display: grid; place-items: center; overflow: visible; transform: translateY(-1px); }
+.huggingface-icon img { width: 38px; height: 30px; max-width: none; object-fit: contain; mix-blend-mode: multiply; }
 .podium-icon { width: 26px; height: 25px; display: flex; align-items: flex-end; justify-content: center; gap: 2px; flex: 0 0 auto; }
 .podium-icon i { display: block; width: 6px; border-radius: 2px 2px 0 0; background: var(--teal); }.podium-icon i:nth-child(1) { height: 11px; opacity: .55; }.podium-icon i:nth-child(2) { height: 22px; }.podium-icon i:nth-child(3) { height: 16px; opacity: .75; }
 
