@@ -445,6 +445,7 @@ export default function Home() {
           </a>
         </div>
         <p className="author-note">* Equal contribution &nbsp; † Project lead &nbsp; ‡ Corresponding authors</p>
+        <p className="contact-line"><span>Contact</span><a href="mailto:scuuy05@gmail.com">scuuy05@gmail.com</a></p>
 
         <div className="resource-links">
           <a className="resource primary" href={links.paper} target="_blank"><BrandIcon src="https://cdn.simpleicons.org/arxiv/B31B1B" label="arXiv" /><span><b>Paper</b><small>arXiv</small></span></a>
