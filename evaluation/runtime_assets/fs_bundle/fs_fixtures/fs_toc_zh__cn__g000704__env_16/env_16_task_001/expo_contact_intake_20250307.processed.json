@@ -1,0 +1,21 @@
+{
+  "source_file": "expo_contact_intake_20250307.json",
+  "processed_at": "2025-03-07T18:30:00",
+  "status": "processed",
+  "new_lead_result": {
+    "company_id": "COM_YUNLAN_20250307",
+    "contact_id": "CON_MAIN_YUNLAN_20250307",
+    "business_card_id": "CARD_YUNLAN_20250307",
+    "tag_id": "TAG5",
+    "contact_status": "read_only"
+  },
+  "existing_account_review_result": {
+    "legacy_contact_id": "CON6",
+    "resolved_primary_contact_id": "CON1",
+    "reference_business_card_id": "CARD1",
+    "reference_interaction_id": "INT1",
+    "reference_reminder_id": "REM1",
+    "reference_contract_id": "CONTRACT2",
+    "review_summary": "Legacy contact already merged into primary record CON1. Reference card/interaction/reminder all point to CON1. Opportunity approval status is normal. Current active contract query is inconsistent with reference CONTRACT2 and needs follow-up on old contract version state."
+  }
+}

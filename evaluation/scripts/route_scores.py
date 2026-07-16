@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Self-contained per-route score extraction from aggregated result JSON.
 
-No heavy deps (no openai / envscaler imports) so it can run anywhere, including
+No heavy deps (no openai / omniabench imports) so it can run anywhere, including
 the orchestrator's post-run summary and the standalone analyze step.
 
 Combined-score precedence per item (mirrors result_evaluator):

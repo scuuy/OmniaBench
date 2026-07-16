@@ -70,41 +70,38 @@ _QWEN_THINKING_MODELS = frozenset([
 
 
 def _is_openai_official_base_url(base_url: str) -> bool:
-    """检查 API 地址是否支持 reasoning 相关参数。"""
-    if not base_url:
-        return True  # 默认为官方 API
-    url = str(base_url).lower()
-    # 内网代理支持 GPT-5.x 的 reasoning_effort 和 Claude 的 reasoning 参数
-    if "7.216.53.54" in url or "4100" in url:
-        return True
-    # 官方 OpenAI API
-    if "openai.com" in url or "api.openai.com" in url:
-        return True
-    # 其他第三方代理默认不支持 reasoning
-    return False
+    """检查 API 地址是否为官方 OpenAI endpoint。
 
-
-def _supports_reasoning_effort(model: str, base_url: str = None) -> bool:
+    第三方 / 自建代理是否支持 reasoning_effort 等扩展参数因部署而异，
+    无法通过 URL 特征通用判断，因此仅识别官方地址；其余情况一律通过
+    `--agent-force-reasoning-effort` 显式开启（见 _supports_reasoning_effort）。
     """
-    判断模型是否支持 reasoning_effort 参数 (仅 GPT-5.x 系列 + 官方 API)。
+    if not base_url:
+        return True  # 未显式配置 base_url 时默认视为官方 API
+    url = str(base_url).lower()
+    return "openai.com" in url
+
+
+def _supports_reasoning_effort(model: str, base_url: str = None, force: bool = False) -> bool:
+    """
+    判断是否应该传递 reasoning_effort 参数 (仅 GPT-5.x 系列)。
 
     Args:
         model: 模型名称
         base_url: API base URL
+        force: 显式强制开启/关闭（对应 CLI 的 --agent-force-reasoning-effort），
+            用于自建 / 第三方代理已知支持该参数、但域名无法被识别为官方 API 的情况。
 
     Returns:
-        是否支持 reasoning_effort
+        是否传递 reasoning_effort
     """
-    # 首先检查 API 是否支持
-    if not _is_openai_official_base_url(base_url):
-        return False
-    # 然后检查模型是否支持
     model_name = str(model or "").lower()
-    # 精确匹配
-    if model_name in _REASONING_EFFORT_MODELS:
+    is_gpt5x = model_name in _REASONING_EFFORT_MODELS or model_name.startswith("gpt-5.")
+    if not is_gpt5x:
+        return False
+    if force:
         return True
-    # 前缀匹配 gpt-5.x
-    return model_name.startswith("gpt-5.")
+    return _is_openai_official_base_url(base_url)
 
 
 def _supports_chat_template_kwargs(enable_thinking: bool, model: str) -> bool:
@@ -119,17 +116,25 @@ def _supports_chat_template_kwargs(enable_thinking: bool, model: str) -> bool:
     return "qwen" in model_name
 
 
-def _uses_responses_api(model: str, base_url: str = None) -> bool:
+_RESPONSES_API_MODELS = frozenset([
+    "gpt-5.6-sol",
+])
+
+
+def _uses_responses_api(model: str, force: Optional[bool] = None) -> bool:
     """
-    判断是否需要使用 responses API。
-    yibuapi 的 gpt-5.6-sol 在使用 function calling + reasoning_effort 时必须用 responses API。
+    判断是否需要使用 OpenAI Responses API（而非 Chat Completions API）。
+
+    某些模型（如 gpt-5.6-sol）在同时使用 reasoning + function calling 时
+    要求走 Responses API，这是模型本身的接口要求，与具体的 base_url/代理无关。
+
+    Args:
+        force: 显式覆盖（对应 CLI --agent-use-responses-api），None 表示按模型名自动判断。
     """
+    if force is not None:
+        return bool(force)
     model_name = str(model or "").lower()
-    # yibuapi 的 gpt-5.6-sol 需要 responses API 来支持 reasoning + function calling
-    if "yibuapi.com" in str(base_url or "").lower() and "gpt-5.6" in model_name:
-        return True
-    # 其他情况不使用 responses API
-    return False
+    return model_name in _RESPONSES_API_MODELS
 
 
 def _create_chat_completion(client, *, model, messages, temperature, max_tokens, enable_thinking, extra_kwargs=None):
@@ -297,7 +302,8 @@ def openai_stream_inference_fc(
     enable_thinking: bool = False,
     api_key: str = None,
     base_url: str = None,
-    reasoning_effort: str = "high"
+    reasoning_effort: str = "high",
+    force_reasoning_effort: bool = False,
 ) -> Dict[str, Any]:
     """
     Streaming inference using official Model tool interface (function calling mode).
@@ -310,6 +316,8 @@ def openai_stream_inference_fc(
 
     Args:
         reasoning_effort: "low", "medium", or "high" - only used for GPT-5.x models
+        force_reasoning_effort: force-enable reasoning_effort even for non-official
+            base_url (some self-hosted / third-party proxies accept it too)
     """
     client = OpenAI(api_key=api_key or os.getenv("OPENAI_API_KEY"), base_url=base_url or os.getenv("OPENAI_BASE_URL"))
 
@@ -326,9 +334,8 @@ def openai_stream_inference_fc(
                 extra_kwargs["tool_choice"] = "auto"
                 extra_kwargs["top_p"] = 0.95
 
-            # 仅对支持的模型添加 reasoning_effort 参数
-            # yibuapi 需要顶层 reasoning_effort 参数，不接受 extra_body 的 reasoning.effort 格式
-            if reasoning_effort and _supports_reasoning_effort(model, base_url):
+            # 仅对支持的模型（+ 支持的 API）添加顶层 reasoning_effort 参数
+            if reasoning_effort and _supports_reasoning_effort(model, base_url, force=force_reasoning_effort):
                 extra_kwargs["reasoning_effort"] = reasoning_effort
 
             # 仅对支持的模型启用 enable_thinking
@@ -433,13 +440,19 @@ def openai_responses_inference_fc(
     tools: Optional[List[Dict]] = None,
     reasoning_effort: str = "medium",
     api_key: str = None,
-    base_url: str = None
+    base_url: str = None,
+    force_reasoning_effort: bool = False,
+    omit_temperature: bool = False,
 ) -> Dict[str, Any]:
     """
-    Inference using OpenAI Responses API (required for gpt-5.4 with tools + reasoning).
+    Inference using OpenAI Responses API (required for some reasoning + function-calling models).
 
     Args:
         reasoning_effort: "low", "medium", or "high"
+        force_reasoning_effort: force-enable reasoning_effort even for non-official base_url
+        omit_temperature: some third-party Responses API deployments reject the
+            `temperature` field entirely; set this to drop it from the request
+            (corresponds to CLI --agent-responses-api-omit-temperature)
     """
     client = OpenAI(api_key=api_key or os.getenv("OPENAI_API_KEY"), base_url=base_url or os.getenv("OPENAI_BASE_URL"))
 
@@ -495,13 +508,14 @@ def openai_responses_inference_fc(
                 "tools": tools_input,
             }
 
-            # yibuapi 的 responses API 不支持 temperature 参数
-            if "yibuapi.com" not in str(base_url or "").lower():
+            # 部分第三方 Responses API 部署不支持 temperature 参数，
+            # 可通过 omit_temperature（对应 CLI --agent-responses-api-omit-temperature）显式关闭
+            if not omit_temperature:
                 request_kwargs["temperature"] = temperature or 0.7
 
             # 添加 reasoning 参数 (仅对支持的模型)
             # responses API 使用 reasoning={"effort": "high"} 格式
-            if reasoning_effort and _supports_reasoning_effort(model, base_url):
+            if reasoning_effort and _supports_reasoning_effort(model, base_url, force=force_reasoning_effort):
                 request_kwargs["reasoning"] = {"effort": reasoning_effort}
 
             response = client.responses.create(**request_kwargs)
@@ -516,7 +530,7 @@ def openai_responses_inference_fc(
                     if item.type == "reasoning":
                         reasoning_content = getattr(item, "summary", "") or ""
                     elif item.type == "message":
-                        # 处理 yibuapi 返回的字符串化对象格式
+                        # 部分第三方 Responses API 部署会返回字符串化的对象格式
                         raw_content = getattr(item, "content", "") or ""
 
                         # raw_content 可能是 list 或 str
@@ -951,17 +965,38 @@ def anthropic_inference_fc(
     }
 
 
-def llm_inference_fc(provider: str, model: str, messages: List[Dict[str, Any]], temperature: float = None, tools: Optional[List[Dict]] = None, enable_thinking: bool = False, api_key: str = None, base_url: str = None, reasoning_effort: str = "high", effort: str = "high") -> Dict[str, Any]:
+def llm_inference_fc(
+    provider: str,
+    model: str,
+    messages: List[Dict[str, Any]],
+    temperature: float = None,
+    tools: Optional[List[Dict]] = None,
+    enable_thinking: bool = False,
+    api_key: str = None,
+    base_url: str = None,
+    reasoning_effort: str = "high",
+    effort: str = "high",
+    force_reasoning_effort: bool = False,
+    use_responses_api: Optional[bool] = None,
+    omit_temperature: bool = False,
+) -> Dict[str, Any]:
     """
     Unified LLM inference interface for FC mode.
 
     Args:
         reasoning_effort: "low", "medium", or "high" - only used for GPT-5.x models
         effort: "low", "medium", "high", "xhigh", or "max" - only used for Claude models
+        force_reasoning_effort: force-enable reasoning_effort even when base_url isn't
+            recognized as an official API endpoint (for self-hosted/third-party proxies
+            that support the parameter). Corresponds to CLI --agent-force-reasoning-effort.
+        use_responses_api: explicitly force on/off the OpenAI Responses API path,
+            overriding the model-based default. Corresponds to CLI --agent-use-responses-api.
+        omit_temperature: drop the `temperature` field when calling the Responses API,
+            for deployments that reject it. Corresponds to CLI
+            --agent-responses-api-omit-temperature.
     """
     if provider == "openai":
-        # gpt-5.6-sol on yibuapi 需要使用 responses API 支持 reasoning + function calling
-        if _uses_responses_api(model, base_url):
+        if _uses_responses_api(model, force=use_responses_api):
             return openai_responses_inference_fc(
                 model=model,
                 messages=messages,
@@ -969,7 +1004,9 @@ def llm_inference_fc(provider: str, model: str, messages: List[Dict[str, Any]], 
                 tools=tools,
                 reasoning_effort=reasoning_effort,
                 api_key=api_key,
-                base_url=base_url
+                base_url=base_url,
+                force_reasoning_effort=force_reasoning_effort,
+                omit_temperature=omit_temperature,
             )
         else:
             return openai_stream_inference_fc(
@@ -980,7 +1017,8 @@ def llm_inference_fc(provider: str, model: str, messages: List[Dict[str, Any]], 
                 enable_thinking=enable_thinking,
                 api_key=api_key,
                 base_url=base_url,
-                reasoning_effort=reasoning_effort
+                reasoning_effort=reasoning_effort,
+                force_reasoning_effort=force_reasoning_effort,
             )
     elif provider == "anthropic":
         return anthropic_inference_fc(

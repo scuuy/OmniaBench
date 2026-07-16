@@ -1,0 +1,3 @@
+contract_number,budget_status,signing_gate,revision_focus,extra_note,contract_number,budget_status,revision_focus,signing_gate,note
+HT-2025-002,pending,未完成年度预算确认前不得进入签署,"['SLA考核口径', '服务窗口说明']",可保留当前服务范围，不建议新增驻场承诺,HT-2025-002,pending,"['SLA考核口径', '服务窗口说明']",未完成年度预算确认前不得进入签署,
+HT-2025-002,pending,未完成年度预算确认前不得进入签署,SLA考核口径;服务窗口说明,可保留当前服务范围，不建议新增驻场承诺,HT-2025-002,pending,SLA考核口径;服务窗口说明,未完成年度预算确认前不得进入签署,可保留当前服务范围，不建议新增驻场承诺

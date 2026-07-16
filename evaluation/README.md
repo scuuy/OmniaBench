@@ -9,13 +9,52 @@ python -m venv .venv
 source .venv/bin/activate
 pip install -r evaluation/requirements.txt
 cp evaluation/configs/profiles.example.json evaluation/configs/profiles.json
+cp evaluation/.env.example evaluation/.env
 ```
 
-Set the API keys and compatible API base URLs referenced by `profiles.json` as environment variables. Credentials must never be committed.
+`profiles.json` only stores *environment variable names* (e.g. `OMNIABENCH_AGENT_API_KEY`), never secrets — the actual keys and base URLs go in `evaluation/.env`. `run_eval.py` loads `.env` automatically at startup via `python-dotenv`. You only need to fill in the variables referenced by the profile you actually use:
+
+```bash
+# --- Agent model (the model under test) ---
+OMNIABENCH_AGENT_API_KEY=sk-...
+OMNIABENCH_AGENT_BASE_URL=https://api.example.com/v1
+
+# --- User-simulator model (plays the human side of the conversation) ---
+OMNIABENCH_USER_API_KEY=sk-...
+OMNIABENCH_USER_BASE_URL=https://api.example.com/v1
+
+# --- Rubric judge model (scores agent transcripts against the rubric) ---
+OMNIABENCH_JUDGE_API_KEY=sk-...
+OMNIABENCH_JUDGE_BASE_URL=https://api.example.com/v1
+```
+
+Credentials must never be committed — `.env` is already covered by `.gitignore`.
 
 ## Data layout
 
-The public dataset will be linked separately. After downloading it, place the four route files at:
+The 644-task challenge subset is hosted on [Hugging Face](https://huggingface.co/datasets/scuuy666/OmniaBench) (it's not committed to this repo, since the files are tens of MB each). Download it with either:
+
+```bash
+# Option A: huggingface_hub
+pip install huggingface_hub
+python -c "
+from huggingface_hub import snapshot_download
+snapshot_download(
+    repo_id='scuuy666/OmniaBench',
+    repo_type='dataset',
+    local_dir='evaluation/data',
+)
+"
+```
+
+```bash
+# Option B: git clone (requires git-lfs if large-file storage is enabled on the repo)
+git clone https://huggingface.co/datasets/scuuy666/OmniaBench evaluation/data/_hf_download
+mv evaluation/data/_hf_download/routes evaluation/data/routes
+rm -rf evaluation/data/_hf_download
+```
+
+Either way, the four route files should end up at:
 
 ```text
 evaluation/data/routes/route1.json
@@ -24,9 +63,11 @@ evaluation/data/routes/route3.json
 evaluation/data/routes/route4.json
 ```
 
-Route 1 also requires the released filesystem sandbox bundle at `evaluation/runtime_assets/fs_bundle/`.
+Route 1 also requires a filesystem sandbox bundle, which *is* committed to this repo (it's small — a few hundred KB) at `evaluation/runtime_assets/fs_bundle/`. No extra download step is needed for it.
 
 ## Run
+
+Run all four routes:
 
 ```bash
 python evaluation/scripts/orchestrate_eval.py \
@@ -34,6 +75,26 @@ python evaluation/scripts/orchestrate_eval.py \
   --routes route1 route2 route3 route4 \
   --pass-k 1 \
   --max-task-workers 8
+```
+
+Run a subset of routes, optionally restricted to a global_id range per route:
+
+```bash
+python evaluation/scripts/orchestrate_eval.py \
+  --profile openai_compatible \
+  --routes route2 route3 \
+  --route-global-id-range route2=1-10 \
+  --route-global-id-range route3=all
+```
+
+Test one or more specific tasks by `global_id` directly, without needing to know
+which route owns which id range — the route is auto-detected from
+`configs/routes.json`:
+
+```bash
+python evaluation/scripts/orchestrate_eval.py \
+  --profile openai_compatible \
+  --global-id 1000023 3000005
 ```
 
 To score an existing result file without rerunning the agent:
@@ -46,4 +107,47 @@ python evaluation/scripts/run_eval.py \
 ```
 
 Outputs are written under `evaluation/results/` and are intentionally ignored by Git.
+
+## Advanced usage
+
+- `--resume` (passed after `--`, e.g. `... -- --resume`): automatically picks up the latest matching result file in `results/<profile>-*/` and skips tasks that already completed, retrying only failed/`INFRA_ERROR` runs. Add `--resume-keep-failed` to keep those failed runs as-is instead of retrying them.
+- `--incremental-dir <path>`: put the incremental shard files on a faster disk instead of next to the output directory. Useful for long runs where I/O contention matters.
+- `--num-shards <n>` (default 16): number of incremental shard files runs are checkpointed into. Higher shard counts reduce lock contention under high `--max-task-workers`.
+- `--pass-k <k>`: run each task `k` times and compute pass@k in addition to pass@1.
+- `--lang-filter cn|en|all`: restrict tasks to a language subset, intersected with any `global_id` range filter.
+- `--data-override route_id=/path/to/file.json`: point a specific route at a local data file instead of the path in `configs/routes.json`. Repeatable.
+
+## Interpreting results
+
+Each run produces a directory `evaluation/results/<profile>-<run_tag>/` containing:
+
+```text
+<profile>-<run_tag>/
+├── route1/                 # per-route raw + aggregated result JSON
+├── route2/
+├── route3/
+├── route4/
+├── incremental_shards/     # checkpoint shards written during the run (safe to delete after completion)
+├── state_diffs/            # merged environment state diffs across all routes
+└── combined-<profile>-<user_model>-<run_tag>.runs.jsonl   # all routes' .runs.jsonl merged
+```
+
+A top-level `evaluation/results/route_summary-<profile>-<run_tag>.json` aggregates all routes. You can also regenerate the per-route table from any aggregated result file with:
+
+```bash
+python evaluation/scripts/route_scores.py --result-file-path /path/to/route1_result.json
+```
+
+Key fields in the summary:
+
+| Field | Meaning |
+|---|---|
+| `task_count` | Number of tasks evaluated in the route |
+| `scored_count` | Number of tasks that produced a usable score (may be less than `task_count` if some runs errored) |
+| `pass_at_1` | Fraction of tasks whose sample-1 combined score equals exactly 1.0 |
+| `score` | Mean combined score across all scored tasks |
+| `score_source` | Which scorer produced the combined score, in priority order: `verifier` (route 3, exact-match/checker-based) → `rubric` (routes 1/2/4, LLM judge against a rubric) → `total_reward` (fallback) |
+| `pass_at_k` / `k` | Only present when `--pass-k` > 1; fraction of tasks with at least one passing sample out of `k` |
+
+`route_scores.py` also prints an equal-weighted overall row (arithmetic mean of `pass_at_1`/`score` across the four routes, not weighted by each route's task count).
 

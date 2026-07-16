@@ -35,13 +35,13 @@ if str(RUNTIME_DIR) not in sys.path:
     sys.path.insert(0, str(RUNTIME_DIR))
 
 from agent.task_solve_agent import TaskSolveAgent  # noqa: E402
-from envscaler_env import (  # noqa: E402
-    EnvScalerConvRLEnv,
-    EnvScalerConvSFTEnv,
-    EnvScalerNonConvRLEnv,
-    EnvScalerNonConvSFTEnv,
+from omniabench_env import (  # noqa: E402
+    OmniaBenchConvRLEnv,
+    OmniaBenchConvSFTEnv,
+    OmniaBenchNonConvRLEnv,
+    OmniaBenchNonConvSFTEnv,
 )
-from envscaler_env.utils.user_agent import (  # noqa: E402
+from omniabench_env.utils.user_agent import (  # noqa: E402
     build_agent_followup_hint,
     normalize_user_difficulty_config,
 )
@@ -54,17 +54,17 @@ from result_evaluator import (  # noqa: E402
 
 
 ENV_CLS_MAP = {
-    "envscaler_conversation_rl": EnvScalerConvRLEnv,
-    "envscaler_non_conversation_rl": EnvScalerNonConvRLEnv,
-    "envscaler_conversation_sft": EnvScalerConvSFTEnv,
-    "envscaler_non_conversation_sft": EnvScalerNonConvSFTEnv,
+    "omniabench_conversation_rl": OmniaBenchConvRLEnv,
+    "omniabench_non_conversation_rl": OmniaBenchNonConvRLEnv,
+    "omniabench_conversation_sft": OmniaBenchConvSFTEnv,
+    "omniabench_non_conversation_sft": OmniaBenchNonConvSFTEnv,
 }
 
 MAX_STEPS_MAP = {
-    "envscaler_conversation_rl": 200,
-    "envscaler_non_conversation_rl": 200,
-    "envscaler_conversation_sft": 200,
-    "envscaler_non_conversation_sft": 200,
+    "omniabench_conversation_rl": 200,
+    "omniabench_non_conversation_rl": 200,
+    "omniabench_conversation_sft": 200,
+    "omniabench_non_conversation_sft": 200,
 }
 
 
@@ -240,10 +240,10 @@ def _apply_runtime_path_overrides(args) -> dict:
     fs_tmp_root = _resolve_optional_path(getattr(args, "fs_tmp_root", ""))
 
     if fs_bundle_root:
-        os.environ["ENVSCALER_FS_BUNDLE_ROOT"] = fs_bundle_root
+        os.environ["OMNIABENCH_FS_BUNDLE_ROOT"] = fs_bundle_root
         applied["fs_bundle_root"] = fs_bundle_root
     if fs_tmp_root:
-        os.environ["ENVSCALER_FS_TMP_ROOT"] = fs_tmp_root
+        os.environ["OMNIABENCH_FS_TMP_ROOT"] = fs_tmp_root
         applied["fs_tmp_root"] = fs_tmp_root
     return applied
 
@@ -948,6 +948,9 @@ def solve_task(
     lang="cn",
     agent_reasoning_effort="high",
     agent_effort="high",
+    agent_force_reasoning_effort=False,
+    agent_use_responses_api=None,
+    agent_omit_temperature=False,
     temperature=0.5,
     max_steps=0,
     task_timeout_seconds=3600,
@@ -956,9 +959,9 @@ def solve_task(
     task_start_time = get_current_utc_timestamp()
     task_start_perf = time.time()
     env_kwargs = dict(env_config or {})
-    if str(env_name or "").startswith("envscaler_") and "verbose" not in env_kwargs:
+    if str(env_name or "").startswith("omniabench_") and "verbose" not in env_kwargs:
         env_kwargs["verbose"] = False
-    if env_name in ["envscaler_conversation_rl", "envscaler_conversation_sft"]:
+    if env_name in ["omniabench_conversation_rl", "omniabench_conversation_sft"]:
         if "user_model" not in env_kwargs and user_model:
             env_kwargs["user_model"] = user_model
         if "provider" not in env_kwargs and user_provider:
@@ -1016,6 +1019,9 @@ def solve_task(
         lang=lang,
         reasoning_effort=agent_reasoning_effort,
         effort=agent_effort,
+        force_reasoning_effort=agent_force_reasoning_effort,
+        use_responses_api=agent_use_responses_api,
+        omit_temperature=agent_omit_temperature,
     )
 
     result = agent.run(task_index=task_id, timeout_seconds=task_timeout_seconds)
@@ -1063,9 +1069,9 @@ def solve_task(
 
 
 def build_parser():
-    parser = argparse.ArgumentParser(description="Run EnvScaler final_eval benchmark.")
+    parser = argparse.ArgumentParser(description="Run OmniaBench evaluation benchmark.")
     parser.add_argument("--execution-mode", choices=["run_and_eval", "eval_only"], default="run_and_eval")
-    parser.add_argument("--env-name", choices=sorted(ENV_CLS_MAP.keys()), default="envscaler_conversation_rl")
+    parser.add_argument("--env-name", choices=sorted(ENV_CLS_MAP.keys()), default="omniabench_conversation_rl")
     parser.add_argument("--batch", default="", help="Batch name defined in configs/datasets.json")
     parser.add_argument("--task-items-path", default="", help="Optional: direct path to prepared task_items json")
     parser.add_argument("--result-file-path", default="", help="Result file used in eval_only mode")
@@ -1129,6 +1135,25 @@ def build_parser():
     parser.add_argument("--rubric-judge-base-url", default="")
     parser.add_argument("--agent-reasoning-effort", default="high", help="Reasoning effort for gpt-5.x responses API: low, medium, high")
     parser.add_argument("--agent-effort", default="high", help="Effort for Claude API: low, medium, high, xhigh, max")
+    parser.add_argument(
+        "--agent-force-reasoning-effort",
+        action="store_true",
+        help="Force-enable reasoning_effort even when --agent-base-url isn't recognized as an official "
+             "OpenAI endpoint. Use this if your self-hosted/third-party proxy supports the parameter.",
+    )
+    parser.add_argument(
+        "--agent-use-responses-api",
+        choices=["auto", "true", "false"],
+        default="auto",
+        help="Force on/off the OpenAI Responses API path for the agent model, overriding the "
+             "model-based default (auto).",
+    )
+    parser.add_argument(
+        "--agent-responses-api-omit-temperature",
+        action="store_true",
+        help="Drop the `temperature` field when calling the OpenAI Responses API, for third-party "
+             "deployments that reject it.",
+    )
     parser.add_argument("--thinking-config", default="", help="JSON config for thinking settings, e.g. '{\"user_enable_thinking\": false, \"rubric_judge_enable_thinking\": false}'")
     parser.add_argument(
         "--fs-bundle-root",
@@ -1233,6 +1258,8 @@ def main():
 
     if not agent_api_key:
         raise RuntimeError("未检测到 agent API key。请设置 api_key 或 OPENAI_API_KEY。")
+
+    agent_use_responses_api = {"auto": None, "true": True, "false": False}[args.agent_use_responses_api]
 
     user_difficulty_ids = [item.strip() for item in str(args.user_difficulty_ids or "").split(",") if item.strip()]
     user_difficulty_config = normalize_user_difficulty_config(user_difficulty_ids)
@@ -1537,6 +1564,9 @@ def main():
                     lang=args.prompt_lang if args.prompt_lang != "auto" else task_index_metadata.get(int(task_id), {}).get("lang", args.lang_filter if args.lang_filter in ["cn", "en"] else "cn"),
                     agent_reasoning_effort=args.agent_reasoning_effort,
                     agent_effort=args.agent_effort,
+                    agent_force_reasoning_effort=bool(args.agent_force_reasoning_effort),
+                    agent_use_responses_api=agent_use_responses_api,
+                    agent_omit_temperature=bool(args.agent_responses_api_omit_temperature),
                     temperature=args.agent_temperature if args.agent_temperature != 0.5 else args.temperature,
                     max_steps=args.max_steps,
                     task_timeout_seconds=args.task_timeout_seconds,

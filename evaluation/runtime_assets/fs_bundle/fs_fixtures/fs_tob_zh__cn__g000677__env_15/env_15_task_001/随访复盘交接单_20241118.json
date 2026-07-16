@@ -1,0 +1,21 @@
+{
+  "client_name": "陈雨桐",
+  "review_period_start": "2024-10-05",
+  "review_period_end": "2024-10-31",
+  "focus_stage_name": "基础管理期",
+  "focus_metric_code": "BP_SYS",
+  "focus_priority": "高",
+  "proposed_adjustment_action": {
+    "action_domain": "运动",
+    "action_name": "每日跳绳训练",
+    "frequency": "每周6次",
+    "intensity": "高",
+    "duration": "20分钟/次"
+  },
+  "report_draft_path": "陈雨桐_阶段复盘报告_待归档.md",
+  "report_final_path": "陈雨桐_阶段复盘报告_20241118.md",
+  "_document": {
+    "title": "慢病会员阶段复盘交接单",
+    "summary": "用于指定本次复盘对象、依从性统计周期、重点目标和拟追加的运动建议，并要求输出归档版复盘报告。"
+  }
+}

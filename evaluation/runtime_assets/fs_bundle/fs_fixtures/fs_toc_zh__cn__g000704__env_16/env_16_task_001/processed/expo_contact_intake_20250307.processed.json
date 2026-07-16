@@ -1,0 +1,31 @@
+{
+  "archive_status": "processed",
+  "source_file_original": "expo_contact_intake_20250307.json",
+  "archived_file": "processed/expo_contact_intake_20250307.processed.json",
+  "processed_at_note": "原始核验单已完成处理；当前沙箱中原始文件不可再读取，故按处理结果生成归档占位文件。",
+  "outputs": {
+    "handover_summary": "expo_contact_intake_20250307_handover_summary.md"
+  },
+  "new_lead_result": {
+    "event_id": "EVT2",
+    "company_id": "COM_YUNLAN_20250307",
+    "master_contact_id": "CON_MAIN_YUNLAN_20250307",
+    "merged_temp_contact_id": "CON_TEMP_YUNLAN_20250307",
+    "business_card_id": "CARD_YUNLAN_20250307",
+    "tag_id": "TAG5"
+  },
+  "existing_account_review_result": {
+    "legacy_contact_id": "CON6",
+    "resolved_primary_contact_id": "CON1",
+    "reference_business_card_id": "CARD1",
+    "reference_interaction_id": "INT1",
+    "reference_reminder_id": "REM1",
+    "reference_contract_id": "CONTRACT2",
+    "key_findings": [
+      "参考资料链路整体指向 CON1 / COM1 / OPP1。",
+      "OPP1 当前状态整体一致，审批已通过。",
+      "OPP2 存在审批未满足即进入 negotiation 的风险。",
+      "当前主合同查询结果与参考合同不一致，原因是复核口径混用了 OPP1 与 OPP2。"
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "patient_id": "PAT001",
+  "focus_sample_id": "SMP001",
+  "paired_sample_id": "SMP002",
+  "primary_comparison_name": "CG001:CG002",
+  "focus_clinical_group_id": "CG001",
+  "control_clinical_group_id": "CG002",
+  "sample_qc_run_id": "RUN001",
+  "primary_diff_run_id": "RUN002",
+  "pathway_run_id": "RUN003",
+  "followup_extension_run_id": "RUN005",
+  "target_pipeline_id": "PLN002",
+  "target_report_type": "analysis_summary",
+  "primary_report_id": "RPT001",
+  "pathway_report_id": "RPT002",
+  "focus_diff_result_id": "DAR001",
+  "focus_biomarker_id": "BM001",
+  "focus_annotation_id": "ANN001",
+  "compliance_watch_sample_id": "SMP006",
+  "followup_rerun_reason": "扩展新的配对正常与复核组比较",
+  "review_goal": "确认主差异分析是否仍可正式沟通，并评估是否具备兼容重跑条件，同时识别扩展比较中的合规排除风险。",
+  "_document": {
+    "title": "PAT001 主比较分析复核说明",
+    "summary": "该文件给出本次复核要围绕的患者、重点样本、主比较条件，以及需要重点查看的既往运行、扩展运行、关键结果、注释和报告对象。",
+    "sections": [
+      {
+        "heading": "复核重点",
+        "lines": [
+          "主比较条件是肿瘤对照比较，需要核对样本、分组和运行链条是否一致。",
+          "需要同时检查后续扩展比较中被排除样本的合规原因。",
+          "需要判断主报告是否仍可正式沟通，以及配套通路报告暂不发布的主要限制。"
+        ]
+      }
+    ]
+  }
+}

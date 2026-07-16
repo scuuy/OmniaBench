@@ -1,0 +1,105 @@
+{
+  "new_lead": {
+    "lead_owner_user_id": "USR2",
+    "source_event": {
+      "expected_event_id": "EVT2",
+      "lookup": {
+        "name": "苏州供应链协同沙龙",
+        "event_type": "seminar",
+        "organizer": "南岭行业联盟",
+        "start_time_from": "2025-03-04T00:00:00",
+        "start_time_to": "2025-03-04T23:59:59",
+        "location": "江苏省苏州市",
+        "status": "completed",
+        "owner_user_id": "USR2"
+      }
+    },
+    "company": {
+      "company_id": "COM_YUNLAN_20250307",
+      "official_name": "云岚智能设备有限公司",
+      "raw_industry": "智能设备",
+      "standardized_industry": "制造业",
+      "website_initial": "https://yunlan-smart.example.com",
+      "website_final": "https://yunlan-smart.example.com",
+      "location": "江苏省无锡市",
+      "company_type": "enterprise",
+      "size_initial": 300,
+      "size_final": 350,
+      "created_at": "2025-03-07T18:00:00",
+      "updated_at": "2025-03-07T18:10:00",
+      "search_filters": {
+        "industry": "制造业",
+        "location": "江苏省无锡市",
+        "owner_user_id": "USR2",
+        "status": "active",
+        "company_type": "enterprise"
+      }
+    },
+    "temp_contact": {
+      "contact_id": "CON_TEMP_YUNLAN_20250307",
+      "full_name": "沈家禾",
+      "job_title": "供应链负责人",
+      "department": "供应链部",
+      "email": "shenjiahe@example.com",
+      "phone": "13900020011",
+      "wechat_id": "sjh_yunlan",
+      "linkedin_url": "https://linkedin.example.com/in/shenjiahe",
+      "source_channel": "展会",
+      "relationship_level": "medium",
+      "decision_role": "influencer",
+      "preferred_contact_method": "phone",
+      "created_at": "2025-03-04T09:30:00",
+      "updated_at": "2025-03-04T09:30:00",
+      "reassigned_at": "2025-03-07T18:12:00",
+      "deactivated_at": "2025-03-07T18:25:00"
+    },
+    "master_contact": {
+      "contact_id": "CON_MAIN_YUNLAN_20250307",
+      "full_name": "沈嘉禾",
+      "job_title_initial": "采购负责人",
+      "department_initial": "采购部",
+      "job_title_final": "采购总监",
+      "department_final": "采购中心",
+      "email": "shenjiahe@example.com",
+      "phone": "13900020011",
+      "wechat_id": "sjh_yunlan",
+      "linkedin_url": "https://linkedin.example.com/in/shenjiahe",
+      "source_channel": "展会",
+      "relationship_level": "high",
+      "decision_role_initial": "influencer",
+      "decision_role_final": "decision_maker",
+      "preferred_contact_method_initial": "phone",
+      "preferred_contact_method_final": "wechat",
+      "created_at": "2025-03-07T18:15:00",
+      "updated_at": "2025-03-07T18:20:00"
+    },
+    "merge_reason": "同一张展会名片的 OCR 姓名误识别为“沈家禾”，人工核验后确认应以“沈嘉禾”为正式主记录并合并临时联系人。",
+    "tag": {
+      "name": "展会来源",
+      "category": "来源渠道",
+      "added_at": "2025-03-07T18:28:00"
+    },
+    "business_card": {
+      "card_id": "CARD_YUNLAN_20250307",
+      "card_image_url": "https://files.example.com/cards/card_yunlan_20250307.png",
+      "card_text_raw": "云岚智能设备有限公司 / 沈嘉禾 / 采购总监 / 13900020011 / sjh_yunlan",
+      "scanned_at": "2025-03-04T09:18:00",
+      "verification_status": "verified",
+      "extracted_company_name": "云岚智能设备有限公司",
+      "extracted_title": "采购总监",
+      "notes": "根据核验单已将 OCR 临时联系人合并到正式主记录，并校正姓名与职位。"
+    }
+  },
+  "existing_account_review": {
+    "legacy_contact_id": "CON6",
+    "reference_business_card_id": "CARD1",
+    "reference_interaction_id": "INT1",
+    "reference_reminder_id": "REM1",
+    "reference_contract_id": "CONTRACT2",
+    "review_focus": "核对遗留联系人是否已并入主记录，并比对商机审批状态、当前主合同查询结果与指定参考合同版本是否一致。"
+  },
+  "_document": {
+    "title": "展会线索核验单（2025-03-07）",
+    "summary": "文件包含一条苏州供应链协同沙龙新名片的落库与合并要求，以及一条老客户遗留联系人编号的商机/合同复核要求。"
+  }
+}

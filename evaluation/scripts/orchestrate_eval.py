@@ -6,7 +6,7 @@ For each selected route:
   2. assign deterministic global_ids -> write a prepared task_items json;
   3. if the route needs a sandbox, copy a FRESH sandbox from the fixed
      runtime_assets bundle into a per-run target dir and point
-     ENVSCALER_FS_BUNDLE_ROOT at it (whole framework stays portable);
+     OMNIABENCH_FS_BUNDLE_ROOT at it (whole framework stays portable);
   4. invoke scripts/run_eval.py with the route's env_name + the chosen profile;
   5. summarize per-route pass@1 + score.
 
@@ -52,6 +52,36 @@ def _load_json(path: Path) -> dict:
         return json.load(file)
 
 
+def _global_id_in_range(global_id: int, range_str: str) -> bool:
+    """判断 global_id 是否落在 routes.json 里某路的 global_id_range 字符串内。
+
+    支持 all / 1-10 / 1-10,21-30 / 5 这几种写法，语义与 run_eval.py 的
+    _parse_global_id_selector 保持一致。
+    """
+    text = str(range_str or "").strip()
+    if not text or text.lower() == "all":
+        return True
+    for part in text.split(","):
+        chunk = part.strip()
+        if not chunk:
+            continue
+        if "-" in chunk:
+            left, right = chunk.split("-", 1)
+            try:
+                start, end = int(left), int(right)
+            except ValueError:
+                continue
+            if start <= global_id <= end:
+                return True
+        else:
+            try:
+                if int(chunk) == global_id:
+                    return True
+            except ValueError:
+                continue
+    return False
+
+
 def _merge_all_route_runs_jsonl(result_files: dict[str, str], summaries: list[dict], merged_path: Path) -> None:
     """Merge all route .runs.jsonl files into one combined file."""
     merged_count = 0
@@ -67,14 +97,14 @@ def _merge_all_route_runs_jsonl(result_files: dict[str, str], summaries: list[di
                             merged_count += 1
 
     # 合并 state_diffs 到统一目录（放在 base_output_dir 内）
-    base_dir = merged_path.parent.parent  # <profile>-<run_tag>/
+    base_dir = merged_path.parent  # <profile>-<run_tag>/
     combined_state_diff_dir = base_dir / "state_diffs"
     combined_state_diff_dir.mkdir(parents=True, exist_ok=True)
 
     import glob
     for summary in summaries:
         if summary.get("status") == "ok":
-            route_save_path = summary.get("save_file_path", "")
+            route_save_path = summary.get("result_file_path", "")
             if route_save_path:
                 route_state_diff_dir = Path(route_save_path).with_suffix("")
                 route_state_diff_dir = route_state_diff_dir.parent / f"{route_state_diff_dir.name}_state_diffs"
@@ -151,6 +181,7 @@ def _profile_args(profile: dict) -> list[str]:
         "rubric_judge_api_key": "--rubric-judge-api-key",
         "rubric_judge_base_url": "--rubric-judge-base-url",
         "infer_mode": "--infer-mode",
+        "agent_use_responses_api": "--agent-use-responses-api",
     }
     flags: list[str] = []
     for key, flag in mapping.items():
@@ -161,6 +192,12 @@ def _profile_args(profile: dict) -> list[str]:
     # Handle thinking configurations
     if profile.get("agent_enable_thinking"):
         flags.append("--enable-thinking")
+
+    # 自建 / 第三方 OpenAI 兼容代理的特判开关（详见 run_eval.py --help）
+    if profile.get("agent_force_reasoning_effort"):
+        flags.append("--agent-force-reasoning-effort")
+    if profile.get("agent_responses_api_omit_temperature"):
+        flags.append("--agent-responses-api-omit-temperature")
 
     # Handle user/rubric thinking configurations (passed as extra kwargs to rubric_judge_config)
     user_thinking = profile.get("user_enable_thinking")
@@ -216,7 +253,7 @@ def run_single_route(
     sandbox_root = ""
     if route.get("needs_sandbox"):
         sandbox_root = _copy_fresh_sandbox(run_tag, route_id, profile_name, custom_prefix)
-        env["ENVSCALER_FS_BUNDLE_ROOT"] = sandbox_root
+        env["OMNIABENCH_FS_BUNDLE_ROOT"] = sandbox_root
         print(f"[orchestrate] {route_id} fresh sandbox -> {sandbox_root}", flush=True)
 
     # 统一输出目录结构：<profile>-<run_tag>/，内含 route1/route2/route3 子目录，incremental_shards 和 state_diffs 在根目录
@@ -418,83 +455,20 @@ def orchestrate(
 
     print_route_table(summaries)
 
-    # Generate comprehensive report with per-route and overall statistics
-    try:
-        from generate_eval_report import generate_combined_report, print_report
+    # Merge all route .runs.jsonl files into one combined file (in base_output_dir)
+    result_files = {}
+    for summary in summaries:
+        if summary.get("status") == "ok" and summary.get("result_file_path"):
+            route_id = summary.get("route_id", "unknown")
+            result_files[route_id] = summary["result_file_path"]
 
-        # Build result_files dict from summaries
-        result_files = {}
-        for summary in summaries:
-            if summary.get("status") == "ok" and summary.get("save_file_path"):
-                route_id = summary.get("route_id", "unknown")
-                result_files[route_id] = summary["save_file_path"]
-
-        if result_files:
-            print()
-            print("=" * 80)
-            print("COMPREHENSIVE EVALUATION REPORT")
-            print("=" * 80)
-            print()
-
-            # Generate and print combined report
-            report = generate_combined_report(result_files, output_path=None)
-            print_report(report)
-
-            # Merge all route .runs.jsonl files into one combined file (in base_output_dir)
+    if result_files:
+        try:
             merged_runs_path = base_output_dir / f"combined-{custom_prefix}{profile_name}-{user_model}-{run_tag}.runs.jsonl"
             _merge_all_route_runs_jsonl(result_files, summaries, merged_runs_path)
             print(f"[orchestrate] Merged runs.jsonl -> {merged_runs_path}")
-
-            # Generate Route1 capability/domain analysis report
-            try:
-                from analyze_eval import load_capability_map, analyze_route1, export_route1_analysis
-
-                print()
-                print("Generating Route1 capability analysis...")
-                cap_map = load_capability_map()
-
-                # Load route1 results for analysis
-                route1_results = []
-                if "route1" in result_files:
-                    route1_path = Path(result_files["route1"])
-                    if route1_path.exists():
-                        with open(route1_path, "r", encoding="utf-8") as f:
-                            for line in f:
-                                line = line.strip()
-                                if line:
-                                    try:
-                                        item = json.loads(line)
-                                        # Filter route1 data (global_id < 1000000)
-                                        r = item.get("result", item)
-                                        task_info = r.get("task_info") if isinstance(r.get("task_info"), dict) else {}
-                                        gid = task_info.get("global_id") or r.get("global_id", 0)
-                                        try:
-                                            gid = int(gid)
-                                        except (TypeError, ValueError):
-                                            gid = 0
-                                        if gid < 1000000:
-                                            route1_results.append(item)
-                                        elif gid >= 1000000:
-                                            break
-                                    except json.JSONDecodeError:
-                                        continue
-
-                if route1_results:
-                    print(f"Route1 results loaded: {len(route1_results)} tasks")
-                    stats = analyze_route1(route1_results, cap_map)
-
-                    # Export to JSON in the same output directory
-                    route1_analysis_path = base_output_dir / f"route1-analysis-{custom_prefix}{profile_name}-{user_model}-{run_tag}.json"
-                    export_route1_analysis(stats, str(route1_analysis_path))
-                    print(f"Route1 analysis saved to: {route1_analysis_path}")
-
-                    # Also print summary to console
-                    from analyze_eval import print_route1_analysis
-                    print_route1_analysis(stats)
-            except Exception as e:
-                print(f"Warning: Failed to generate Route1 analysis: {e}")
-    except Exception as e:
-        print(f"[orchestrate] Warning: Failed to generate comprehensive report: {e}")
+        except Exception as e:
+            print(f"[orchestrate] Warning: Failed to merge runs.jsonl: {e}")
 
     summary_path = RESULTS_DIR / f"route_summary-{profile_name}-{run_tag}.json"
     with open(summary_path, "w", encoding="utf-8") as file:
@@ -524,6 +498,18 @@ def build_parser() -> argparse.ArgumentParser:
         default=[],
         metavar="route_id=RANGE",
         help="Per-route global_id range, e.g. route2=1-10 route3=all. Can be repeated.",
+    )
+    parser.add_argument(
+        "--global-id",
+        nargs="*",
+        default=None,
+        metavar="GLOBAL_ID",
+        help=(
+            "Directly test one or more specific global_id(s), e.g. --global-id 1000023 3000005. "
+            "The route for each id is auto-detected by matching it against routes.json's "
+            "global_id_range, so you don't need to know which route owns which id range. "
+            "Overrides --routes and --route-global-id-range."
+        ),
     )
     parser.add_argument(
         "--data-override",
@@ -628,11 +614,56 @@ def main():
             raise ValueError(f"--data-override 格式应为 route_id=PATH，收到：{raw!r}")
         data_overrides[rid] = path
 
+    selected_route_ids = args.routes
+
+    # --global-id: 直接指定要测的 global_id(s)，自动匹配所属 route，
+    # 覆盖 --routes / --route-global-id-range，免去用户记 id_base 映射。
+    raw_global_ids = getattr(args, "global_id", None)
+    if raw_global_ids is not None:
+        if not raw_global_ids:
+            raise ValueError("--global-id 至少需要提供一个 global_id。")
+        try:
+            requested_ids = [int(x) for x in raw_global_ids]
+        except ValueError as exc:
+            raise ValueError(f"--global-id 只接受整数，收到：{raw_global_ids!r}") from exc
+
+        all_routes = _load_json(Path(args.routes_config)).get("routes", [])
+        matched_route_ids: list[str] = []
+        ids_by_route: dict[str, list[int]] = {}
+        unmatched: list[int] = []
+        for gid in requested_ids:
+            hit = None
+            for route in all_routes:
+                if _global_id_in_range(gid, route.get("global_id_range", "")):
+                    hit = route.get("id")
+                    break
+            if hit is None:
+                unmatched.append(gid)
+                continue
+            if hit not in matched_route_ids:
+                matched_route_ids.append(hit)
+            ids_by_route.setdefault(hit, []).append(gid)
+
+        if unmatched:
+            known_ranges = ", ".join(
+                f"{r.get('id')}={r.get('global_id_range', 'N/A')}" for r in all_routes
+            )
+            raise ValueError(
+                f"--global-id 里以下 id 未匹配到任何路的 global_id_range：{unmatched}。"
+                f"各路范围：{known_ranges}"
+            )
+
+        selected_route_ids = matched_route_ids
+        route_global_id_ranges = {
+            rid: ",".join(str(x) for x in sorted(ids)) for rid, ids in ids_by_route.items()
+        }
+        print(f"[orchestrate] --global-id auto-matched: {route_global_id_ranges}", flush=True)
+
     orchestrate(
         routes_config_path=args.routes_config,
         profiles_config_path=args.profiles_config,
         profile_name=args.profile,
-        selected_route_ids=args.routes,
+        selected_route_ids=selected_route_ids,
         pass_k=int(args.pass_k),
         max_task_workers=int(args.max_task_workers),
         lang_filter=args.lang_filter,

@@ -10,7 +10,7 @@ evaluation/data/
 !evaluation/data/.gitkeep
 evaluation/results/
 evaluation/runtime/tmp/
-evaluation/runtime_assets/
+evaluation/configs/profiles.json
 website/node_modules/
 website/.next/
 website/out/

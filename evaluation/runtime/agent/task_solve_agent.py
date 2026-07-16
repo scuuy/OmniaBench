@@ -5,7 +5,7 @@ import datetime
 from copy import deepcopy
 from agent.system_prompt_util import conversational_system_prompt, non_conversational_system_prompt, conversational_system_prompt_en, non_conversational_system_prompt_en, merge_tools_into_system_prompt
 from agent.agent_llm_inference import llm_inference_fc, llm_inference_prompt
-from envscaler_env.utils.env_util import get_state_info
+from omniabench_env.utils.env_util import get_state_info
 
 
 def _fix_missing_items_in_tools(schema):
@@ -44,6 +44,9 @@ class TaskSolveAgent:
         lang="cn",
         reasoning_effort="high",
         effort="high",
+        force_reasoning_effort=False,
+        use_responses_api=None,
+        omit_temperature=False,
     ):
         self.env_name = env_name
         self.env = env
@@ -61,6 +64,10 @@ class TaskSolveAgent:
         self.reasoning_effort = reasoning_effort or "high"
         # effort 用于 Claude 的 output_config
         self.effort = effort or "high"
+        # 以下三项用于兼容自建/第三方 OpenAI 兼容代理（详见 agent_llm_inference.llm_inference_fc）
+        self.force_reasoning_effort = bool(force_reasoning_effort)
+        self.use_responses_api = use_responses_api
+        self.omit_temperature = bool(omit_temperature)
         self.extra_system_prompt = str(extra_system_prompt or "").strip()
         self.lang = lang
 
@@ -112,9 +119,9 @@ class TaskSolveAgent:
         self.tools = _fix_missing_items_in_tools(deepcopy(info["tools"]))
         self.user_tools = info.get("user_tools", [])
         # Select system prompt based on conversation/non-conversation mode
-        if self.env_name in ["tau_bench_retail", "tau_bench_airline", "envscaler_conversation_rl", "envscaler_conversation_sft", "conv_custom_wo_reward", "acebench_multi_turn"] :
+        if self.env_name in ["tau_bench_retail", "tau_bench_airline", "omniabench_conversation_rl", "omniabench_conversation_sft", "conv_custom_wo_reward", "acebench_multi_turn"] :
             system_prompt = conversational_system_prompt_en if self.lang == "en" else conversational_system_prompt
-        elif self.env_name in ["envscaler_non_conversation_rl", "envscaler_non_conversation_sft","bfcl", "acebench_multi_step"]:
+        elif self.env_name in ["omniabench_non_conversation_rl", "omniabench_non_conversation_sft","bfcl", "acebench_multi_step"]:
             system_prompt = non_conversational_system_prompt_en if self.lang == "en" else non_conversational_system_prompt 
         else:
             raise RuntimeError(f"Unknown env_name: {self.env_name}")  
@@ -134,7 +141,7 @@ class TaskSolveAgent:
         task_item = deepcopy(info["task"])
         if self.env_name in ["tau_bench_retail", "tau_bench_airline"]:
             self.task_info = {"user_id": task_item.user_id, "instruction": task_item.instruction}
-        elif self.env_name in ["envscaler_non_conversation_rl", "envscaler_conversation_rl", "envscaler_non_conversation_sft", "envscaler_conversation_sft"]:
+        elif self.env_name in ["omniabench_non_conversation_rl", "omniabench_conversation_rl", "omniabench_non_conversation_sft", "omniabench_conversation_sft"]:
             self.task_info = {
                 "env_id": task_item.get("env_id"),
                 "task_id": task_item.get("task_id"),
@@ -363,7 +370,10 @@ class TaskSolveAgent:
                 api_key=self.api_key,
                 base_url=self.base_url,
                 reasoning_effort=self.reasoning_effort,
-                effort=self.effort
+                effort=self.effort,
+                force_reasoning_effort=self.force_reasoning_effort,
+                use_responses_api=self.use_responses_api,
+                omit_temperature=self.omit_temperature,
             )
 
         # Add model output to conversation history

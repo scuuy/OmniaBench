@@ -18,7 +18,7 @@ if str(CURRENT_DIR) not in sys.path:
     sys.path.insert(0, str(CURRENT_DIR))
 
 from agent.agent_llm_inference import openai_inference_prompt
-from envscaler_env.utils.env_util import run_check_function
+from omniabench_env.utils.env_util import run_check_function
 
 
 RUBRIC_FIELDS = {
@@ -211,11 +211,11 @@ def _normalize_task_path(task_items_path: str) -> Path:
 
 def _strip_prepared_suffix(task_path: Path) -> Path:
     stem = task_path.stem
-    for token in ("_single_file_ready_", "_envscaler_ready_"):
+    for token in ("_single_file_ready_", "_omniabench_ready_"):
         if token in stem:
             stem = stem.replace(token, "_")
             return task_path.with_name(stem + task_path.suffix)
-    for suffix in ("_single_file_ready", "_envscaler_ready"):
+    for suffix in ("_single_file_ready", "_omniabench_ready"):
         if stem.endswith(suffix):
             stem = stem[: -len(suffix)]
             return task_path.with_name(stem + task_path.suffix)

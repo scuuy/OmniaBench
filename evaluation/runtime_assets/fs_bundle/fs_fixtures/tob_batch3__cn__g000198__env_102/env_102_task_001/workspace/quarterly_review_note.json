@@ -1,0 +1,28 @@
+{
+  "review_keyword": "肺腺癌",
+  "anchor_sample_id": "SMP001",
+  "primary_comparison_name": "CG001:CG002",
+  "secondary_comparison_name": "CG002:CG003",
+  "focus_biomarker_id": "BM001",
+  "primary_batch_asset_id": "AST005",
+  "consent_risk_audit_log_id": "AUD006",
+  "critical_qc_metrics": [
+    "pathway_coverage",
+    "batch_balance"
+  ],
+  "target_pipeline_id": "PLN002",
+  "review_notice": "扩展比较仅可做方向性参考，若存在同意状态或QC限制，不得直接作为正式发布结论。",
+  "_document": {
+    "title": "季度肿瘤分析复核清单",
+    "summary": "为周会准备的重点复核项，指定了主样本、标准比较、扩展比较、重点候选、需复核的审计记录和用于重跑前置检查的目标流程。",
+    "sections": [
+      {
+        "heading": "复核说明",
+        "lines": [
+          "标准比较用于正式差异结果、候选标志物和通路解释复核。",
+          "扩展比较只用于方向性参考，若涉及同意状态撤回或关键QC限制，不能直接当作正式发布依据。"
+        ]
+      }
+    ]
+  }
+}

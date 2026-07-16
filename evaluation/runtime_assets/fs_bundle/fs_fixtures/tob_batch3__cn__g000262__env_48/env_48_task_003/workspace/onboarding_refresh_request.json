@@ -1,0 +1,87 @@
+{
+  "target_program_name": "新员工入职导航",
+  "target_program_type": "onboarding",
+  "target_program_status": "active",
+  "program_search_window": {
+    "start_date_from": "2024-01-01",
+    "start_date_to": "2025-12-31",
+    "end_date_from": "2024-12-31",
+    "end_date_to": "2026-12-31"
+  },
+  "new_hire_window": {
+    "start": "2024-01-01",
+    "end": "2025-03-31"
+  },
+  "seed_instructor_id": "INS001",
+  "focus_employee_id": "EMP002",
+  "audit_attendance_id": "ATD004",
+  "preview_top_n": 2,
+  "proposed_session": {
+    "session_id": "SES004",
+    "session_name": "新员工入职导航-补开班",
+    "audience_scope": "2024年至2025年一季度新入职员工",
+    "capacity": 12,
+    "registration_open_at": "2025-04-01",
+    "registration_close_at": "2025-04-10",
+    "session_status": "开放",
+    "location": "海州培训教室C",
+    "plan_start_date": "2025-04-15",
+    "recommendation_window_start": "2025-04-15T09:00:00",
+    "recommendation_window_end": "2025-04-15T12:00:00"
+  },
+  "draft_course": {
+    "course_id": "COURSE006",
+    "course_name": "入职工具与协作实操",
+    "course_type": "基础",
+    "delivery_mode": "混合",
+    "duration_hours": 2.5,
+    "passing_score": 80,
+    "description": "帮助新员工掌握内部协作工具、知识库与报销审批基础操作。",
+    "status": "active"
+  },
+  "_document": {
+    "title": "入职培训补开班与历史复核请求",
+    "summary": "该文件定义了需要检索的入职培训项目、开班时间窗口、重点核查员工与讲师、待新建课程草案，以及需复核的一条历史出勤记录。",
+    "sections": [
+      {
+        "heading": "项目定位",
+        "lines": [
+          "目标项目名称：新员工入职导航",
+          "目标项目类型：onboarding",
+          "目标项目状态：active",
+          "项目搜索时间范围：start_date 2024-01-01 至 2025-12-31，end_date 2024-12-31 至 2026-12-31"
+        ]
+      },
+      {
+        "heading": "开班与排期草案",
+        "lines": [
+          "新员工统计窗口：2024-01-01 至 2025-03-31",
+          "班次编号：SES004",
+          "班次名称：新员工入职导航-补开班",
+          "报名时间：2025-04-01 至 2025-04-10",
+          "计划开班日期：2025-04-15",
+          "排期推荐时间窗：2025-04-15T09:00:00 至 2025-04-15T12:00:00"
+        ]
+      },
+      {
+        "heading": "新增课程草案",
+        "lines": [
+          "课程编号：COURSE006",
+          "课程名称：入职工具与协作实操",
+          "授课方式：混合",
+          "时长：2.5小时",
+          "及格分：80"
+        ]
+      },
+      {
+        "heading": "重点核查对象",
+        "lines": [
+          "首选讲师：INS001",
+          "重点员工：EMP002",
+          "历史出勤异常记录：ATD004",
+          "讲师推荐候选数：2"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+document:
+  title: 紧急补录会议请求单
+  summary: 一份 YAML 请求单，描述技术问题后续短会的原始安排，以及发现阻塞提醒后的时间调整规则。
+payload:
+  request_id: RFU-20240815-01
+  title: 接口超时修复跨团队对齐
+  team_name: 澄明技术组
+  proposed_start_utc: "2024-08-15T03:00:00Z"
+  proposed_end_utc: "2024-08-15T03:30:00Z"
+  organizer_name: 韩予安
+  host_name: 顾承宇
+  required_participants:
+    - 韩予安
+    - 顾承宇
+    - 陈雨桐
+  acceptance_to_backfill:
+    - 陈雨桐
+  agenda: 确认超时回退修复范围、产品侧影响说明、以及回归验证口径。
+  buffer_rule_if_blocker_notice_found: 若顾承宇当天收到与该问题相关的阻塞任务提醒，则开始时间顺延10分钟。
+  output_brief_file: tech_followup_brief.md
+  archive_processed_request_to: tech_followup_request.processed.yaml
