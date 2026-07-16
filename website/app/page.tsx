@@ -139,7 +139,11 @@ function PodiumIcon() {
 }
 
 function HuggingFaceIcon() {
-  return <span className="huggingface-icon" aria-hidden="true">🤗</span>;
+  return (
+    <span className="huggingface-icon" aria-hidden="true">
+      <img src={asset("/logos/huggingface.png")} alt="" />
+    </span>
+  );
 }
 
 function SectionNavigation({ active }: { active: string }) {
