@@ -119,15 +119,7 @@ const sections = [
   { id: "diagnosis", label: "Capability Diagnosis", short: "Analysis" },
   { id: "findings", label: "Key Findings", short: "Findings" },
   { id: "release", label: "Open Release", short: "Release" },
-  { id: "citation", label: "Citation", short: "Cite" },
 ];
-
-const bibtex = `@article{shen2026omniabench,
-  title   = {OmniaBench: Benchmarking General AI Agents
-             Across Diverse Scenarios},
-  author  = {Shen, Chengyu and Fu, Yujie and Xin, Gangtao and others},
-  year    = {2026}
-}`;
 
 function BrandIcon({ src, label }: { src: string; label: string }) {
   return (
@@ -374,7 +366,6 @@ function RadarExplorer() {
 }
 
 export default function Home() {
-  const [copied, setCopied] = useState(false);
   const [activeSection, setActiveSection] = useState("leaderboard");
 
   useEffect(() => {
@@ -399,12 +390,6 @@ export default function Home() {
     revealElements.forEach((element) => revealObserver.observe(element));
     return () => { sectionObserver.disconnect(); revealObserver.disconnect(); };
   }, []);
-
-  async function copyCitation() {
-    await navigator.clipboard.writeText(bibtex);
-    setCopied(true);
-    window.setTimeout(() => setCopied(false), 1600);
-  }
 
   return (
     <main id="top">
@@ -575,11 +560,6 @@ export default function Home() {
           <div><div className="section-label">Open release</div><h2>Code, data, and evaluation tools</h2></div>
           <div><p>The benchmark environments, task sets, evaluation harness, and leaderboard are being prepared for public release.</p><a href="mailto:scuuy05@gmail.com">Contact the team <span>↗</span></a></div>
         </div>
-      </section>
-
-      <section className="section container citation-section" id="citation" data-reveal>
-        <div><div className="section-label">Citation</div><h2>If you find OmniaBench useful, please cite our work.</h2></div>
-        <div className="bibtex-box"><pre>{bibtex}</pre><button type="button" onClick={copyCitation}>{copied ? "Copied" : "Copy BibTeX"}</button></div>
       </section>
 
       <footer>
