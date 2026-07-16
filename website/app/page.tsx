@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import radarDataSource from "./data/radar_20models_raw.json";
+import radarDataSource from "./data/radar_22models_micro.json";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 const asset = (path: string) => `${basePath}${path}`;
@@ -23,23 +23,24 @@ const providerLogos: Record<string, string> = {
   Doubao: asset("/logos/doubao.png"),
 };
 
-const leaderboard = [
-  { rank: 1, provider: "OpenAI", model: "GPT-5.5", access: "Proprietary", effort: "high", dag: "54.80", solver: "38.33", program: "60.00", dags: "64.50", overall: "54.41" },
-  { rank: 2, provider: "Anthropic", model: "Claude Opus 4.7", access: "Proprietary", effort: "max", dag: "53.39", solver: "43.33", program: "63.33", dags: "57.50", overall: "54.39" },
-  { rank: 3, provider: "Kimi", model: "Kimi K2.6", access: "Open", dag: "49.72", solver: "45.00", program: "63.33", dags: "57.50", overall: "53.89" },
-  { rank: 4, provider: "Qwen", model: "Qwen3.7-Max", access: "Proprietary", dag: "48.59", solver: "51.67", program: "66.67", dags: "48.50", overall: "53.86" },
-  { rank: 5, provider: "GLM", model: "GLM-5.2", access: "Open", effort: "max", dag: "54.80", solver: "26.67", program: "60.00", dags: "69.00", overall: "52.62" },
-  { rank: 6, provider: "DeepSeek", model: "DeepSeek-V4-Pro", access: "Open", effort: "max", dag: "52.54", solver: "36.67", program: "53.33", dags: "63.50", overall: "51.51" },
-  { rank: 7, provider: "DeepSeek", model: "DeepSeek-V4-Flash", access: "Open", effort: "max", dag: "51.13", solver: "28.33", program: "43.33", dags: "51.00", overall: "43.45" },
-  { rank: 8, provider: "Qwen", model: "Qwen3.5-397B", access: "Open", dag: "50.56", solver: "31.67", program: "50.00", dags: "26.00", overall: "39.56" },
-];
-
 type RadarData = {
   caps: string[];
   models: string[];
   capability: Record<string, Record<string, number>>;
   split: Record<string, { tob: number; toc: number; toe: number }>;
-  leaderboard: Record<string, { R1: number; R2: number; R3: number; R4: number; Overall: number }>;
+  leaderboard: Record<string, {
+    R1: number;
+    R2: number;
+    R3: number;
+    R4: number;
+    Overall: number;
+    passed: number;
+    total: number;
+    UsrTurns: number;
+    ToolSteps: number;
+    turns_steps_source: string;
+    is_new: boolean;
+  }>;
 };
 
 type RadarView = "capability" | "split" | "routes";
@@ -49,6 +50,7 @@ const paperRadarModels = ["GPT-5.5", "Claude-Opus-4.7", "GLM-5.2", "DeepSeek-V4-
 const radarPalette = [
   "#d86f55", "#318b88", "#7d9c43", "#5878b8", "#c46f9b", "#9a6cc1", "#d9953f", "#498cba", "#8392a6", "#5f9b72",
   "#b36d5e", "#4f76a5", "#af8543", "#4d9b9a", "#8e70a6", "#c15f72", "#6e914d", "#8c7356", "#497da0", "#9b6286",
+  "#3f8f6d", "#b06d36",
 ];
 const paperRadarColors: Record<string, string> = {
   "GPT-5.5": "#F0876A",
@@ -75,6 +77,34 @@ function colorForModel(model: string) {
   const index = radarData.models.indexOf(model);
   return radarPalette[Math.max(0, index) % radarPalette.length];
 }
+
+function accessForModel(model: string) {
+  if (model.startsWith("GPT") || model.startsWith("Claude") || model.startsWith("Gemini") || model.startsWith("Doubao")) return "Proprietary";
+  if (model === "Qwen3.7-Max") return "Proprietary";
+  return "Open";
+}
+
+function effortForModel(model: string) {
+  if (model.startsWith("GPT")) return "high";
+  if (model.startsWith("Claude") || model.startsWith("GLM") || model.startsWith("DeepSeek")) return "max";
+  return undefined;
+}
+
+const leaderboard = radarData.models.slice(0, 8).map((model, index) => {
+  const scores = radarData.leaderboard[model];
+  return {
+    rank: index + 1,
+    provider: providerForModel(model),
+    model,
+    access: accessForModel(model),
+    effort: effortForModel(model),
+    dag: scores.R1.toFixed(2),
+    solver: scores.R2.toFixed(2),
+    program: scores.R3.toFixed(2),
+    dags: scores.R4.toFixed(2),
+    overall: scores.Overall.toFixed(2),
+  };
+});
 
 const authors = [
   "Chengyu Shen*", "Yujie Fu*", "Gangtao Xin*", "Yanheng Hou", "Wenlong Fei",
@@ -147,7 +177,7 @@ function RadarExplorer() {
     ? {
         title: "Ten capability dimensions",
         labels: radarData.caps,
-        shortLabels: ["Task Understanding", "Info Gathering", "Planning & Decision", "State Management", "Tool Use", "Code & Program", "Data Analysis", "Office & Docs", "Interactive Collab.", "Reliability & Safety"],
+        shortLabels: ["Task Understanding", "Info Gathering", "Planning & Decision", "Tool Use", "State Management", "Office & Docs", "Data Analysis", "Code & Program", "Interactive Collab.", "Reliability & Safety"],
         values: (model: string) => radarData.caps.map((capability) => radarData.capability[model][capability]),
         minScore: 38,
         maxScore: 61,
@@ -445,7 +475,7 @@ export default function Home() {
           <div className="section-label">Evaluation results</div>
           <div className="section-heading leaderboard-heading">
             <div><h2>Leaderboard</h2><p className="section-subtitle">Current frontier performance on the 644-task challenging set.</p></div>
-            <p>Overall is the macro-average of Pass@1 across DAG, Solver, Program, and DAG-S. Similar final scores can reflect very different execution profiles.</p>
+            <p>Overall is Pass@1 across all 644 tasks (micro-average). Similar final scores can reflect very different execution profiles.</p>
           </div>
 
           <div className="table-wrap">
@@ -464,7 +494,7 @@ export default function Home() {
               </tbody>
             </table>
           </div>
-          <div className="leaderboard-footer"><p>644 tasks: 354 DAG · 60 Solver · 30 Program · 200 DAG-S.</p><a href={links.paper} target="_blank">View all 20 models in the paper <span>↗</span></a></div>
+          <div className="leaderboard-footer"><p>644 tasks: 354 DAG · 60 Solver · 30 Program · 200 DAG-S.</p><a href={links.paper} target="_blank">View all 22 models <span>↗</span></a></div>
           <RadarExplorer />
         </div>
       </section>
@@ -527,7 +557,7 @@ export default function Home() {
         <div className="container">
           <div className="section-label">Key findings</div>
           <div className="findings-list">
-            <article><span>01</span><div><h3>Frontier models solve only about half of the benchmark.</h3><p>GPT-5.5 reaches 54.41 Overall Pass@1, showing substantial headroom even for the strongest evaluated systems.</p></div><strong>54.41%</strong></article>
+            <article><span>01</span><div><h3>Frontier models solve only about half of the benchmark.</h3><p>Claude-Sonnet-5 reaches 58.54 Overall Pass@1, showing substantial headroom even for the strongest evaluated systems.</p></div><strong>58.54%</strong></article>
             <article><span>02</span><div><h3>Reasoning—not tool syntax—is the primary bottleneck.</h3><p>Planning, decomposition, constraint maintenance, reflection, and adaptive correction account for most observed failures.</p></div><strong>53.8%</strong></article>
             <article><span>03</span><div><h3>Stronger models complete tasks with fewer tool steps.</h3><p>Longer trajectories often reflect redundant exploration or repeated replanning rather than more thorough execution.</p></div><strong>↓ steps</strong></article>
             <article><span>04</span><div><h3>Aggregate rankings hide scenario-specific strengths.</h3><p>Performance shifts substantially across business, consumer, employee, and fine-grained application domains.</p></div><strong>90 domains</strong></article>

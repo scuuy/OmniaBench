@@ -25,3 +25,12 @@ npm run dev
 
 Pushes to `main` automatically build and deploy the static site through GitHub Pages.
 
+## License
+
+The source code in `evaluation/` and `website/` is released under the
+[Apache License 2.0](LICENSE).
+
+The paper PDF, benchmark figures, institutional marks, and third-party logos are
+not covered by the Apache-2.0 code license. Their respective copyrights and
+trademarks remain with their owners. The OmniaBench dataset will be released
+separately with its own license and terms of use.
