@@ -428,7 +428,6 @@ def _build_task_index_metadata(task_items_path):
             "task_id": str(item.get("task_id", "")).strip(),
             "env_id": str(item.get("env_id", "")).strip(),
             "global_id": item.get("global_id"),
-            "batch": str(item.get("batch", "")).strip(),
             "lang": str(item.get("lang", "")).strip(),
         }
     return metadata

@@ -147,7 +147,6 @@ class TaskSolveAgent:
                 "task_id": task_item.get("task_id"),
                 "task": task_item.get("task"),
                 "global_id": task_item.get("global_id"),
-                "batch": task_item.get("batch"),
                 "lang": task_item.get("lang"),
             }
             # Preserve ground truth fields for visualization

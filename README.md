@@ -14,6 +14,10 @@
   <img src="website/public/figures/overview.webp" width="820" alt="Conceptual overview of OmniaBench: data sources, taxonomy, executable environments, and evaluation protocol">
 </p>
 
+## 🔔 News
+
+- [2026-07] The OmniaBench codebase and dataset are released.
+
 OmniaBench is a broad, diagnostic benchmark for evaluating general AI agents. Scenario knowledge is
 distilled from app stores, product documents, industry resources, and web retrieval into a hierarchical
 taxonomy spanning **ToC, ToB, and ToE** with **90 level-1 and 354 level-2 domains**. On top of this
@@ -76,38 +80,39 @@ evaluation/  Reproducible evaluation runners, route orchestration, and scoring
 website/     Next.js project page deployed to GitHub Pages
 ```
 
-See [evaluation/README.md](evaluation/README.md) for evaluation setup. The 644-task route files are hosted
-on [Hugging Face](https://huggingface.co/datasets/scuuy666/OmniaBench) (not committed to this repo); the
-filesystem sandbox assets needed by Route 1 are committed under `evaluation/runtime_assets/fs_bundle/`.
+The 644-task route files are hosted on [Hugging Face](https://huggingface.co/datasets/scuuy666/OmniaBench)
+(not committed to this repo); the filesystem sandbox assets needed by Route 1 are committed under
+`evaluation/runtime_assets/fs_bundle/`.
 
-## Getting started
+## Quick start
 
 ```bash
 git clone https://github.com/scuuy/OmniaBench.git
 cd OmniaBench
-
 python -m venv .venv && source .venv/bin/activate
 pip install -r evaluation/requirements.txt
-cp evaluation/configs/profiles.example.json evaluation/configs/profiles.json
-cp evaluation/.env.example evaluation/.env   # fill in your API keys, never commit this file
-
-python evaluation/scripts/orchestrate_eval.py \
-  --profile openai_compatible \
-  --routes route1 route2 route3 route4 \
-  --pass-k 1 --max-task-workers 8
 ```
 
-Full setup, data download, and advanced usage are documented in [evaluation/README.md](evaluation/README.md).
-
-## Website development
+### 1. Configure your models
 
 ```bash
-cd website
-npm ci
-npm run dev
+cp evaluation/configs/profiles.example.json evaluation/configs/profiles.json  # declare which models play agent / user-simulator / rubric-judge
+cp evaluation/.env.example evaluation/.env                                    # fill in the API keys/base URLs, never commit this file
 ```
 
-Pushes to `main` automatically build and deploy the static site through GitHub Pages.
+`profiles.json` only stores *environment variable names*; the actual keys and base URLs go in `.env`. See [evaluation/README.md](evaluation/README.md) for the full config reference and how to download the 644-task dataset from [Hugging Face](https://huggingface.co/datasets/scuuy666/OmniaBench).
+
+### 2. Run evaluations
+
+```bash
+python evaluation/scripts/orchestrate_eval.py \
+  --profile openai_compatible \        # profile name defined in configs/profiles.json
+  --routes route1 route2 route3 route4 \  # which of the 4 routes to run; omit to run all
+  --pass-k 1 \                         # run each task k times, report pass@k
+  --max-task-workers 8                 # concurrent task workers
+```
+
+Results are written to `evaluation/results/`. More flags (resuming a run, filtering by `global_id`/language, overriding data paths, etc.) are documented in [evaluation/README.md](evaluation/README.md).
 
 ## Team
 
