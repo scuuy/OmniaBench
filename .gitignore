@@ -16,4 +16,5 @@ website/.next/
 website/out/
 website/dist/
 website/.wrangler/
-
+/omniabench.pdf
+/website/public/omniabench.pdf

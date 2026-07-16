@@ -80,6 +80,8 @@ main > :where(*:not(.ambient)) { position: relative; z-index: 1; }
 .resource { min-width: 148px; min-height: 58px; padding: 8px 16px; display: flex; align-items: center; justify-content: flex-start; gap: 12px; border: 1px solid #b9cad9; border-radius: 11px; background: rgba(255,255,255,.74); color: #2c4358; transition: border-color .2s, transform .2s, background .2s, box-shadow .2s; }
 .resource:hover { transform: translateY(-3px); border-color: #78a6c5; background: white; box-shadow: 0 10px 26px rgba(35,73,104,.1); }
 .resource.primary { border-color: #8baac1; background: rgba(238,247,253,.94); }
+.resource-disabled { cursor: default; }
+.resource-disabled:hover { transform: none; border-color: #8baac1; background: rgba(238,247,253,.94); box-shadow: none; }
 .resource > span:last-child { display: flex; flex-direction: column; align-items: flex-start; }
 .resource b { font-size: 15px; line-height: 1.2; }.resource small { margin-top: 4px; color: #789; font: 550 10px/1 var(--mono); text-transform: uppercase; letter-spacing: .035em; }
 .brand-icon { position: relative; width: 25px; height: 25px; flex: 0 0 auto; display: grid; place-items: center; }

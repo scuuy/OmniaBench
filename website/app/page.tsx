@@ -7,7 +7,6 @@ const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 const asset = (path: string) => `${basePath}${path}`;
 
 const links = {
-  paper: asset("/omniabench.pdf"), // Replace with the public arXiv URL when available.
   github: "https://github.com/scuuy/OmniaBench",
   dataset: "#release", // Replace with the public Hugging Face dataset URL.
 };
@@ -448,7 +447,7 @@ export default function Home() {
         <p className="contact-line"><span>Contact</span><a href="mailto:scuuy05@gmail.com">scuuy05@gmail.com</a></p>
 
         <div className="resource-links">
-          <a className="resource primary" href={links.paper} target="_blank"><BrandIcon src="https://cdn.simpleicons.org/arxiv/B31B1B" label="arXiv" /><span><b>Paper</b><small>arXiv</small></span></a>
+          <span className="resource primary resource-disabled" aria-label="Paper coming soon on arXiv"><BrandIcon src="https://cdn.simpleicons.org/arxiv/B31B1B" label="arXiv" /><span><b>Paper</b><small>arXiv soon</small></span></span>
           <a className="resource" href={links.github}><BrandIcon src="https://cdn.simpleicons.org/github/17324D" label="GitHub" /><span><b>Code</b><small>GitHub</small></span></a>
           <a className="resource" href={links.dataset}><HuggingFaceIcon /><span><b>Dataset</b><small>Hugging Face</small></span></a>
           <a className="resource" href="#leaderboard"><PodiumIcon /><span><b>Leaderboard</b><small>View results</small></span></a>
@@ -488,7 +487,7 @@ export default function Home() {
               </tbody>
             </table>
           </div>
-          <div className="leaderboard-footer"><p>644 tasks: 354 DAG · 60 Solver · 30 Program · 200 DAG-S.</p><a href={links.paper} target="_blank">View all 22 models <span>↗</span></a></div>
+          <div className="leaderboard-footer"><p>644 tasks: 354 DAG · 60 Solver · 30 Program · 200 DAG-S.</p><span>22 models evaluated</span></div>
           <RadarExplorer />
         </div>
       </section>
@@ -568,7 +567,7 @@ export default function Home() {
       </section>
 
       <footer>
-        <div className="container footer-inner"><div><a className="brand footer-brand" href="#top">OmniaBench</a><p>Benchmarking General AI Agents Across Diverse Scenarios</p></div><div className="footer-links"><a href={links.paper} target="_blank">Paper</a><a href="#leaderboard">Leaderboard</a><a href="mailto:scuuy05@gmail.com">Contact</a></div></div>
+        <div className="container footer-inner"><div><a className="brand footer-brand" href="#top">OmniaBench</a><p>Benchmarking General AI Agents Across Diverse Scenarios</p></div><div className="footer-links"><a href="#leaderboard">Leaderboard</a><a href="mailto:scuuy05@gmail.com">Contact</a></div></div>
         <div className="container footer-bottom"><span>Huawei Cloud Post-Training Team</span><span>© 2026 OmniaBench</span></div>
       </footer>
     </main>
