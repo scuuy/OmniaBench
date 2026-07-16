@@ -69,7 +69,7 @@ main > :where(*:not(.ambient)) { position: relative; z-index: 1; }
 .affiliation-mark img { position: absolute; top: 50%; left: 50%; max-width: none; object-fit: contain; mix-blend-mode: multiply; opacity: .94; transform: translate(-50%, -50%); transition: opacity .22s, transform .22s; }
 .affiliation-logos a:hover img { opacity: 1; transform: translate(-50%, -50%) scale(1.05); }
 .pku-mark, .bit-mark { width: 55px; height: 55px; }
-.ruc-mark { width: auto; height: 79px; }
+.ruc-mark { width: auto; height: 68px; }
 .tsinghua-mark { width: auto; height: 72px; }
 .author-note { margin: 8px 0 0; color: #76899a; font-size: 13px; }
 .resource-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 34px; }
