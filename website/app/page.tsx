@@ -146,6 +146,10 @@ function PodiumIcon() {
   return <span className="podium-icon" aria-hidden="true"><i /><i /><i /></span>;
 }
 
+function HuggingFaceIcon() {
+  return <span className="huggingface-icon" aria-hidden="true">🤗</span>;
+}
+
 function SectionNavigation({ active }: { active: string }) {
   return (
     <>
@@ -456,7 +460,7 @@ export default function Home() {
         <div className="resource-links">
           <a className="resource primary" href={links.paper} target="_blank"><BrandIcon src="https://cdn.simpleicons.org/arxiv/B31B1B" label="arXiv" /><span><b>Paper</b><small>arXiv</small></span></a>
           <a className="resource" href={links.github}><BrandIcon src="https://cdn.simpleicons.org/github/17324D" label="GitHub" /><span><b>Code</b><small>GitHub</small></span></a>
-          <a className="resource" href={links.dataset}><BrandIcon src="https://cdn.simpleicons.org/huggingface/FFD21E" label="Hugging Face" /><span><b>Dataset</b><small>Hugging Face</small></span></a>
+          <a className="resource" href={links.dataset}><HuggingFaceIcon /><span><b>Dataset</b><small>Hugging Face</small></span></a>
           <a className="resource" href="#leaderboard"><PodiumIcon /><span><b>Leaderboard</b><small>View results</small></span></a>
         </div>
       </header>
