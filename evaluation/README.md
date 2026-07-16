@@ -32,29 +32,11 @@ Credentials must never be committed — `.env` is already covered by `.gitignore
 
 ## Data layout
 
-The 644-task challenge subset is hosted on [Hugging Face](https://huggingface.co/datasets/scuuy666/OmniaBench) (it's not committed to this repo, since the files are tens of MB each). Download it with either:
-
-```bash
-# Option A: huggingface_hub
-pip install huggingface_hub
-python -c "
-from huggingface_hub import snapshot_download
-snapshot_download(
-    repo_id='scuuy666/OmniaBench',
-    repo_type='dataset',
-    local_dir='evaluation/data',
-)
-"
-```
-
-```bash
-# Option B: git clone (requires git-lfs if large-file storage is enabled on the repo)
-git clone https://huggingface.co/datasets/scuuy666/OmniaBench evaluation/data/_hf_download
-mv evaluation/data/_hf_download/routes evaluation/data/routes
-rm -rf evaluation/data/_hf_download
-```
-
-Either way, the four route files should end up at:
+The 644-task challenge subset is hosted on [Hugging Face](https://huggingface.co/datasets/scuuy666/OmniaBench)
+(it's not committed to this repo, since the files are tens of MB each). You don't need to download it
+yourself: the first time `orchestrate_eval.py` runs, it checks whether each route's data file is present
+under `evaluation/data/routes/`, and if any are missing it calls `huggingface_hub.snapshot_download()` to
+pull the whole dataset repo into `evaluation/data/` automatically, landing the four files at:
 
 ```text
 evaluation/data/routes/route1.json
@@ -62,6 +44,23 @@ evaluation/data/routes/route2.json
 evaluation/data/routes/route3.json
 evaluation/data/routes/route4.json
 ```
+
+This requires the `huggingface_hub` package (already in `requirements.txt`) and outbound network access.
+If you'd rather manage the data yourself:
+
+- `--no-download`: disable the automatic download entirely (e.g. offline/air-gapped environments). Any
+  route still missing a data file will be reported as `missing_data_file` in the run summary instead of
+  being downloaded.
+- `--data-override route_id=/path/to/file.json`: point a specific route at a local file instead (see
+  Advanced usage below). Routes with an override never trigger a download, since they already resolve.
+- Manual download, if you want the files without running an eval first:
+
+  ```bash
+  python -c "
+  from huggingface_hub import snapshot_download
+  snapshot_download(repo_id='scuuy666/OmniaBench', repo_type='dataset', local_dir='evaluation/data')
+  "
+  ```
 
 Route 1 also requires a filesystem sandbox bundle, which *is* committed to this repo (it's small — a few hundred KB) at `evaluation/runtime_assets/fs_bundle/`. No extra download step is needed for it.
 
@@ -116,6 +115,7 @@ Outputs are written under `evaluation/results/` and are intentionally ignored by
 - `--pass-k <k>`: run each task `k` times and compute pass@k in addition to pass@1.
 - `--lang-filter cn|en|all`: restrict tasks to a language subset, intersected with any `global_id` range filter.
 - `--data-override route_id=/path/to/file.json`: point a specific route at a local data file instead of the path in `configs/routes.json`. Repeatable.
+- `--no-download`: disable the automatic Hugging Face download when a route's data file is missing (see Data layout above).
 
 ## Interpreting results
 

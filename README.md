@@ -10,13 +10,13 @@
 
 </div>
 
+## 🔔 News
+
+- 🚀 **[2026-07]** The OmniaBench codebase and dataset are released!
+
 <p align="center">
   <img src="website/public/figures/overview.webp" width="820" alt="Conceptual overview of OmniaBench: data sources, taxonomy, executable environments, and evaluation protocol">
 </p>
-
-## 🔔 News
-
-- [2026-07] The OmniaBench codebase and dataset are released.
 
 OmniaBench is a broad, diagnostic benchmark for evaluating general AI agents. Scenario knowledge is
 distilled from app stores, product documents, industry resources, and web retrieval into a hierarchical
@@ -81,8 +81,9 @@ website/     Next.js project page deployed to GitHub Pages
 ```
 
 The 644-task route files are hosted on [Hugging Face](https://huggingface.co/datasets/scuuy666/OmniaBench)
-(not committed to this repo); the filesystem sandbox assets needed by Route 1 are committed under
-`evaluation/runtime_assets/fs_bundle/`.
+(not committed to this repo, since the files are tens of MB each) and are downloaded automatically the
+first time you run an evaluation — no manual download step needed. The filesystem sandbox assets needed
+by Route 1 are small enough to be committed directly, under `evaluation/runtime_assets/fs_bundle/`.
 
 ## Quick start
 
@@ -100,7 +101,7 @@ cp evaluation/configs/profiles.example.json evaluation/configs/profiles.json  # 
 cp evaluation/.env.example evaluation/.env                                    # fill in the API keys/base URLs, never commit this file
 ```
 
-`profiles.json` only stores *environment variable names*; the actual keys and base URLs go in `.env`. See [evaluation/README.md](evaluation/README.md) for the full config reference and how to download the 644-task dataset from [Hugging Face](https://huggingface.co/datasets/scuuy666/OmniaBench).
+`profiles.json` only stores *environment variable names*; the actual keys and base URLs go in `.env`. See [evaluation/README.md](evaluation/README.md) for the full config reference.
 
 ### 2. Run evaluations
 
@@ -111,6 +112,11 @@ python evaluation/scripts/orchestrate_eval.py \
   --pass-k 1 \                         # run each task k times, report pass@k
   --max-task-workers 8                 # concurrent task workers
 ```
+
+The first run automatically downloads the 644-task dataset from [Hugging Face](https://huggingface.co/datasets/scuuy666/OmniaBench)
+into `evaluation/data/` if it's not already there — no separate download step needed. Pass `--no-download`
+to disable this (e.g. offline environments), and use `--data-override route_id=/path` to point a route at
+your own local copy instead.
 
 Results are written to `evaluation/results/`. More flags (resuming a run, filtering by `global_id`/language, overriding data paths, etc.) are documented in [evaluation/README.md](evaluation/README.md).
 

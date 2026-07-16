@@ -130,6 +130,50 @@ def _resolve_route_data_file(route: dict) -> str:
     return ""
 
 
+HF_DATASET_REPO_ID = "scuuy666/OmniaBench"
+
+
+def _ensure_dataset_downloaded(routes: list[dict], no_download: bool) -> None:
+    """在跑任何 route 之前，检查数据文件是否齐全；缺了就从 HF 自动下载一次。
+
+    只在真的缺文件时才触发网络请求/依赖 huggingface_hub；已有本地数据（如内网
+    环境用 --data-override 指向自己的路径）的用户完全不受影响。
+    """
+    missing = [r for r in routes if not _resolve_route_data_file(r)]
+    if not missing:
+        return
+    if no_download:
+        print(
+            f"[orchestrate] --no-download 已启用，跳过自动下载；以下 route 缺数据文件: "
+            f"{[r.get('id') for r in missing]}",
+            flush=True,
+        )
+        return
+
+    try:
+        from huggingface_hub import snapshot_download
+    except ImportError:
+        print(
+            "[orchestrate] 检测到数据文件缺失，但未安装 huggingface_hub，无法自动下载。"
+            " 请先 `pip install huggingface_hub`，或使用 --data-override / --no-download。",
+            flush=True,
+        )
+        return
+
+    data_dir = FRAMEWORK_ROOT / "data"
+    print(
+        f"[orchestrate] 检测到数据文件缺失 ({[r.get('id') for r in missing]})，"
+        f"正在从 Hugging Face 自动下载 {HF_DATASET_REPO_ID} -> {data_dir} ...",
+        flush=True,
+    )
+    try:
+        snapshot_download(repo_id=HF_DATASET_REPO_ID, repo_type="dataset", local_dir=str(data_dir))
+    except Exception as e:
+        print(f"[orchestrate] 自动下载失败: {e}. 各 route 会按 missing_data_file 处理。", flush=True)
+        return
+    print("[orchestrate] 数据集下载完成。", flush=True)
+
+
 def _copy_fresh_sandbox(run_tag: str, route_id: str = None, profile_name: str = None, custom_prefix: str = None) -> str:
     """Copy the fixed sandbox bundle to a fresh per-run dir; return its path.
 
@@ -368,6 +412,7 @@ def orchestrate(
     extra_args: list[str],
     data_overrides: dict[str, str] | None = None,
     route_global_id_ranges: dict[str, str] | None = None,
+    no_download: bool = False,
 ) -> list[dict]:
     routes_config = _load_json(Path(routes_config_path))
     profiles_config = _load_json(Path(profiles_config_path))
@@ -396,6 +441,10 @@ def orchestrate(
                 route["data_file"] = data_overrides[rid]
                 route["fallback_data_files"] = []
                 print(f"[orchestrate] {rid} data_file 覆盖 -> {data_overrides[rid]}", flush=True)
+
+    # 缺哪路数据文件就自动从 Hugging Face 下载哪路；已用 --data-override 指到本地
+    # 路径的 route 已经能 resolve，不会触发下载。
+    _ensure_dataset_downloaded(routes, no_download)
 
     # 使用北京时间
     if _is_resume_requested(extra_args):
@@ -517,6 +566,15 @@ def build_parser() -> argparse.ArgumentParser:
         default=[],
         metavar="route_id=PATH",
         help="直接指定某路数据文件，覆盖 routes.json。可重复，如 --data-override route2=/data/solver.json",
+    )
+    parser.add_argument(
+        "--no-download",
+        action="store_true",
+        default=False,
+        help=(
+            "缺数据文件时默认会自动从 Hugging Face (scuuy666/OmniaBench) 下载；"
+            "加此项禁用自动下载（如离线/内网环境，请配合 --data-override 指向本地数据）。"
+        ),
     )
     parser.add_argument(
         "--",
@@ -670,6 +728,7 @@ def main():
         extra_args=extra_args,
         data_overrides=data_overrides,
         route_global_id_ranges=route_global_id_ranges,
+        no_download=args.no_download,
     )
 
 
