@@ -88,6 +88,8 @@ by Route 1 are small enough to be committed directly, under `evaluation/runtime_
 
 ## Quick start
 
+Requires **Python 3.10+**.
+
 ```bash
 git clone https://github.com/scuuy/OmniaBench.git
 cd OmniaBench
