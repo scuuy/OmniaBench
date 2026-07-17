@@ -551,7 +551,7 @@ export default function Home() {
           <p>Ten capability dimensions reveal where agents succeed, where they fail, and why similar overall scores can conceal different practical strengths.</p>
         </div>
         <div className="analysis-grid">
-          <figure><img src={asset("/figures/capabilities.webp")} alt="Capability profiles and per-task score distributions" /><figcaption>Capability profiles across ten execution dimensions.</figcaption></figure>
+          <figure><img src={asset("/figures/capabilities.webp")} alt="Capability profiles and per-task score distributions" /><figcaption>Capability profiles across ten execution dimensions and per-task score distributions.</figcaption></figure>
           <figure><img src={asset("/figures/scenarios.webp")} alt="Model performance across scenario splits" /><figcaption>Pass@1 across ToB, ToC, and ToE scenario splits.</figcaption></figure>
         </div>
         <div className="capability-tags" aria-label="Ten capability dimensions">
