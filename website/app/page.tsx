@@ -9,7 +9,7 @@ const asset = (path: string) => `${basePath}${path}`;
 const links = {
   paper: "https://arxiv.org/abs/2607.14989",
   github: "https://github.com/scuuy/OmniaBench",
-  dataset: "#release", // Replace with the public Hugging Face dataset URL.
+  dataset: "https://huggingface.co/datasets/scuuy666/OmniaBench",
 };
 
 const citation = `@misc{shen2026omniabenchbenchmarkinggeneralai,
@@ -462,7 +462,7 @@ export default function Home() {
         <div className="resource-links">
           <a className="resource primary" href={links.paper} target="_blank" rel="noreferrer"><BrandIcon src="https://cdn.simpleicons.org/arxiv/B31B1B" label="arXiv" /><span><b>Paper</b><small>arXiv</small></span></a>
           <a className="resource" href={links.github}><BrandIcon src="https://cdn.simpleicons.org/github/17324D" label="GitHub" /><span><b>Code</b><small>GitHub</small></span></a>
-          <a className="resource" href={links.dataset}><HuggingFaceIcon /><span><b>Dataset</b><small>Hugging Face</small></span></a>
+          <a className="resource" href={links.dataset} target="_blank" rel="noreferrer"><HuggingFaceIcon /><span><b>Dataset</b><small>Hugging Face</small></span></a>
           <a className="resource" href="#leaderboard"><PodiumIcon /><span><b>Leaderboard</b><small>View results</small></span></a>
         </div>
       </header>
@@ -575,7 +575,7 @@ export default function Home() {
       <section className="release-section" id="release" data-reveal>
         <div className="container release-inner">
           <div><div className="section-label">Open release</div><h2>Code, data, and evaluation tools</h2></div>
-          <div><p>The benchmark environments, task sets, evaluation harness, and leaderboard are being prepared for public release.</p><a href="mailto:scuuy05@gmail.com">Contact the team <span>↗</span></a></div>
+          <div><p>The 644-task challenging set is available on Hugging Face, together with the open evaluation harness and interactive leaderboard.</p><a href={links.dataset} target="_blank" rel="noreferrer">Open the dataset <span>↗</span></a></div>
         </div>
       </section>
 

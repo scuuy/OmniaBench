@@ -148,5 +148,5 @@ The source code in `evaluation/` and `website/` is released under the
 
 Benchmark figures, institutional marks, and third-party logos are
 not covered by the Apache-2.0 code license. Their respective copyrights and
-trademarks remain with their owners. The OmniaBench dataset will be released
-separately with its own license and terms of use.
+trademarks remain with their owners. The OmniaBench dataset is distributed
+separately under the license and terms stated on its [Hugging Face dataset card](https://huggingface.co/datasets/scuuy666/OmniaBench).
