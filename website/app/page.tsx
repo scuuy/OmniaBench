@@ -7,9 +7,20 @@ const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 const asset = (path: string) => `${basePath}${path}`;
 
 const links = {
+  paper: "https://arxiv.org/abs/2607.14989",
   github: "https://github.com/scuuy/OmniaBench",
   dataset: "#release", // Replace with the public Hugging Face dataset URL.
 };
+
+const citation = `@misc{shen2026omniabenchbenchmarkinggeneralai,
+  title={OmniaBench: Benchmarking General AI Agents Across Diverse Scenarios},
+  author={Chengyu Shen and Yujie Fu and Gangtao Xin and Yanheng Hou and Wenlong Fei and Guojie Zhu and Jiawei Li and Hongcheng Gao and Runming He and Zhen Hao Wong and Meiyi Qiang and Hao Liang and Zhao Cao and Hao Jiang and Chong Chen and Wentao Zhang},
+  year={2026},
+  eprint={2607.14989},
+  archivePrefix={arXiv},
+  primaryClass={cs.CL},
+  url={https://arxiv.org/abs/2607.14989},
+}`;
 
 const providerLogos: Record<string, string> = {
   OpenAI: asset("/logos/openai.png"),
@@ -118,6 +129,7 @@ const sections = [
   { id: "diagnosis", label: "Capability Diagnosis", short: "Analysis" },
   { id: "findings", label: "Key Findings", short: "Findings" },
   { id: "release", label: "Open Release", short: "Release" },
+  { id: "citation", label: "Citation", short: "Cite" },
 ];
 
 function BrandIcon({ src, label }: { src: string; label: string }) {
@@ -370,6 +382,7 @@ function RadarExplorer() {
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState("leaderboard");
+  const [citationCopied, setCitationCopied] = useState(false);
 
   useEffect(() => {
     const elements = sections.map(({ id }) => document.getElementById(id)).filter(Boolean) as HTMLElement[];
@@ -447,7 +460,7 @@ export default function Home() {
         <p className="contact-line"><span>Contact</span><a href="mailto:scuuy05@gmail.com">scuuy05@gmail.com</a></p>
 
         <div className="resource-links">
-          <span className="resource primary resource-disabled" aria-label="Paper coming soon on arXiv"><BrandIcon src="https://cdn.simpleicons.org/arxiv/B31B1B" label="arXiv" /><span><b>Paper</b><small>arXiv soon</small></span></span>
+          <a className="resource primary" href={links.paper} target="_blank" rel="noreferrer"><BrandIcon src="https://cdn.simpleicons.org/arxiv/B31B1B" label="arXiv" /><span><b>Paper</b><small>arXiv</small></span></a>
           <a className="resource" href={links.github}><BrandIcon src="https://cdn.simpleicons.org/github/17324D" label="GitHub" /><span><b>Code</b><small>GitHub</small></span></a>
           <a className="resource" href={links.dataset}><HuggingFaceIcon /><span><b>Dataset</b><small>Hugging Face</small></span></a>
           <a className="resource" href="#leaderboard"><PodiumIcon /><span><b>Leaderboard</b><small>View results</small></span></a>
@@ -566,8 +579,25 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="citation-section" id="citation" data-reveal>
+        <div className="container">
+          <div className="citation-heading">
+            <div><div className="section-label">Reference</div><h2>Cite OmniaBench</h2></div>
+            <p>If OmniaBench supports your research, please cite our arXiv paper.</p>
+          </div>
+          <div className="citation-card">
+            <pre><code>{citation}</code></pre>
+            <button type="button" onClick={async () => {
+              await navigator.clipboard.writeText(citation);
+              setCitationCopied(true);
+              window.setTimeout(() => setCitationCopied(false), 1800);
+            }}>{citationCopied ? "Copied" : "Copy BibTeX"}</button>
+          </div>
+        </div>
+      </section>
+
       <footer>
-        <div className="container footer-inner"><div><a className="brand footer-brand" href="#top">OmniaBench</a><p>Benchmarking General AI Agents Across Diverse Scenarios</p></div><div className="footer-links"><a href="#leaderboard">Leaderboard</a><a href="mailto:scuuy05@gmail.com">Contact</a></div></div>
+        <div className="container footer-inner"><div><a className="brand footer-brand" href="#top">OmniaBench</a><p>Benchmarking General AI Agents Across Diverse Scenarios</p></div><div className="footer-links"><a href={links.paper} target="_blank" rel="noreferrer">Paper</a><a href="#citation">Citation</a><a href="#leaderboard">Leaderboard</a><a href="mailto:scuuy05@gmail.com">Contact</a></div></div>
         <div className="container footer-bottom"><span>Huawei Cloud Post-Training Team</span><span>© 2026 OmniaBench</span></div>
       </footer>
     </main>

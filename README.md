@@ -5,6 +5,7 @@
 **Benchmarking General AI Agents Across Diverse Scenarios**
 
 [![Project Page](https://img.shields.io/badge/🌐-Project%20Page-1a73e8)](https://scuuy.github.io/OmniaBench/)
+[![Paper](https://img.shields.io/badge/arXiv-2607.14989-b31b1b)](https://arxiv.org/abs/2607.14989)
 [![Dataset](https://img.shields.io/badge/🤗-Dataset-ffcc4d)](https://huggingface.co/datasets/scuuy666/OmniaBench)
 [![Citation](https://img.shields.io/badge/📚-Citation-6f42c1)](#citation)
 
@@ -50,7 +51,7 @@ GPT-5.6-Sol top the leaderboard with Overall Pass@1 of only **58.54%** and **57.
 | 7 | Kimi-K2.6 | Open | 49.72 | 7.09 | 45.00 | 63.33 | 52.33 |
 | 8 | Qwen3.7-Max | Closed | 48.59 | 6.49 | 51.67 | 66.67 | 49.69 |
 
-The paper and its arXiv link will be added after the official release. See the
+See the [paper](https://arxiv.org/abs/2607.14989) for the complete benchmark and the
 [project page](https://scuuy.github.io/OmniaBench/) for the interactive leaderboard and analyses.
 
 ## Data construction
@@ -123,13 +124,21 @@ Results are written to `evaluation/results/`. More flags (resuming a run, filter
 ## Team
 
 OmniaBench is developed by the Huawei Cloud Post-Training Team and PKU DCAI Team, in collaboration with
-Renmin University of China, Beijing Institute of Technology, and Tsinghua University. The full author list
-and acknowledgments will be added with the arXiv release.
+Renmin University of China, Beijing Institute of Technology, and Tsinghua University. See the
+[paper](https://arxiv.org/abs/2607.14989) for the full author list and acknowledgments.
 
 ## Citation
 
 ```bibtex
-Coming soon.
+@misc{shen2026omniabenchbenchmarkinggeneralai,
+      title={OmniaBench: Benchmarking General AI Agents Across Diverse Scenarios},
+      author={Chengyu Shen and Yujie Fu and Gangtao Xin and Yanheng Hou and Wenlong Fei and Guojie Zhu and Jiawei Li and Hongcheng Gao and Runming He and Zhen Hao Wong and Meiyi Qiang and Hao Liang and Zhao Cao and Hao Jiang and Chong Chen and Wentao Zhang},
+      year={2026},
+      eprint={2607.14989},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2607.14989},
+}
 ```
 
 ## License
