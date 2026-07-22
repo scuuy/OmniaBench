@@ -31,7 +31,7 @@ The full collection contains **1,431 tasks**; a **644-task challenging subset** 
 contamination-resistant leaderboard evaluation. Even frontier models find it hard: Claude-Sonnet-5 and
 GPT-5.6-Sol top the leaderboard with Overall Pass@1 of only **58.54%** and **57.14%**, respectively.
 
-## 📊 Leaderboard (challenging subset, Pass@1)
+## 📊 Leaderboard
 
 <p align="center">
   <img src="website/public/figures/leaderboard.png" width="820" alt="Leaderboard comparison across routes and models">
