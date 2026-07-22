@@ -516,7 +516,9 @@ export default function Home() {
         </div>
 
         <figure className="paper-figure overview-figure">
-          <img src={asset("/figures/overview.webp")} alt="OmniaBench data sources, environments, interaction trajectories, and evaluation" />
+          <div className="overview-image-crop">
+            <img src={asset("/figures/overview.webp")} alt="OmniaBench data sources, environments, interaction trajectories, and evaluation" />
+          </div>
           <figcaption><b>Figure 1.</b> From real application knowledge to executable trajectories and verifiable outcomes.</figcaption>
         </figure>
 

@@ -119,6 +119,8 @@ h2 { margin: 0; color: var(--navy); font-family: var(--serif); font-size: clamp(
 .paper-figure { padding: clamp(18px, 3vw, 34px); }
 .overview-figure { margin: 62px 0 0; }
 .paper-figure img, .large-figure img { width: 100%; }
+.overview-image-crop { position: relative; width: 100%; aspect-ratio: 1360 / 500; overflow: hidden; }
+.overview-image-crop img { position: absolute; inset: 0; display: block; height: auto; }
 .figure-caption, figcaption { margin: 15px 6px 0; color: #526b80; font-size: 15px; line-height: 1.6; text-align: center; }
 .taxonomy-row { margin-top: 62px; display: grid; grid-template-columns: repeat(3, 1fr); border-top: 2px solid var(--navy); border-bottom: 1px solid var(--line); }
 .taxonomy-row article { padding: 26px 29px 29px; border-right: 1px solid var(--line); background: rgba(255,255,255,.35); }
