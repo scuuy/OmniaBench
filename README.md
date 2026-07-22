@@ -34,7 +34,7 @@ GPT-5.6-Sol top the leaderboard with Overall Pass@1 of only **58.54%** and **57.
 ## 📊 Leaderboard (challenging subset, Pass@1)
 
 <p align="center">
-  <img src="website/public/figures/statistics.webp" width="820" alt="Leaderboard comparison across routes and models">
+  <img src="website/public/figures/leaderboard.png" width="820" alt="Leaderboard comparison across routes and models">
 </p>
 
 | Rank | Model | Access | DAG | Solver | Program | DAG-S | Overall |
