@@ -1,6 +1,6 @@
 <div align="center">
 
-# OmniaBench
+# <img src="website/public/favicon.png" width="28" height="28" style="vertical-align: middle;"> OmniaBench
 
 **Benchmarking General AI Agents Across Diverse Scenarios**
 
@@ -13,6 +13,7 @@
 
 ## 🔔 News
 
+- 📄 **[2026-07]** Our paper is released on arXiv!
 - 🚀 **[2026-07]** The OmniaBench codebase and dataset are released!
 
 <p align="center">
@@ -30,15 +31,11 @@ The full collection contains **1,431 tasks**; a **644-task challenging subset** 
 contamination-resistant leaderboard evaluation. Even frontier models find it hard: Claude-Sonnet-5 and
 GPT-5.6-Sol top the leaderboard with Overall Pass@1 of only **58.54%** and **57.14%**, respectively.
 
-## Highlights
+## 📊 Leaderboard (challenging subset, Pass@1)
 
-- **Broad scenario coverage** — 90 level-1 / 354 level-2 domains grounded in real app stores, PRDs, and industry taxonomies across consumer, business, and employee-facing settings.
-- **Four complementary construction routes** — DAG (multi-turn, stateful tool-chain execution), DAG-S (single-turn tasks derived from DAG via query refinement), Solver (selection / scheduling / allocation / optimization), and Program (procedural reasoning with branching, iteration, and execution debugging).
-- **Diagnostic evaluation, not just pass/fail** — a ten-dimensional capability taxonomy (Task Understanding, Information Gathering, Planning & Decision Making, State Management, Tool Use, Code & Programmatic Operations, Data Analysis, Office & Document Handling, Interactive Collaboration, Reliability & Safety) and eight atomic difficulty factors enable fine-grained analysis beyond a single aggregate score.
-- **Rubric- and code-based scoring** — DAG / DAG-S / Solver tasks are judged against weighted rubric checklists; Program tasks use binary `VerifyCode` verification.
-- **Reproducible evaluation harness** — a model-agnostic runner, four-route orchestrator, and scoring pipeline are provided under [`evaluation/`](evaluation/), portable across OpenAI-compatible and Anthropic-native providers.
-
-## Leaderboard (challenging subset, Pass@1)
+<p align="center">
+  <img src="website/public/figures/statistics.webp" width="820" alt="Leaderboard comparison across routes and models">
+</p>
 
 | Rank | Model | Access | DAG | Solver | Program | DAG-S | Overall |
 |---|---|---|---|---|---|---|---|
@@ -54,7 +51,15 @@ GPT-5.6-Sol top the leaderboard with Overall Pass@1 of only **58.54%** and **57.
 See the [paper](https://arxiv.org/abs/2607.14989) for the complete benchmark and the
 [project page](https://scuuy.github.io/OmniaBench/) for the interactive leaderboard and analyses.
 
-## Data construction
+## ✨ Highlights
+
+- **Broad scenario coverage** — 90 level-1 / 354 level-2 domains grounded in real app stores, PRDs, and industry taxonomies across consumer, business, and employee-facing settings.
+- **Four complementary construction routes** — DAG (multi-turn, stateful tool-chain execution), DAG-S (single-turn tasks derived from DAG via query refinement), Solver (selection / scheduling / allocation / optimization), and Program (procedural reasoning with branching, iteration, and execution debugging).
+- **Diagnostic evaluation, not just pass/fail** — a ten-dimensional capability taxonomy (Task Understanding, Information Gathering, Planning & Decision Making, State Management, Tool Use, Code & Programmatic Operations, Data Analysis, Office & Document Handling, Interactive Collaboration, Reliability & Safety) and eight atomic difficulty factors enable fine-grained analysis beyond a single aggregate score.
+- **Rubric- and code-based scoring** — DAG / DAG-S / Solver tasks are judged against weighted rubric checklists; Program tasks use binary `VerifyCode` verification.
+- **Reproducible evaluation harness** — a model-agnostic runner, four-route orchestrator, and scoring pipeline are provided under [`evaluation/`](evaluation/), portable across OpenAI-compatible and Anthropic-native providers.
+
+## 📦 Data construction
 
 <p align="center">
   <img src="website/public/figures/pipeline.webp" width="820" alt="OmniaBench data construction pipeline: taxonomy, environment synthesis, and four task construction routes">
@@ -74,19 +79,7 @@ synthesized on top of these environments through four routes:
 The challenging subset (644 tasks) is a fixed, curated slice of the full 1,431-task collection, selected to
 reduce evaluation cost and mitigate contamination risk after public release while preserving domain coverage.
 
-## Repository layout
-
-```text
-evaluation/  Reproducible evaluation runners, route orchestration, and scoring
-website/     Next.js project page deployed to GitHub Pages
-```
-
-The 644-task route files are hosted on [Hugging Face](https://huggingface.co/datasets/scuuy666/OmniaBench)
-(not committed to this repo, since the files are tens of MB each) and are downloaded automatically the
-first time you run an evaluation — no manual download step needed. The filesystem sandbox assets needed
-by Route 1 are small enough to be committed directly, under `evaluation/runtime_assets/fs_bundle/`.
-
-## Quick start
+## 🚀 Quick start
 
 Requires **Python 3.10+**.
 
@@ -121,15 +114,27 @@ into `evaluation/data/` if it's not already there — no separate download step 
 to disable this (e.g. offline environments), and use `--data-override route_id=/path` to point a route at
 your own local copy instead.
 
-Results are written to `evaluation/results/`. More flags (resuming a run, filtering by `global_id`/language, overriding data paths, etc.) are documented in [evaluation/README.md](evaluation/README.md).
+Results are written to `evaluation/results/`. More flags (resuming a run, filtering by `global_id`/language, overriding data paths, computing multi-dimensional scores and visualizations, etc.) are documented in [evaluation/README.md](evaluation/README.md).
 
-## Team
+## 📁 Repository layout
+
+```text
+evaluation/  Reproducible evaluation runners, route orchestration, and scoring
+website/     Next.js project page deployed to GitHub Pages
+```
+
+The 644-task route files are hosted on [Hugging Face](https://huggingface.co/datasets/scuuy666/OmniaBench)
+(not committed to this repo, since the files are tens of MB each) and are downloaded automatically the
+first time you run an evaluation — no manual download step needed. The filesystem sandbox assets needed
+by Route 1 are small enough to be committed directly, under `evaluation/runtime_assets/fs_bundle/`.
+
+## 👥 Team
 
 OmniaBench is developed by the Huawei Cloud Post-Training Team and PKU DCAI Team, in collaboration with
 Renmin University of China, Beijing Institute of Technology, and Tsinghua University. See the
 [paper](https://arxiv.org/abs/2607.14989) for the full author list and acknowledgments.
 
-## Citation
+## 📚 Citation
 
 ```bibtex
 @misc{shen2026omniabenchbenchmarkinggeneralai,
@@ -143,12 +148,7 @@ Renmin University of China, Beijing Institute of Technology, and Tsinghua Univer
 }
 ```
 
-## License
+## 📄 License
 
-The source code in `evaluation/` and `website/` is released under the
-[Apache License 2.0](LICENSE).
-
-Benchmark figures, institutional marks, and third-party logos are
-not covered by the Apache-2.0 code license. Their respective copyrights and
-trademarks remain with their owners. The OmniaBench dataset is distributed
-separately under the license and terms stated on its [Hugging Face dataset card](https://huggingface.co/datasets/scuuy666/OmniaBench).
+Code: [Apache License 2.0](LICENSE)  
+Dataset: See [Hugging Face dataset card](https://huggingface.co/datasets/scuuy666/OmniaBench)
