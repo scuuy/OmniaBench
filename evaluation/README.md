@@ -153,3 +153,57 @@ Key fields in the summary:
 
 `route_scores.py` also prints an equal-weighted overall row (arithmetic mean of `pass_at_1`/`score` across the four routes, not weighted by each route's task count).
 
+## Computing multi-dimensional scores
+
+Beyond the route-level pass@1 and average score, OmniaBench provides utilities to compute and visualize scores across multiple dimensions:
+
+### Compute scores across all dimensions
+
+```bash
+python evaluation/scripts/compute_scores.py \
+  --result-dir results/<profile>-<run_tag>/ \
+  --output scores.json
+```
+
+This computes:
+- **Route-level scores** (route1/2/3/4)
+- **Level-1 domain scores** (90 domains across ToB/ToC/ToE)
+- **ToB/ToC/ToE category scores**
+- **Capability dimension scores** (10 capabilities: task understanding, information gathering, planning & decision making, state management, tool use, code & programmatic operations, data analysis, office & document handling, interactive collaboration, reliability & safety)
+
+The output JSON contains:
+```json
+{
+  "overall": {"count": 644, "pass_rate": 58.54, "avg_score": 72.3},
+  "by_route": {"route1": {...}, "route2": {...}, ...},
+  "by_level1_domain": {"financial_services": {...}, "healthcare": {...}, ...},
+  "by_tob_toc_toe": {"TOB": {...}, "TOC": {...}, "TOE": {...}},
+  "by_capability": {"task_understanding": 75.2, "tool_use": 68.9, ...}
+}
+```
+
+### Visualize results
+
+Generate comparison charts and heatmaps:
+
+```bash
+python evaluation/scripts/plot_results.py \
+  --scores scores.json \
+  --output figures/ \
+  --top-domains 30
+```
+
+Or directly from result directory (will compute scores first):
+
+```bash
+python evaluation/scripts/plot_results.py \
+  --result-dir results/<profile>-<run_tag>/ \
+  --output figures/
+```
+
+This generates:
+- **route_comparison.png** — Pass@1 and average score by route
+- **tob_toc_toe.png** — ToB/ToC/ToE category comparison and task distribution
+- **domain_heatmap.png** — Top N level-1 domains by pass rate
+- **capability_radar.png** — Capability dimension scores (if available in data)
+
