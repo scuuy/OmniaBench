@@ -42,14 +42,14 @@ GPT-5.6-Sol top the leaderboard with Overall Pass@1 of only **58.54%** and **57.
 
 | Rank | Model | Access | DAG | Solver | Program | DAG-S | Overall |
 |---|---|---|---|---|---|---|---|
-| 1 | Claude-Sonnet-5 | Closed | 57.34 | 9.97 | 56.67 | 63.33 | **58.54** |
-| 2 | GPT-5.6-Sol | Closed | 55.37 | 7.52 | 65.00 | 50.00 | 57.14 |
-| 3 | GLM-5.2 | Open | 54.80 | 6.83 | 26.67 | 60.00 | 56.83 |
-| 4 | GPT-5.5 | Closed | 54.80 | 7.27 | 38.33 | 60.00 | 56.52 |
-| 5 | DeepSeek-V4-Pro | Open | 52.54 | 6.23 | 36.67 | 53.33 | 54.50 |
-| 6 | Claude-Opus-4.7 | Closed | 53.39 | 7.60 | 43.33 | 63.33 | 54.19 |
-| 7 | Kimi-K2.6 | Open | 49.72 | 7.09 | 45.00 | 63.33 | 52.33 |
-| 8 | Qwen3.7-Max | Closed | 48.59 | 6.49 | 51.67 | 66.67 | 49.69 |
+| 1 | Claude-Sonnet-5 | Closed | 57.34 | 56.67 | 63.33 | 60.50 | **58.54** |
+| 2 | GPT-5.6-Sol | Closed | 55.37 | 65.00 | 50.00 | 59.00| 57.14 |
+| 3 | GLM-5.2 | Open | 54.80 | 26.67 | 60.00 | 69.00 | 56.83 |
+| 4 | GPT-5.5 | Closed | 54.80 | 38.33 | 60.00 | 64.50 | 56.52 |
+| 5 | DeepSeek-V4-Pro | Open | 52.54 | 36.67 | 53.33 | 63.50 | 54.50 |
+| 6 | Claude-Opus-4.7 | Closed | 53.39 | 43.33 | 63.33 | 57.50 | 54.19 |
+| 7 | Kimi-K2.6 | Open | 49.72 | 45.00 | 63.33 | 57.50 | 52.33 |
+| 8 | Qwen3.7-Max | Closed | 48.59 | 51.67 | 66.67 |48.50 | 49.69 |
 
 See the [paper](https://arxiv.org/abs/2607.14989) for the complete benchmark and the
 [project page](https://scuuy.github.io/OmniaBench/) for the interactive leaderboard and analyses.
