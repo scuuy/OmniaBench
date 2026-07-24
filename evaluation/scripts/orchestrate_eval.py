@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Three-route eval orchestrator.
+"""Four-route eval orchestrator.
 
 For each selected route:
   1. resolve its data file (data_file, else fallback_data_files);
@@ -44,7 +44,7 @@ if str(SCRIPT_DIR) not in sys.path:
     sys.path.insert(0, str(SCRIPT_DIR))
 
 from assign_route_ids import prepare_route_file  # noqa: E402
-from route_scores import summarize_route, print_route_table  # noqa: E402
+from route_scores import summarize_route, print_route_table, compute_overall_summary  # noqa: E402
 
 
 def _load_json(path: Path) -> dict:
@@ -520,9 +520,10 @@ def orchestrate(
             print(f"[orchestrate] Warning: Failed to merge runs.jsonl: {e}")
 
     summary_path = RESULTS_DIR / f"route_summary-{profile_name}-{run_tag}.json"
+    overall = compute_overall_summary(summaries)
     with open(summary_path, "w", encoding="utf-8") as file:
         json.dump(
-            {"profile": profile_name, "run_tag": run_tag, "routes": summaries},
+            {"profile": profile_name, "run_tag": run_tag, "routes": summaries, "overall": overall},
             file,
             ensure_ascii=False,
             indent=2,

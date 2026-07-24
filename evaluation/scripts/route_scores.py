@@ -162,7 +162,54 @@ def summarize_route(result_file_path: str) -> dict[str, Any]:
     if passk_available and passk_task_count:
         summary["pass_at_k"] = round(passk_pass_count / passk_task_count, 4)
         summary["pass_at_k_count"] = passk_pass_count
+        summary["pass_at_k_task_count"] = passk_task_count
     return summary
+
+
+def compute_overall_summary(route_summaries: list[dict[str, Any]]) -> dict[str, Any] | None:
+    """Compute task-count weighted overall metrics across successful routes."""
+    ok_rows = [
+        r
+        for r in route_summaries
+        if not r.get("status") or r.get("status") == "ok"
+    ]
+    if not ok_rows:
+        return None
+
+    total_tasks = sum(int(r.get("task_count") or 0) for r in ok_rows)
+    if total_tasks <= 0:
+        return None
+
+    overall: dict[str, Any] = {
+        "route_count": len(ok_rows),
+        "task_count": total_tasks,
+        "pass_at_1_count": sum(int(r.get("pass_at_1_count") or 0) for r in ok_rows),
+        "score": round(
+            sum(float(r.get("score") or 0.0) * int(r.get("task_count") or 0) for r in ok_rows)
+            / total_tasks,
+            4,
+        ),
+        "weighting": "task_count",
+    }
+    overall["pass_at_1"] = round(overall["pass_at_1_count"] / total_tasks, 4)
+
+    passk_rows = [r for r in ok_rows if r.get("pass_at_k") is not None]
+    passk_task_count = sum(int(r.get("pass_at_k_task_count") or r.get("task_count") or 0) for r in passk_rows)
+    if passk_rows and passk_task_count > 0:
+        overall["k"] = passk_rows[0].get("k", "?")
+        overall["pass_at_k"] = round(
+            sum(
+                float(r.get("pass_at_k") or 0.0)
+                * int(r.get("pass_at_k_task_count") or r.get("task_count") or 0)
+                for r in passk_rows
+            )
+            / passk_task_count,
+            4,
+        )
+        overall["pass_at_k_count"] = sum(int(r.get("pass_at_k_count") or 0) for r in passk_rows)
+        overall["pass_at_k_task_count"] = passk_task_count
+
+    return overall
 
 
 def print_route_table(route_summaries: list[dict[str, Any]]) -> None:
@@ -192,23 +239,20 @@ def print_route_table(route_summaries: list[dict[str, Any]]) -> None:
             f"{row.get('score', 0.0):>8.4f} {str(row.get('score_source') or '-'):>12}"
             f"{passk_str}"
         )
-    # 四路平权 overall：各路 pass@1 / score 的算术平均（每路权重相同，与各路条数无关）
+    # Overall uses task-count weighting across however many routes completed.
     if ok_rows:
         print("-" * 78)
-        n = len(ok_rows)
-        overall_pass1 = sum(r.get("pass_at_1", 0.0) for r in ok_rows) / n
-        overall_score = sum(r.get("score", 0.0) for r in ok_rows) / n
-        passk_rows = [r for r in ok_rows if r.get("pass_at_k") is not None]
+        overall = compute_overall_summary(ok_rows)
         overall_passk_str = ""
-        if passk_rows:
-            overall_passk = sum(r["pass_at_k"] for r in passk_rows) / len(passk_rows)
-            k_disp = passk_rows[0].get("k", "?")
-            overall_passk_str = f"  pass@{k_disp}={overall_passk:.4f}"
-        print(
-            f"{'OVERALL':<10} {'(equal-weighted)':<18} "
-            f"{n:>6} {overall_pass1:>8.4f} {overall_score:>8.4f} {'-':>12}"
-            f"{overall_passk_str}"
-        )
+        if overall:
+            if overall.get("pass_at_k") is not None:
+                overall_passk_str = f"  pass@{overall.get('k', '?')}={overall['pass_at_k']:.4f}"
+            print(
+                f"{'OVERALL':<10} {'(task-weighted)':<18} "
+                f"{overall['task_count']:>6} {overall['pass_at_1']:>8.4f} "
+                f"{overall['score']:>8.4f} {'-':>12}"
+                f"{overall_passk_str}"
+            )
     print("=" * 78)
     print("")
 
