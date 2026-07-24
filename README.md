@@ -97,7 +97,7 @@ cp evaluation/configs/profiles.example.json evaluation/configs/profiles.json  # 
 cp evaluation/.env.example evaluation/.env                                    # fill in the API keys/base URLs, never commit this file
 ```
 
-`profiles.json` only stores *environment variable names*; the actual keys and base URLs go in `.env`. See [evaluation/README.md](evaluation/README.md) for the full config reference.
+`profiles.json` still defines the profile details, including model names and providers; for API keys and base URLs it can reference environment variable names, with actual values loaded from `.env` / the environment. See [evaluation/README.md](evaluation/README.md) for the full config reference.
 
 ### 2. Run evaluations
 

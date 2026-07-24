@@ -14,7 +14,7 @@ cp evaluation/configs/profiles.example.json evaluation/configs/profiles.json
 cp evaluation/.env.example evaluation/.env
 ```
 
-`profiles.json` only stores *environment variable names* (e.g. `OMNIABENCH_AGENT_API_KEY`), never secrets — the actual keys and base URLs go in `evaluation/.env`. `run_eval.py` loads `.env` automatically at startup via `python-dotenv`. You only need to fill in the variables referenced by the profile you actually use:
+`profiles.json` defines profile details such as model names, providers, and optional environment variable names for credentials/endpoints. Actual API keys and base URLs should live in `evaluation/.env` or the process environment, and environment values take precedence. `run_eval.py` loads `.env` automatically at startup via `python-dotenv`. You only need to fill in the variables referenced by the profile you actually use:
 
 ```bash
 # --- Agent model (the model under test) ---
@@ -151,7 +151,8 @@ Key fields in the summary:
 | `score_source` | Which scorer produced the combined score, in priority order: `verifier` (route 3, exact-match/checker-based) → `rubric` (routes 1/2/4, LLM judge against a rubric) → `total_reward` (fallback) |
 | `pass_at_k` / `k` | Only present when `--pass-k` > 1; fraction of tasks with at least one passing sample out of `k` |
 
-`route_scores.py` also prints an equal-weighted overall row (arithmetic mean of `pass_at_1`/`score` across the four routes, not weighted by each route's task count).
+`route_scores.py` also prints an overall row weighted by each completed route's `task_count`.
+The top-level route summary JSON includes the same task-weighted metrics in its `overall` field.
 
 ## Computing multi-dimensional scores
 
@@ -206,4 +207,3 @@ This generates:
 - **tob_toc_toe.png** — ToB/ToC/ToE category comparison and task distribution
 - **domain_heatmap.png** — Top N level-1 domains by pass rate
 - **capability_radar.png** — Capability dimension scores (if available in data)
-
