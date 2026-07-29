@@ -1,0 +1,355 @@
+id,split,domain_l1_en,domain_l1_zh,domain_l2_en,domain_l2_zh,domain_path_en,domain_path_zh
+10000,toc,Social,社交,Instant Messaging,即时通讯,Social > Instant Messaging,社交->即时通讯
+10001,toc,Social,社交,Video Calls,视频通话,Social > Video Calls,社交->视频通话
+10002,toc,Social,社交,Location Sharing,位置共享,Social > Location Sharing,社交->位置共享
+10003,toc,Social,社交,Social Networking,社交网络,Social > Social Networking,社交->社交网络
+10004,toc,Lifestyle,生活,Home Services,家政服务,Lifestyle > Home Services,生活->家政服务
+10005,toc,Lifestyle,生活,Pet Services,宠物服务,Lifestyle > Pet Services,生活->宠物服务
+10006,toc,Lifestyle,生活,Beauty & Hair Salon,美容美发,Lifestyle > Beauty & Hair Salon,生活->美容美发
+10007,toc,Lifestyle,生活,Auto Services,汽车服务,Lifestyle > Auto Services,生活->汽车服务
+10008,toc,Lifestyle,生活,Real Estate Services,房产服务,Lifestyle > Real Estate Services,生活->房产服务
+10009,toc,Lifestyle,生活,Parenting & Childcare,母婴育儿,Lifestyle > Parenting & Childcare,生活->母婴育儿
+10010,toc,Lifestyle,生活,Laundry Services,洗衣服务,Lifestyle > Laundry Services,生活->洗衣服务
+10011,toc,Lifestyle,生活,Flower Delivery,鲜花配送,Lifestyle > Flower Delivery,生活->鲜花配送
+10012,toc,Food,美食,Food Delivery,外卖订餐,Food > Food Delivery,美食->外卖订餐
+10013,toc,Food,美食,Grocery Shopping,食材购买,Food > Grocery Shopping,美食->食材购买
+10014,toc,Food,美食,Restaurant Recommendations,餐厅推荐,Food > Restaurant Recommendations,美食->餐厅推荐
+10015,toc,Food,美食,Dining Reviews,餐饮评价,Food > Dining Reviews,美食->餐饮评价
+10016,toc,Travel,旅行,Transportation,交通出行,Travel > Transportation,旅行->交通出行
+10017,toc,Travel,旅行,Travel Tools,旅行工具,Travel > Travel Tools,旅行->旅行工具
+10018,toc,Travel,旅行,Travel Expense Tracking,旅行记账,Travel > Travel Expense Tracking,旅行->旅行记账
+10019,toc,Travel,旅行,Visa Application,签证办理,Travel > Visa Application,旅行->签证办理
+10020,toc,Travel,旅行,Itinerary Planning,行程规划,Travel > Itinerary Planning,旅行->行程规划
+10021,toc,Travel,旅行,Hotel Booking,酒店预订,Travel > Hotel Booking,旅行->酒店预订
+10022,toc,Shopping,购物,Secondhand Trading,二手交易,Shopping > Secondhand Trading,购物->二手交易
+10023,toc,Shopping,购物,Price Monitoring,价格监控,Shopping > Price Monitoring,购物->价格监控
+10024,toc,Shopping,购物,Group Buying & Flash Sales,团购秒杀,Shopping > Group Buying & Flash Sales,购物->团购秒杀
+10025,toc,Shopping,购物,Fresh Grocery E-commerce,生鲜电商,Shopping > Fresh Grocery E-commerce,购物->生鲜电商
+10026,toc,Shopping,购物,General E-commerce,综合电商,Shopping > General E-commerce,购物->综合电商
+10027,toc,Shopping,购物,Cross-border E-commerce,跨境电商,Shopping > Cross-border E-commerce,购物->跨境电商
+10028,toc,Health,健康,Health Monitoring,健康监测,Health > Health Monitoring,健康->健康监测
+10029,toc,Health,健康,Rehabilitation Training,康复训练,Health > Rehabilitation Training,健康->康复训练
+10030,toc,Health,健康,Mental Health,心理健康,Health > Mental Health,健康->心理健康
+10031,toc,Health,健康,Sleep Management,睡眠管理,Health > Sleep Management,健康->睡眠管理
+10032,toc,Health,健康,Fitness & Exercise,运动健身,Health > Fitness & Exercise,健康->运动健身
+10033,toc,Health,健康,Diet Management,饮食管理,Health > Diet Management,健康->饮食管理
+10034,toc,Education,教育,K12 Education,K12教育,Education > K12 Education,教育->K12教育
+10035,toc,Education,教育,Online Courses,在线课程,Education > Online Courses,教育->在线课程
+10036,toc,Education,教育,Early Childhood Education,早教启蒙,Education > Early Childhood Education,教育->早教启蒙
+10037,toc,Education,教育,Study Abroad Services,留学服务,Education > Study Abroad Services,教育->留学服务
+10038,toc,Education,教育,Certification Exams,证书考试,Education > Certification Exams,教育->证书考试
+10039,toc,Education,教育,Language Learning,语言学习,Education > Language Learning,教育->语言学习
+10040,toc,Productivity,效率,Cloud Storage,云存储,Productivity > Cloud Storage,效率->云存储
+10041,toc,Productivity,效率,Task Management,任务管理,Productivity > Task Management,效率->任务管理
+10042,toc,Productivity,效率,Document Processing,文档处理,Productivity > Document Processing,效率->文档处理
+10043,toc,Productivity,效率,Time Management,时间管理,Productivity > Time Management,效率->时间管理
+10044,toc,Productivity,效率,Note Taking,笔记记录,Productivity > Note Taking,效率->笔记记录
+10045,toc,Productivity,效率,Automation,自动化,Productivity > Automation,效率->自动化
+10046,toc,Productivity,效率,Email Handling,邮件处理,Productivity > Email Handling,效率->邮件处理
+10047,toc,Business,商务,Office Collaboration,办公协作,Business > Office Collaboration,商务->办公协作
+10048,toc,Business,商务,Contract Management,合同管理,Business > Contract Management,商务->合同管理
+10049,toc,Business,商务,Business Networking,商务社交,Business > Business Networking,商务->商务社交
+10050,toc,Business,商务,Customer Management,客户管理,Business > Customer Management,商务->客户管理
+10051,toc,Business,商务,Job Search & Recruiting,求职招聘,Business > Job Search & Recruiting,商务->求职招聘
+10052,toc,Business,商务,Remote Work,远程办公,Business > Remote Work,商务->远程办公
+10053,toc,Finance,财务,Insurance Services,保险服务,Finance > Insurance Services,财务->保险服务
+10054,toc,Finance,财务,Debt Management,债务管理,Finance > Debt Management,财务->债务管理
+10055,toc,Finance,财务,Investment & Wealth Management,投资理财,Finance > Investment & Wealth Management,财务->投资理财
+10056,toc,Finance,财务,Tax Services,税务服务,Finance > Tax Services,财务->税务服务
+10057,toc,Finance,财务,Bookkeeping & Budgeting,记账理财,Finance > Bookkeeping & Budgeting,财务->记账理财
+10058,toc,Finance,财务,Banking Services,银行服务,Finance > Banking Services,财务->银行服务
+10059,toc,Entertainment,娱乐,Live Streaming Interaction,直播互动,Entertainment > Live Streaming Interaction,娱乐->直播互动
+10060,toc,Entertainment,娱乐,Short Video,短视频,Entertainment > Short Video,娱乐->短视频
+10061,toc,Entertainment,娱乐,Video Watching,视频观看,Entertainment > Video Watching,娱乐->视频观看
+10062,toc,News,新闻,Financial News,财经新闻,News > Financial News,新闻->财经新闻
+10063,toc,News,新闻,News Reading,资讯阅读,News > News Reading,新闻->资讯阅读
+10064,toc,Books,图书,E-books,电子书,Books > E-books,图书->电子书
+10065,toc,Books,图书,Reading Notes,读书笔记,Books > Reading Notes,图书->读书笔记
+10066,toc,Music,音乐,Concerts,演唱会,Music > Concerts,音乐->演唱会
+10067,toc,Music,音乐,Music Creation,音乐创作,Music > Music Creation,音乐->音乐创作
+10068,toc,Music,音乐,Music Playback,音乐播放,Music > Music Playback,音乐->音乐播放
+10069,toc,Photography,摄影,Photography Equipment,摄影器材,Photography > Photography Equipment,摄影->摄影器材
+10070,toc,Photography,摄影,Photo Editing,照片编辑,Photography > Photo Editing,摄影->照片编辑
+10071,toc,Photography,摄影,Video Production,视频制作,Photography > Video Production,摄影->视频制作
+10072,toc,Navigation,导航,Location Services,位置服务,Navigation > Location Services,导航->位置服务
+10073,toc,Navigation,导航,Parking Services,停车服务,Navigation > Parking Services,导航->停车服务
+10074,toc,Navigation,导航,EV Charging Services,充电服务,Navigation > EV Charging Services,导航->充电服务
+10075,toc,Navigation,导航,Navigation,出行导航,Navigation > Navigation,导航->出行导航
+10076,toc,Weather,天气,Historical Weather,历史天气,Weather > Historical Weather,天气->历史天气
+10077,toc,Weather,天气,Weather Forecast,天气预报,Weather > Weather Forecast,天气->天气预报
+10078,toc,Weather,天气,Weather Alerts,气象预警,Weather > Weather Alerts,天气->气象预警
+10079,toc,Tools,工具,Password Management,密码管理,Tools > Password Management,工具->密码管理
+10080,toc,Tools,工具,Scanning & Recognition,扫描识别,Tools > Scanning & Recognition,工具->扫描识别
+10081,toc,Tools,工具,Lifestyle Tools,生活工具,Tools > Lifestyle Tools,工具->生活工具
+10082,toc,Tools,工具,System Optimization,系统优化,Tools > System Optimization,工具->系统优化
+10083,toc,Tools,工具,Network Speed Test,网速测试,Tools > Network Speed Test,工具->网速测试
+10084,toc,Sports,体育,Fitness Tutorials,健身教程,Sports > Fitness Tutorials,体育->健身教程
+10085,toc,Sports,体育,Sports Event News,赛事资讯,Sports > Sports Event News,体育->赛事资讯
+10086,toc,Sports,体育,Sports Data Tracking,运动数据,Sports > Sports Data Tracking,体育->运动数据
+10087,toc,Medical,医疗,Health Consultation,健康咨询,Medical > Health Consultation,医疗->健康咨询
+10088,toc,Medical,医疗,Medical Services,医疗服务,Medical > Medical Services,医疗->医疗服务
+10089,toc,Medical,医疗,Rehabilitation Guidance,康复指导,Medical > Rehabilitation Guidance,医疗->康复指导
+10090,toc,Medical,医疗,Symptom Checker,症状自查,Medical > Symptom Checker,医疗->症状自查
+10091,toc,Public Service,公共服务,Public Utility Payments,公共缴费,Public Service > Public Utility Payments,公共服务->公共缴费
+10092,toc,Public Service,公共服务,City Services,城市服务,Public Service > City Services,公共服务->城市服务
+10093,toc,Public Service,公共服务,Government Services,政务办事,Public Service > Government Services,公共服务->政务办事
+10094,toc,Public Service,公共服务,Social Security & Medical Insurance,社保医保,Public Service > Social Security & Medical Insurance,公共服务->社保医保
+10095,toc,Public Service,公共服务,ID & Document Processing,证件办理,Public Service > ID & Document Processing,公共服务->证件办理
+10096,toc,Smart Devices,智能设备,Wearable Devices,可穿戴设备,Smart Devices > Wearable Devices,智能设备->可穿戴设备
+10097,toc,Smart Devices,智能设备,Home Security,家庭安防,Smart Devices > Home Security,智能设备->家庭安防
+10098,toc,Smart Devices,智能设备,Smart Home,智能家居,Smart Devices > Smart Home,智能设备->智能家居
+10099,toc,Smart Devices,智能设备,Device Interconnection,设备联动,Smart Devices > Device Interconnection,智能设备->设备联动
+10100,toc,Smart Devices,智能设备,Car Connectivity,车机互联,Smart Devices > Car Connectivity,智能设备->车机互联
+20000,tob,Finance,金融,Investment Advisor,投资顾问,Finance > Investment Advisor,金融->投资顾问
+20001,tob,Finance,金融,Risk Control Specialist,风控专员,Finance > Risk Control Specialist,金融->风控专员
+20002,tob,Finance,金融,Account Manager,客户经理,Finance > Account Manager,金融->客户经理
+20003,tob,Finance,金融,Financial Analyst,财务分析师,Finance > Financial Analyst,金融->财务分析师
+20004,tob,Finance,金融,Trader,交易员,Finance > Trader,金融->交易员
+20005,tob,Healthcare,医疗健康,Clinical Physician,临床医生,Healthcare > Clinical Physician,医疗健康->临床医生
+20006,tob,Healthcare,医疗健康,Medical Imaging Technician,医学影像技师,Healthcare > Medical Imaging Technician,医疗健康->医学影像技师
+20007,tob,Healthcare,医疗健康,Pharmacist,药剂师,Healthcare > Pharmacist,医疗健康->药剂师
+20008,tob,Healthcare,医疗健康,Medical Researcher,医学研究员,Healthcare > Medical Researcher,医疗健康->医学研究员
+20009,tob,Healthcare,医疗健康,Health Manager,健康管理师,Healthcare > Health Manager,医疗健康->健康管理师
+20010,tob,IT & Internet,IT互联网,Software Engineer,软件工程师,IT & Internet > Software Engineer,IT互联网->软件工程师
+20011,tob,IT & Internet,IT互联网,Algorithm Engineer,算法工程师,IT & Internet > Algorithm Engineer,IT互联网->算法工程师
+20012,tob,IT & Internet,IT互联网,Product Manager,产品经理,IT & Internet > Product Manager,IT互联网->产品经理
+20013,tob,IT & Internet,IT互联网,QA/Test Engineer,测试工程师,IT & Internet > QA/Test Engineer,IT互联网->测试工程师
+20014,tob,IT & Internet,IT互联网,Ops Engineer,运维工程师,IT & Internet > Ops Engineer,IT互联网->运维工程师
+20015,tob,Construction,建筑行业,Architect,建筑设计师,Construction > Architect,建筑行业->建筑设计师
+20016,tob,Construction,建筑行业,Structural Engineer,结构工程师,Construction > Structural Engineer,建筑行业->结构工程师
+20017,tob,Construction,建筑行业,Project Manager,项目经理,Construction > Project Manager,建筑行业->项目经理
+20018,tob,Construction,建筑行业,Cost Engineer,造价工程师,Construction > Cost Engineer,建筑行业->造价工程师
+20019,tob,Construction,建筑行业,Construction Site Manager,施工管理员,Construction > Construction Site Manager,建筑行业->施工管理员
+20020,tob,Agriculture,农业行业,Agricultural Technician,农业技术员,Agriculture > Agricultural Technician,农业行业->农业技术员
+20021,tob,Agriculture,农业行业,Farm Manager,农场经理,Agriculture > Farm Manager,农业行业->农场经理
+20022,tob,Agriculture,农业行业,Agricultural Researcher,农业研究员,Agriculture > Agricultural Researcher,农业行业->农业研究员
+20023,tob,Agriculture,农业行业,Farm Machinery Operator,农机操作员,Agriculture > Farm Machinery Operator,农业行业->农机操作员
+20024,tob,Agriculture,农业行业,Agricultural Products Sales,农产品销售,Agriculture > Agricultural Products Sales,农业行业->农产品销售
+20025,tob,Tourism,旅游行业,Travel Consultant,旅游顾问,Tourism > Travel Consultant,旅游行业->旅游顾问
+20026,tob,Tourism,旅游行业,Tour Guide,导游,Tourism > Tour Guide,旅游行业->导游
+20027,tob,Tourism,旅游行业,Hotel Front Desk,酒店前台,Tourism > Hotel Front Desk,旅游行业->酒店前台
+20028,tob,Tourism,旅游行业,Tour Product Designer,旅游产品设计师,Tourism > Tour Product Designer,旅游行业->旅游产品设计师
+20029,tob,Tourism,旅游行业,Tourism Marketing Specialist,旅游营销专员,Tourism > Tourism Marketing Specialist,旅游行业->旅游营销专员
+20030,tob,Hospitality,酒店行业,Hotel Manager,酒店经理,Hospitality > Hotel Manager,酒店行业->酒店经理
+20031,tob,Hospitality,酒店行业,Front Desk Receptionist,前台接待,Hospitality > Front Desk Receptionist,酒店行业->前台接待
+20032,tob,Hospitality,酒店行业,Housekeeping Staff,客房服务员,Hospitality > Housekeeping Staff,酒店行业->客房服务员
+20033,tob,Hospitality,酒店行业,Sales Manager,销售经理,Hospitality > Sales Manager,酒店行业->销售经理
+20034,tob,Hospitality,酒店行业,Marketing Specialist,市场专员,Hospitality > Marketing Specialist,酒店行业->市场专员
+20035,tob,Publishing,出版行业,Editor,编辑,Publishing > Editor,出版行业->编辑
+20036,tob,Publishing,出版行业,Proofreader,校对员,Publishing > Proofreader,出版行业->校对员
+20037,tob,Publishing,出版行业,Layout Designer,排版设计师,Publishing > Layout Designer,出版行业->排版设计师
+20038,tob,Publishing,出版行业,Copyright Specialist,版权专员,Publishing > Copyright Specialist,出版行业->版权专员
+20039,tob,Publishing,出版行业,Marketing Specialist,营销专员,Publishing > Marketing Specialist,出版行业->营销专员
+20040,tob,Aviation,航空行业,Pilot,飞行员,Aviation > Pilot,航空行业->飞行员
+20041,tob,Aviation,航空行业,Flight Attendant,空乘人员,Aviation > Flight Attendant,航空行业->空乘人员
+20042,tob,Aviation,航空行业,Ground Staff,地勤人员,Aviation > Ground Staff,航空行业->地勤人员
+20043,tob,Aviation,航空行业,Dispatcher,调度员,Aviation > Dispatcher,航空行业->调度员
+20044,tob,Aviation,航空行业,Maintenance Engineer,维修工程师,Aviation > Maintenance Engineer,航空行业->维修工程师
+20045,tob,Sports Industry,体育行业,Sports Coach,体育教练,Sports Industry > Sports Coach,体育行业->体育教练
+20046,tob,Sports Industry,体育行业,Sports Analyst,体育分析师,Sports Industry > Sports Analyst,体育行业->体育分析师
+20047,tob,Sports Industry,体育行业,Event Operations,赛事运营,Sports Industry > Event Operations,体育行业->赛事运营
+20048,tob,Sports Industry,体育行业,Sports Journalist,体育记者,Sports Industry > Sports Journalist,体育行业->体育记者
+20049,tob,Sports Industry,体育行业,Athlete Agent,运动员经纪人,Sports Industry > Athlete Agent,体育行业->运动员经纪人
+20050,tob,Sports Industry,体育行业,Fitness Trainer,健身教练,Sports Industry > Fitness Trainer,体育行业->健身教练
+20051,tob,Environmental Services,环保行业,Environmental Engineer,环境工程师,Environmental Services > Environmental Engineer,环保行业->环境工程师
+20052,tob,Environmental Services,环保行业,Environmental Consultant,环保顾问,Environmental Services > Environmental Consultant,环保行业->环保顾问
+20053,tob,Environmental Services,环保行业,Data Analyst,数据分析师,Environmental Services > Data Analyst,环保行业->数据分析师
+20054,tob,Environmental Services,环保行业,Project Manager,项目经理,Environmental Services > Project Manager,环保行业->项目经理
+20055,tob,Environmental Services,环保行业,Technical Specialist,技术专员,Environmental Services > Technical Specialist,环保行业->技术专员
+20056,tob,Beauty & Cosmetics,美妆行业,Beauty Product Manager,美妆产品经理,Beauty & Cosmetics > Beauty Product Manager,美妆行业->美妆产品经理
+20057,tob,Beauty & Cosmetics,美妆行业,Makeup Artist,化妆师,Beauty & Cosmetics > Makeup Artist,美妆行业->化妆师
+20058,tob,Beauty & Cosmetics,美妆行业,Marketing Specialist,营销专员,Beauty & Cosmetics > Marketing Specialist,美妆行业->营销专员
+20059,tob,Beauty & Cosmetics,美妆行业,Sales Consultant,销售顾问,Beauty & Cosmetics > Sales Consultant,美妆行业->销售顾问
+20060,tob,Beauty & Cosmetics,美妆行业,R&D Engineer,研发工程师,Beauty & Cosmetics > R&D Engineer,美妆行业->研发工程师
+20061,tob,Manufacturing,制造业,Production Supervisor,生产主管,Manufacturing > Production Supervisor,制造业->生产主管
+20062,tob,Manufacturing,制造业,Quality Engineer,质量工程师,Manufacturing > Quality Engineer,制造业->质量工程师
+20063,tob,Manufacturing,制造业,Process Engineer,工艺工程师,Manufacturing > Process Engineer,制造业->工艺工程师
+20064,tob,Manufacturing,制造业,Equipment Engineer,设备工程师,Manufacturing > Equipment Engineer,制造业->设备工程师
+20065,tob,Manufacturing,制造业,Supply Chain Specialist,供应链专员,Manufacturing > Supply Chain Specialist,制造业->供应链专员
+20066,tob,Education Industry,教育行业,Secondary School Teacher,中学教师,Education Industry > Secondary School Teacher,教育行业->中学教师
+20067,tob,Education Industry,教育行业,University Professor,大学教授,Education Industry > University Professor,教育行业->大学教授
+20068,tob,Education Industry,教育行业,Training Instructor,培训讲师,Education Industry > Training Instructor,教育行业->培训讲师
+20069,tob,Education Industry,教育行业,Education Consultant,教育顾问,Education Industry > Education Consultant,教育行业->教育顾问
+20070,tob,Education Industry,教育行业,Curriculum Designer,课程设计师,Education Industry > Curriculum Designer,教育行业->课程设计师
+20071,tob,Retail,零售行业,Store Manager,店长,Retail > Store Manager,零售行业->店长
+20072,tob,Retail,零售行业,Purchasing Specialist,采购专员,Retail > Purchasing Specialist,零售行业->采购专员
+20073,tob,Retail,零售行业,Visual Merchandiser,陈列设计师,Retail > Visual Merchandiser,零售行业->陈列设计师
+20074,tob,Retail,零售行业,E-commerce Operations,电商运营,Retail > E-commerce Operations,零售行业->电商运营
+20075,tob,Retail,零售行业,Membership Operations,会员运营,Retail > Membership Operations,零售行业->会员运营
+20076,tob,Legal Services,法律行业,Lawyer,律师,Legal Services > Lawyer,法律行业->律师
+20077,tob,Legal Services,法律行业,Legal Specialist,法务专员,Legal Services > Legal Specialist,法律行业->法务专员
+20078,tob,Legal Services,法律行业,IP Specialist,知识产权专员,Legal Services > IP Specialist,法律行业->知识产权专员
+20079,tob,Legal Services,法律行业,Compliance Specialist,合规专员,Legal Services > Compliance Specialist,法律行业->合规专员
+20080,tob,Legal Services,法律行业,Arbitrator,仲裁员,Legal Services > Arbitrator,法律行业->仲裁员
+20081,tob,Human Resources,人力资源,Recruiter,招聘专员,Human Resources > Recruiter,人力资源->招聘专员
+20082,tob,Human Resources,人力资源,Training Specialist,培训专员,Human Resources > Training Specialist,人力资源->培训专员
+20083,tob,Human Resources,人力资源,Compensation Specialist,薪酬专员,Human Resources > Compensation Specialist,人力资源->薪酬专员
+20084,tob,Human Resources,人力资源,Performance Specialist,绩效专员,Human Resources > Performance Specialist,人力资源->绩效专员
+20085,tob,Human Resources,人力资源,HR Business Partner,HRBP,Human Resources > HR Business Partner,人力资源->HRBP
+20086,tob,Marketing,市场营销,Brand Manager,品牌经理,Marketing > Brand Manager,市场营销->品牌经理
+20087,tob,Marketing,市场营销,Market Researcher,市场研究员,Marketing > Market Researcher,市场营销->市场研究员
+20088,tob,Marketing,市场营销,Event Planner,活动策划,Marketing > Event Planner,市场营销->活动策划
+20089,tob,Marketing,市场营销,Digital Marketing,数字营销,Marketing > Digital Marketing,市场营销->数字营销
+20090,tob,Marketing,市场营销,PR Specialist,公关专员,Marketing > PR Specialist,市场营销->公关专员
+20091,tob,Media,传媒行业,Journalist,记者,Media > Journalist,传媒行业->记者
+20092,tob,Media,传媒行业,Director/Producer,编导,Media > Director/Producer,传媒行业->编导
+20093,tob,Media,传媒行业,New Media Operations,新媒体运营,Media > New Media Operations,传媒行业->新媒体运营
+20094,tob,Media,传媒行业,Photographer,摄影师,Media > Photographer,传媒行业->摄影师
+20095,tob,Media,传媒行业,Advertising Creative,广告创意,Media > Advertising Creative,传媒行业->广告创意
+20096,tob,Logistics,物流行业,Logistics Specialist,物流专员,Logistics > Logistics Specialist,物流行业->物流专员
+20097,tob,Logistics,物流行业,Warehouse Manager,仓储管理员,Logistics > Warehouse Manager,物流行业->仓储管理员
+20098,tob,Logistics,物流行业,Transport Dispatcher,运输调度,Logistics > Transport Dispatcher,物流行业->运输调度
+20099,tob,Logistics,物流行业,Supply Chain Manager,供应链经理,Logistics > Supply Chain Manager,物流行业->供应链经理
+20100,tob,Logistics,物流行业,Delivery Courier,快递员,Logistics > Delivery Courier,物流行业->快递员
+20101,tob,Gaming,游戏行业,Game Designer,游戏策划,Gaming > Game Designer,游戏行业->游戏策划
+20102,tob,Gaming,游戏行业,Game Artist,游戏美术,Gaming > Game Artist,游戏行业->游戏美术
+20103,tob,Gaming,游戏行业,Game Programmer,游戏程序,Gaming > Game Programmer,游戏行业->游戏程序
+20104,tob,Gaming,游戏行业,Game Operations,游戏运营,Gaming > Game Operations,游戏行业->游戏运营
+20105,tob,Gaming,游戏行业,Game QA Tester,游戏测试,Gaming > Game QA Tester,游戏行业->游戏测试
+20106,tob,Energy,能源行业,Power Engineer,电力工程师,Energy > Power Engineer,能源行业->电力工程师
+20107,tob,Energy,能源行业,Petroleum Engineer,石油工程师,Energy > Petroleum Engineer,能源行业->石油工程师
+20108,tob,Energy,能源行业,New Energy Specialist,新能源专员,Energy > New Energy Specialist,能源行业->新能源专员
+20109,tob,Energy,能源行业,Energy Efficiency Engineer,节能工程师,Energy > Energy Efficiency Engineer,能源行业->节能工程师
+20110,tob,Energy,能源行业,Grid Dispatcher,电网调度,Energy > Grid Dispatcher,能源行业->电网调度
+20111,tob,Real Estate,房地产行业,Real Estate Sales,房地产销售,Real Estate > Real Estate Sales,房地产行业->房地产销售
+20112,tob,Real Estate,房地产行业,Property Appraiser,房产评估,Real Estate > Property Appraiser,房地产行业->房产评估
+20113,tob,Real Estate,房地产行业,Property Management,物业管理,Real Estate > Property Management,房地产行业->物业管理
+20114,tob,Real Estate,房地产行业,Land Development,土地开发,Real Estate > Land Development,房地产行业->土地开发
+20115,tob,Real Estate,房地产行业,Real Estate Planner,房地产策划,Real Estate > Real Estate Planner,房地产行业->房地产策划
+20116,tob,Food Service,餐饮行业,Chef,厨师,Food Service > Chef,餐饮行业->厨师
+20117,tob,Food Service,餐饮行业,Restaurant Manager,餐厅经理,Food Service > Restaurant Manager,餐饮行业->餐厅经理
+20118,tob,Food Service,餐饮行业,Purchaser,采购员,Food Service > Purchaser,餐饮行业->采购员
+20119,tob,Food Service,餐饮行业,Bartender,调酒师,Food Service > Bartender,餐饮行业->调酒师
+20120,tob,Food Service,餐饮行业,Baker,烘焙师,Food Service > Baker,餐饮行业->烘焙师
+20121,tob,Design,设计行业,Graphic Designer,平面设计师,Design > Graphic Designer,设计行业->平面设计师
+20122,tob,Design,设计行业,UI Designer,UI设计师,Design > UI Designer,设计行业->UI设计师
+20123,tob,Design,设计行业,Interior Designer,室内设计师,Design > Interior Designer,设计行业->室内设计师
+20124,tob,Design,设计行业,Industrial Designer,工业设计师,Design > Industrial Designer,设计行业->工业设计师
+20125,tob,Design,设计行业,Fashion Designer,服装设计师,Design > Fashion Designer,设计行业->服装设计师
+20126,tob,Consulting,咨询行业,Management Consultant,管理顾问,Consulting > Management Consultant,咨询行业->管理顾问
+20127,tob,Consulting,咨询行业,Financial Consultant,财务顾问,Consulting > Financial Consultant,咨询行业->财务顾问
+20128,tob,Consulting,咨询行业,IT Consultant,IT顾问,Consulting > IT Consultant,咨询行业->IT顾问
+20129,tob,Consulting,咨询行业,HR Consultant,人力资源顾问,Consulting > HR Consultant,咨询行业->人力资源顾问
+20130,tob,Consulting,咨询行业,Strategy Consultant,战略顾问,Consulting > Strategy Consultant,咨询行业->战略顾问
+20131,tob,Automotive,汽车行业,Automotive Design,汽车设计,Automotive > Automotive Design,汽车行业->汽车设计
+20132,tob,Automotive,汽车行业,Automotive Engineering,汽车工程,Automotive > Automotive Engineering,汽车行业->汽车工程
+20133,tob,Automotive,汽车行业,Auto Sales,汽车销售,Automotive > Auto Sales,汽车行业->汽车销售
+20134,tob,Automotive,汽车行业,After-sales Service,售后服务,Automotive > After-sales Service,汽车行业->售后服务
+20135,tob,Automotive,汽车行业,Vehicle Testing,汽车测试,Automotive > Vehicle Testing,汽车行业->汽车测试
+20136,tob,Insurance,保险行业,Insurance Sales,保险销售,Insurance > Insurance Sales,保险行业->保险销售
+20137,tob,Insurance,保险行业,Claims Specialist,理赔专员,Insurance > Claims Specialist,保险行业->理赔专员
+20138,tob,Insurance,保险行业,Underwriter,核保专员,Insurance > Underwriter,保险行业->核保专员
+20139,tob,Insurance,保险行业,Actuary,保险精算,Insurance > Actuary,保险行业->保险精算
+20140,tob,Insurance,保险行业,Insurance Customer Service,保险客服,Insurance > Insurance Customer Service,保险行业->保险客服
+20141,tob,Telecom,电信行业,Network Engineer,网络工程师,Telecom > Network Engineer,电信行业->网络工程师
+20142,tob,Telecom,电信行业,Product Manager,产品经理,Telecom > Product Manager,电信行业->产品经理
+20143,tob,Telecom,电信行业,Account Manager,客户经理,Telecom > Account Manager,电信行业->客户经理
+20144,tob,Telecom,电信行业,Ops Engineer,运维工程师,Telecom > Ops Engineer,电信行业->运维工程师
+20145,tob,Telecom,电信行业,Data Analyst,数据分析师,Telecom > Data Analyst,电信行业->数据分析师
+20146,tob,Pet Services,宠物行业,Veterinarian,宠物医生,Pet Services > Veterinarian,宠物行业->宠物医生
+20147,tob,Pet Services,宠物行业,Pet Groomer,宠物美容师,Pet Services > Pet Groomer,宠物行业->宠物美容师
+20148,tob,Pet Services,宠物行业,Pet Store Manager,宠物店店长,Pet Services > Pet Store Manager,宠物行业->宠物店店长
+20149,tob,Pet Services,宠物行业,Pet Trainer,宠物训练师,Pet Services > Pet Trainer,宠物行业->宠物训练师
+20150,tob,Pet Services,宠物行业,Pet Nutritionist,宠物营养师,Pet Services > Pet Nutritionist,宠物行业->宠物营养师
+20151,tob,Security,安全行业,Cybersecurity,网络安全,Security > Cybersecurity,安全行业->网络安全
+20152,tob,Security,安全行业,Information Security,信息安全,Security > Information Security,安全行业->信息安全
+20153,tob,Security,安全行业,Fire Safety,消防安全,Security > Fire Safety,安全行业->消防安全
+20154,tob,Security,安全行业,Production Safety,生产安全,Security > Production Safety,安全行业->生产安全
+20155,tob,Security,安全行业,Security Guard,安保人员,Security > Security Guard,安全行业->安保人员
+20156,tob,Research,科研行业,Researcher,研究员,Research > Researcher,科研行业->研究员
+20157,tob,Research,科研行业,Lab Technician,实验员,Research > Lab Technician,科研行业->实验员
+20158,tob,Research,科研行业,Project Manager,项目经理,Research > Project Manager,科研行业->项目经理
+20159,tob,Research,科研行业,Data Analyst,数据分析师,Research > Data Analyst,科研行业->数据分析师
+20160,tob,Research,科研行业,Academic Editor,学术编辑,Research > Academic Editor,科研行业->学术编辑
+20161,tob,Beauty Care,美容行业,Beautician,美容师,Beauty Care > Beautician,美容行业->美容师
+20162,tob,Beauty Care,美容行业,Hairstylist,美发师,Beauty Care > Hairstylist,美容行业->美发师
+20163,tob,Beauty Care,美容行业,Nail Technician,美甲师,Beauty Care > Nail Technician,美容行业->美甲师
+20164,tob,Beauty Care,美容行业,Beauty Consultant,美容顾问,Beauty Care > Beauty Consultant,美容行业->美容顾问
+20165,tob,Beauty Care,美容行业,Spa Therapist,SPA技师,Beauty Care > Spa Therapist,美容行业->SPA技师
+20166,tob,Robotics & Automation,机器人与自动化,Robotics Algorithm Engineer,机器人算法工程师,Robotics & Automation > Robotics Algorithm Engineer,机器人与自动化->机器人算法工程师
+20167,tob,Robotics & Automation,机器人与自动化,Automation Control Engineer,自动化控制工程师,Robotics & Automation > Automation Control Engineer,机器人与自动化->自动化控制工程师
+20168,tob,Robotics & Automation,机器人与自动化,Robotics Implementation Consultant,机器人工程实施顾问,Robotics & Automation > Robotics Implementation Consultant,机器人与自动化->机器人工程实施顾问
+20169,tob,Biotech & Bioinformatics,生物科技与生物信息,Bioinformatics Analyst,生物信息分析师,Biotech & Bioinformatics > Bioinformatics Analyst,生物科技与生物信息->生物信息分析师
+20170,tob,Biotech & Bioinformatics,生物科技与生物信息,Clinical Data Analyst,临床数据分析师,Biotech & Bioinformatics > Clinical Data Analyst,生物科技与生物信息->临床数据分析师
+20171,tob,Biotech & Bioinformatics,生物科技与生物信息,Drug R&D Researcher,药物研发研究员,Biotech & Bioinformatics > Drug R&D Researcher,生物科技与生物信息->药物研发研究员
+20172,tob,Natural Science & Mathematics,自然科学与数学,Mathematical Modeling Engineer,数学建模工程师,Natural Science & Mathematics > Mathematical Modeling Engineer,自然科学与数学->数学建模工程师
+20173,tob,Natural Science & Mathematics,自然科学与数学,Operations Research Engineer,运筹优化工程师,Natural Science & Mathematics > Operations Research Engineer,自然科学与数学->运筹优化工程师
+20174,tob,Natural Science & Mathematics,自然科学与数学,Scientific Computing Researcher,科学计算研究员,Natural Science & Mathematics > Scientific Computing Researcher,自然科学与数学->科学计算研究员
+20175,tob,Semiconductor & Electronics,半导体与电子,Chip Verification Engineer,芯片验证工程师,Semiconductor & Electronics > Chip Verification Engineer,半导体与电子->芯片验证工程师
+20176,tob,Semiconductor & Electronics,半导体与电子,Embedded Systems Engineer,嵌入式系统工程师,Semiconductor & Electronics > Embedded Systems Engineer,半导体与电子->嵌入式系统工程师
+20177,tob,Semiconductor & Electronics,半导体与电子,Electronics Test Engineer,电子测试工程师,Semiconductor & Electronics > Electronics Test Engineer,半导体与电子->电子测试工程师
+20178,tob,Government & Public Sector,政务与公共事业,Government Service Operations Specialist,政务服务运营专员,Government & Public Sector > Government Service Operations Specialist,政务与公共事业->政务服务运营专员
+20179,tob,Government & Public Sector,政务与公共事业,Urban Governance Analyst,城市治理分析师,Government & Public Sector > Urban Governance Analyst,政务与公共事业->城市治理分析师
+20180,tob,Government & Public Sector,政务与公共事业,Public Utility Dispatcher,公用事业调度员,Government & Public Sector > Public Utility Dispatcher,政务与公共事业->公用事业调度员
+20181,tob,IT & Internet,IT互联网,On-chain Data Analyst,链上数据分析师,IT & Internet > On-chain Data Analyst,IT互联网->链上数据分析师
+20182,tob,IT & Internet,IT互联网,Smart Contract Security Auditor,智能合约安全审计员,IT & Internet > Smart Contract Security Auditor,IT互联网->智能合约安全审计员
+20183,tob,Media,传媒行业,Content Creator,自媒体主理人,Media > Content Creator,传媒行业->自媒体主理人
+20184,tob,Media,传媒行业,Livestream Operations,直播运营,Media > Livestream Operations,传媒行业->直播运营
+20185,tob,Marketing,市场营销,Omnichannel Operations Specialist,全域运营专员,Marketing > Omnichannel Operations Specialist,市场营销->全域运营专员
+30000,toe,Email Communication,邮件沟通,Client Follow-up Emails,客户跟进邮件,Email Communication > Client Follow-up Emails,邮件沟通->客户跟进邮件
+30001,toe,Email Communication,邮件沟通,Meeting Minutes Emails,会议纪要邮件,Email Communication > Meeting Minutes Emails,邮件沟通->会议纪要邮件
+30002,toe,Email Communication,邮件沟通,Email Template Management,邮件模板管理,Email Communication > Email Template Management,邮件沟通->邮件模板管理
+30003,toe,Meeting Management,会议管理,Meeting Scheduling Coordination,会议预约协调,Meeting Management > Meeting Scheduling Coordination,会议管理->会议预约协调
+30004,toe,Meeting Management,会议管理,Meeting Agenda Preparation,会议议程准备,Meeting Management > Meeting Agenda Preparation,会议管理->会议议程准备
+30005,toe,Scheduling,日程安排,Personal Schedule Management,个人日程管理,Scheduling > Personal Schedule Management,日程安排->个人日程管理
+30006,toe,Scheduling,日程安排,Team Schedule Coordination,团队日程协调,Scheduling > Team Schedule Coordination,日程安排->团队日程协调
+30007,toe,Document Handling,文档处理,Document Version Control,文档版本管理,Document Handling > Document Version Control,文档处理->文档版本管理
+30008,toe,Document Handling,文档处理,Document Approval Workflow,文档审批流程,Document Handling > Document Approval Workflow,文档处理->文档审批流程
+30009,toe,Data Analysis,数据分析,Sales Data Analysis,销售数据分析,Data Analysis > Sales Data Analysis,数据分析->销售数据分析
+30010,toe,Data Analysis,数据分析,Customer Data Analysis,客户数据分析,Data Analysis > Customer Data Analysis,数据分析->客户数据分析
+30011,toe,Data Analysis,数据分析,Operations Data Analysis,运营数据分析,Data Analysis > Operations Data Analysis,数据分析->运营数据分析
+30012,toe,Customer Management,客户管理,Customer Information Maintenance,客户信息维护,Customer Management > Customer Information Maintenance,客户管理->客户信息维护
+30013,toe,Customer Management,客户管理,Customer Tier Management,客户分级管理,Customer Management > Customer Tier Management,客户管理->客户分级管理
+30014,toe,Project Management,项目管理,Project Progress Tracking,项目进度跟踪,Project Management > Project Progress Tracking,项目管理->项目进度跟踪
+30015,toe,Project Management,项目管理,Task Assignment Management,任务分配管理,Project Management > Task Assignment Management,项目管理->任务分配管理
+30016,toe,Project Management,项目管理,Project Risk Management,项目风险管理,Project Management > Project Risk Management,项目管理->项目风险管理
+30017,toe,Expense Reimbursement,财务报销,Travel Expense Reimbursement,差旅费用报销,Expense Reimbursement > Travel Expense Reimbursement,财务报销->差旅费用报销
+30018,toe,Expense Reimbursement,财务报销,Routine Expense Reimbursement,日常费用报销,Expense Reimbursement > Routine Expense Reimbursement,财务报销->日常费用报销
+30019,toe,Travel Booking,差旅预订,Business Trip Itinerary Planning,出差行程规划,Travel Booking > Business Trip Itinerary Planning,差旅预订->出差行程规划
+30020,toe,Travel Booking,差旅预订,Travel Expense Control,差旅费用控制,Travel Booking > Travel Expense Control,差旅预订->差旅费用控制
+30021,toe,HR Operations,人事相关,Attendance Management,考勤管理,HR Operations > Attendance Management,人事相关->考勤管理
+30022,toe,HR Operations,人事相关,Employee Records Management,员工档案管理,HR Operations > Employee Records Management,人事相关->员工档案管理
+30023,toe,Market Research,市场调研,Industry Trend Analysis,行业趋势分析,Market Research > Industry Trend Analysis,市场调研->行业趋势分析
+30024,toe,Market Research,市场调研,User Needs Research,用户需求调研,Market Research > User Needs Research,市场调研->用户需求调研
+30025,toe,Competitor Analysis,竞品分析,Competitor Feature Comparison,竞品功能对比,Competitor Analysis > Competitor Feature Comparison,竞品分析->竞品功能对比
+30026,toe,Competitor Analysis,竞品分析,Competitor Pricing Analysis,竞品定价分析,Competitor Analysis > Competitor Pricing Analysis,竞品分析->竞品定价分析
+30027,toe,Report Writing,报告撰写,Weekly/Monthly Report Writing,周报月报撰写,Report Writing > Weekly/Monthly Report Writing,报告撰写->周报月报撰写
+30028,toe,Report Writing,报告撰写,Special Report Writing,专项报告撰写,Report Writing > Special Report Writing,报告撰写->专项报告撰写
+30029,toe,Knowledge Management,知识管理,Knowledge Base Maintenance,知识库维护,Knowledge Management > Knowledge Base Maintenance,知识管理->知识库维护
+30030,toe,Knowledge Management,知识管理,Knowledge Sharing Organization,知识分享组织,Knowledge Management > Knowledge Sharing Organization,知识管理->知识分享组织
+30031,toe,Task Collaboration,任务协作,Cross-department Collaboration,跨部门协作,Task Collaboration > Cross-department Collaboration,任务协作->跨部门协作
+30032,toe,Task Collaboration,任务协作,Remote Collaboration Management,远程协作管理,Task Collaboration > Remote Collaboration Management,任务协作->远程协作管理
+30033,toe,Approval Workflow,审批流程,Procurement Approval,采购审批,Approval Workflow > Procurement Approval,审批流程->采购审批
+30034,toe,Approval Workflow,审批流程,Contract Approval,合同审批,Approval Workflow > Contract Approval,审批流程->合同审批
+30035,toe,Training & Learning,培训学习,Training Plan Development,培训计划制定,Training & Learning > Training Plan Development,培训学习->培训计划制定
+30036,toe,Training & Learning,培训学习,Training Effectiveness Evaluation,培训效果评估,Training & Learning > Training Effectiveness Evaluation,培训学习->培训效果评估
+30037,toe,Recruiting & Interviews,招聘面试,Candidate Screening,候选人筛选,Recruiting & Interviews > Candidate Screening,招聘面试->候选人筛选
+30038,toe,Recruiting & Interviews,招聘面试,Interview Scheduling Coordination,面试安排协调,Recruiting & Interviews > Interview Scheduling Coordination,招聘面试->面试安排协调
+30039,toe,Performance Review,绩效考核,Performance Goal Setting,绩效目标设定,Performance Review > Performance Goal Setting,绩效考核->绩效目标设定
+30040,toe,Performance Review,绩效考核,Performance Evaluation Execution,绩效评估执行,Performance Review > Performance Evaluation Execution,绩效考核->绩效评估执行
+30041,toe,Administrative Affairs,行政事务,Office Supplies Management,办公用品管理,Administrative Affairs > Office Supplies Management,行政事务->办公用品管理
+30042,toe,Administrative Affairs,行政事务,Fixed Asset Management,固定资产管理,Administrative Affairs > Fixed Asset Management,行政事务->固定资产管理
+30043,toe,Contract Management,合同管理,Contract Drafting & Review,合同起草审核,Contract Management > Contract Drafting & Review,合同管理->合同起草审核
+30044,toe,Contract Management,合同管理,Contract Performance Tracking,合同履约跟踪,Contract Management > Contract Performance Tracking,合同管理->合同履约跟踪
+30045,toe,Vendor Management,供应商管理,Vendor Evaluation,供应商评估,Vendor Management > Vendor Evaluation,供应商管理->供应商评估
+30046,toe,Vendor Management,供应商管理,Vendor Relationship Management,供应商关系维护,Vendor Management > Vendor Relationship Management,供应商管理->供应商关系维护
+30047,toe,Inventory Management,库存管理,Inventory Counting,库存盘点,Inventory Management > Inventory Counting,库存管理->库存盘点
+30048,toe,Inventory Management,库存管理,Inventory Alert Management,库存预警管理,Inventory Management > Inventory Alert Management,库存管理->库存预警管理
+30049,toe,Sales Support,销售支持,Sales Material Preparation,销售材料准备,Sales Support > Sales Material Preparation,销售支持->销售材料准备
+30050,toe,Sales Support,销售支持,Sales Lead Follow-up Support,商机跟进支持,Sales Support > Sales Lead Follow-up Support,销售支持->商机跟进支持
+30051,toe,Legal & Compliance,法务合规,Compliance Review,合规审查,Legal & Compliance > Compliance Review,法务合规->合规审查
+30052,toe,Legal & Compliance,法务合规,IP Management,知识产权管理,Legal & Compliance > IP Management,法务合规->知识产权管理
+30053,toe,Customer Service,客户服务,Customer Ticket Handling,客户工单处理,Customer Service > Customer Ticket Handling,客户服务->客户工单处理
+30054,toe,Customer Service,客户服务,Complaint Escalation Handling,投诉升级处理,Customer Service > Complaint Escalation Handling,客户服务->投诉升级处理
+30055,toe,Customer Service,客户服务,FAQ & Reply Template Maintenance,FAQ与回复模板维护,Customer Service > FAQ & Reply Template Maintenance,客户服务->FAQ与回复模板维护
+30056,toe,Procurement & Reconciliation,采购与对账,Procurement Request Management,采购申请管理,Procurement & Reconciliation > Procurement Request Management,采购与对账->采购申请管理
+30057,toe,Procurement & Reconciliation,采购与对账,Vendor Reconciliation,供应商对账,Procurement & Reconciliation > Vendor Reconciliation,采购与对账->供应商对账
+30058,toe,Procurement & Reconciliation,采购与对账,Invoice & Payment Follow-up,发票与付款跟进,Procurement & Reconciliation > Invoice & Payment Follow-up,采购与对账->发票与付款跟进
+30059,toe,Business Material Preparation,商务材料制作,Client Proposal Writing,客户提案撰写,Business Material Preparation > Client Proposal Writing,商务材料制作->客户提案撰写
+30060,toe,Business Material Preparation,商务材料制作,Presentation Material Preparation,汇报材料制作,Business Material Preparation > Presentation Material Preparation,商务材料制作->汇报材料制作
+30061,toe,Business Material Preparation,商务材料制作,External Proposal Updates,对外方案更新,Business Material Preparation > External Proposal Updates,商务材料制作->对外方案更新
+30062,toe,Process Automation,流程自动化,Cross-system Data Sync,跨系统数据同步,Process Automation > Cross-system Data Sync,流程自动化->跨系统数据同步
+30063,toe,Process Automation,流程自动化,Periodic Process Orchestration,周期性流程编排,Process Automation > Periodic Process Orchestration,流程自动化->周期性流程编排
+30064,toe,Process Automation,流程自动化,Automated Approval Trigger,审批流自动触发,Process Automation > Automated Approval Trigger,流程自动化->审批流自动触发
+30065,toe,Digital Content Operations,数字内容运营,Cross-platform Content Distribution & Review,跨平台内容分发与复盘,Digital Content Operations > Cross-platform Content Distribution & Review,数字内容运营->跨平台内容分发与复盘
+30066,toe,Digital Content Operations,数字内容运营,Livestream Event Operations,直播活动运营,Digital Content Operations > Livestream Event Operations,数字内容运营->直播活动运营

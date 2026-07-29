@@ -1,0 +1,645 @@
+route,global_id,split,taxonomy_id,domain_l1_en,domain_l1_zh,domain_l2_en,domain_l2_zh,domain_path_en,domain_path_zh
+route1,2,tob,20029,Tourism,旅游行业,Tourism Marketing Specialist,旅游营销专员,Tourism > Tourism Marketing Specialist,旅游行业->旅游营销专员
+route1,19,tob,20028,Tourism,旅游行业,Tour Product Designer,旅游产品设计师,Tourism > Tour Product Designer,旅游行业->旅游产品设计师
+route1,22,tob,20000,Finance,金融,Investment Advisor,投资顾问,Finance > Investment Advisor,金融->投资顾问
+route1,24,tob,20002,Finance,金融,Account Manager,客户经理,Finance > Account Manager,金融->客户经理
+route1,27,tob,20022,Agriculture,农业行业,Agricultural Researcher,农业研究员,Agriculture > Agricultural Researcher,农业行业->农业研究员
+route1,38,tob,20034,Hospitality,酒店行业,Marketing Specialist,市场专员,Hospitality > Marketing Specialist,酒店行业->市场专员
+route1,41,tob,20013,IT & Internet,IT互联网,QA/Test Engineer,测试工程师,IT & Internet > QA/Test Engineer,IT互联网->测试工程师
+route1,44,tob,20017,Construction,建筑行业,Project Manager,项目经理,Construction > Project Manager,建筑行业->项目经理
+route1,48,tob,20181,IT & Internet,IT互联网,On-chain Data Analyst,链上数据分析师,IT & Internet > On-chain Data Analyst,IT互联网->链上数据分析师
+route1,49,tob,20020,Agriculture,农业行业,Agricultural Technician,农业技术员,Agriculture > Agricultural Technician,农业行业->农业技术员
+route1,51,tob,20030,Hospitality,酒店行业,Hotel Manager,酒店经理,Hospitality > Hotel Manager,酒店行业->酒店经理
+route1,58,tob,20010,IT & Internet,IT互联网,Software Engineer,软件工程师,IT & Internet > Software Engineer,IT互联网->软件工程师
+route1,65,tob,20025,Tourism,旅游行业,Travel Consultant,旅游顾问,Tourism > Travel Consultant,旅游行业->旅游顾问
+route1,69,tob,20033,Hospitality,酒店行业,Sales Manager,销售经理,Hospitality > Sales Manager,酒店行业->销售经理
+route1,75,tob,20024,Agriculture,农业行业,Agricultural Products Sales,农产品销售,Agriculture > Agricultural Products Sales,农业行业->农产品销售
+route1,83,tob,20023,Agriculture,农业行业,Farm Machinery Operator,农机操作员,Agriculture > Farm Machinery Operator,农业行业->农机操作员
+route1,86,tob,20005,Healthcare,医疗健康,Clinical Physician,临床医生,Healthcare > Clinical Physician,医疗健康->临床医生
+route1,87,tob,20027,Tourism,旅游行业,Hotel Front Desk,酒店前台,Tourism > Hotel Front Desk,旅游行业->酒店前台
+route1,98,tob,20039,Publishing,出版行业,Marketing Specialist,营销专员,Publishing > Marketing Specialist,出版行业->营销专员
+route1,104,tob,20042,Aviation,航空行业,Ground Staff,地勤人员,Aviation > Ground Staff,航空行业->地勤人员
+route1,112,tob,20050,Sports Industry,体育行业,Fitness Trainer,健身教练,Sports Industry > Fitness Trainer,体育行业->健身教练
+route1,117,tob,20052,Environmental Services,环保行业,Environmental Consultant,环保顾问,Environmental Services > Environmental Consultant,环保行业->环保顾问
+route1,119,tob,20036,Publishing,出版行业,Proofreader,校对员,Publishing > Proofreader,出版行业->校对员
+route1,123,tob,20047,Sports Industry,体育行业,Event Operations,赛事运营,Sports Industry > Event Operations,体育行业->赛事运营
+route1,127,tob,20054,Environmental Services,环保行业,Project Manager,项目经理,Environmental Services > Project Manager,环保行业->项目经理
+route1,131,tob,20045,Sports Industry,体育行业,Sports Coach,体育教练,Sports Industry > Sports Coach,体育行业->体育教练
+route1,138,tob,20043,Aviation,航空行业,Dispatcher,调度员,Aviation > Dispatcher,航空行业->调度员
+route1,140,tob,20060,Beauty & Cosmetics,美妆行业,R&D Engineer,研发工程师,Beauty & Cosmetics > R&D Engineer,美妆行业->研发工程师
+route1,143,tob,20152,Security,安全行业,Information Security,信息安全,Security > Information Security,安全行业->信息安全
+route1,149,tob,20087,Marketing,市场营销,Market Researcher,市场研究员,Marketing > Market Researcher,市场营销->市场研究员
+route1,155,tob,20167,Robotics & Automation,机器人与自动化,Automation Control Engineer,自动化控制工程师,Robotics & Automation > Automation Control Engineer,机器人与自动化->自动化控制工程师
+route1,167,tob,20160,Research,科研行业,Academic Editor,学术编辑,Research > Academic Editor,科研行业->学术编辑
+route1,168,tob,20107,Energy,能源行业,Petroleum Engineer,石油工程师,Energy > Petroleum Engineer,能源行业->石油工程师
+route1,176,tob,20149,Pet Services,宠物行业,Pet Trainer,宠物训练师,Pet Services > Pet Trainer,宠物行业->宠物训练师
+route1,184,tob,20105,Gaming,游戏行业,Game QA Tester,游戏测试,Gaming > Game QA Tester,游戏行业->游戏测试
+route1,186,tob,20112,Real Estate,房地产行业,Property Appraiser,房产评估,Real Estate > Property Appraiser,房地产行业->房产评估
+route1,189,tob,20063,Manufacturing,制造业,Process Engineer,工艺工程师,Manufacturing > Process Engineer,制造业->工艺工程师
+route1,191,tob,20094,Media,传媒行业,Photographer,摄影师,Media > Photographer,传媒行业->摄影师
+route1,204,tob,20078,Legal Services,法律行业,IP Specialist,知识产权专员,Legal Services > IP Specialist,法律行业->知识产权专员
+route1,211,tob,20159,Research,科研行业,Data Analyst,数据分析师,Research > Data Analyst,科研行业->数据分析师
+route1,213,tob,20113,Real Estate,房地产行业,Property Management,物业管理,Real Estate > Property Management,房地产行业->物业管理
+route1,215,tob,20161,Beauty Care,美容行业,Beautician,美容师,Beauty Care > Beautician,美容行业->美容师
+route1,222,tob,20180,Government & Public Sector,政务与公共事业,Public Utility Dispatcher,公用事业调度员,Government & Public Sector > Public Utility Dispatcher,政务与公共事业->公用事业调度员
+route1,225,tob,20165,Beauty Care,美容行业,Spa Therapist,SPA技师,Beauty Care > Spa Therapist,美容行业->SPA技师
+route1,227,tob,20143,Telecom,电信行业,Account Manager,客户经理,Telecom > Account Manager,电信行业->客户经理
+route1,230,tob,20168,Robotics & Automation,机器人与自动化,Robotics Implementation Consultant,机器人工程实施顾问,Robotics & Automation > Robotics Implementation Consultant,机器人与自动化->机器人工程实施顾问
+route1,233,tob,20132,Automotive,汽车行业,Automotive Engineering,汽车工程,Automotive > Automotive Engineering,汽车行业->汽车工程
+route1,239,tob,20137,Insurance,保险行业,Claims Specialist,理赔专员,Insurance > Claims Specialist,保险行业->理赔专员
+route1,242,tob,20092,Media,传媒行业,Director/Producer,编导,Media > Director/Producer,传媒行业->编导
+route1,248,tob,20106,Energy,能源行业,Power Engineer,电力工程师,Energy > Power Engineer,能源行业->电力工程师
+route1,250,tob,20098,Logistics,物流行业,Transport Dispatcher,运输调度,Logistics > Transport Dispatcher,物流行业->运输调度
+route1,252,tob,20068,Education Industry,教育行业,Training Instructor,培训讲师,Education Industry > Training Instructor,教育行业->培训讲师
+route1,255,tob,20072,Retail,零售行业,Purchasing Specialist,采购专员,Retail > Purchasing Specialist,零售行业->采购专员
+route1,258,tob,20158,Research,科研行业,Project Manager,项目经理,Research > Project Manager,科研行业->项目经理
+route1,261,tob,20065,Manufacturing,制造业,Supply Chain Specialist,供应链专员,Manufacturing > Supply Chain Specialist,制造业->供应链专员
+route1,262,tob,20082,Human Resources,人力资源,Training Specialist,培训专员,Human Resources > Training Specialist,人力资源->培训专员
+route1,263,tob,20109,Energy,能源行业,Energy Efficiency Engineer,节能工程师,Energy > Energy Efficiency Engineer,能源行业->节能工程师
+route1,266,tob,20157,Research,科研行业,Lab Technician,实验员,Research > Lab Technician,科研行业->实验员
+route1,267,tob,20093,Media,传媒行业,New Media Operations,新媒体运营,Media > New Media Operations,传媒行业->新媒体运营
+route1,275,tob,20102,Gaming,游戏行业,Game Artist,游戏美术,Gaming > Game Artist,游戏行业->游戏美术
+route1,279,tob,20090,Marketing,市场营销,PR Specialist,公关专员,Marketing > PR Specialist,市场营销->公关专员
+route1,286,tob,20150,Pet Services,宠物行业,Pet Nutritionist,宠物营养师,Pet Services > Pet Nutritionist,宠物行业->宠物营养师
+route1,288,tob,20086,Marketing,市场营销,Brand Manager,品牌经理,Marketing > Brand Manager,市场营销->品牌经理
+route1,292,tob,20089,Marketing,市场营销,Digital Marketing,数字营销,Marketing > Digital Marketing,市场营销->数字营销
+route1,298,tob,20085,Human Resources,人力资源,HR Business Partner,HRBP,Human Resources > HR Business Partner,人力资源->HRBP
+route1,299,tob,20125,Design,设计行业,Fashion Designer,服装设计师,Design > Fashion Designer,设计行业->服装设计师
+route1,302,tob,20154,Security,安全行业,Production Safety,生产安全,Security > Production Safety,安全行业->生产安全
+route1,309,tob,20104,Gaming,游戏行业,Game Operations,游戏运营,Gaming > Game Operations,游戏行业->游戏运营
+route1,316,tob,20073,Retail,零售行业,Visual Merchandiser,陈列设计师,Retail > Visual Merchandiser,零售行业->陈列设计师
+route1,319,tob,20080,Legal Services,法律行业,Arbitrator,仲裁员,Legal Services > Arbitrator,法律行业->仲裁员
+route1,323,tob,20069,Education Industry,教育行业,Education Consultant,教育顾问,Education Industry > Education Consultant,教育行业->教育顾问
+route1,325,tob,20111,Real Estate,房地产行业,Real Estate Sales,房地产销售,Real Estate > Real Estate Sales,房地产行业->房地产销售
+route1,327,tob,20138,Insurance,保险行业,Underwriter,核保专员,Insurance > Underwriter,保险行业->核保专员
+route1,330,tob,20061,Manufacturing,制造业,Production Supervisor,生产主管,Manufacturing > Production Supervisor,制造业->生产主管
+route1,336,tob,20095,Media,传媒行业,Advertising Creative,广告创意,Media > Advertising Creative,传媒行业->广告创意
+route1,344,tob,20067,Education Industry,教育行业,University Professor,大学教授,Education Industry > University Professor,教育行业->大学教授
+route1,348,tob,20151,Security,安全行业,Cybersecurity,网络安全,Security > Cybersecurity,安全行业->网络安全
+route1,350,tob,20108,Energy,能源行业,New Energy Specialist,新能源专员,Energy > New Energy Specialist,能源行业->新能源专员
+route1,356,tob,20096,Logistics,物流行业,Logistics Specialist,物流专员,Logistics > Logistics Specialist,物流行业->物流专员
+route1,358,tob,20174,Natural Science & Mathematics,自然科学与数学,Scientific Computing Researcher,科学计算研究员,Natural Science & Mathematics > Scientific Computing Researcher,自然科学与数学->科学计算研究员
+route1,363,tob,20074,Retail,零售行业,E-commerce Operations,电商运营,Retail > E-commerce Operations,零售行业->电商运营
+route1,372,tob,20117,Food Service,餐饮行业,Restaurant Manager,餐厅经理,Food Service > Restaurant Manager,餐饮行业->餐厅经理
+route1,378,tob,20123,Design,设计行业,Interior Designer,室内设计师,Design > Interior Designer,设计行业->室内设计师
+route1,384,tob,20127,Consulting,咨询行业,Financial Consultant,财务顾问,Consulting > Financial Consultant,咨询行业->财务顾问
+route1,390,tob,20175,Semiconductor & Electronics,半导体与电子,Chip Verification Engineer,芯片验证工程师,Semiconductor & Electronics > Chip Verification Engineer,半导体与电子->芯片验证工程师
+route1,391,tob,20163,Beauty Care,美容行业,Nail Technician,美甲师,Beauty Care > Nail Technician,美容行业->美甲师
+route1,393,tob,20176,Semiconductor & Electronics,半导体与电子,Embedded Systems Engineer,嵌入式系统工程师,Semiconductor & Electronics > Embedded Systems Engineer,半导体与电子->嵌入式系统工程师
+route1,396,tob,20171,Biotech & Bioinformatics,生物科技与生物信息,Drug R&D Researcher,药物研发研究员,Biotech & Bioinformatics > Drug R&D Researcher,生物科技与生物信息->药物研发研究员
+route1,400,tob,20162,Beauty Care,美容行业,Hairstylist,美发师,Beauty Care > Hairstylist,美容行业->美发师
+route1,406,toc,10030,Health,健康,Mental Health,心理健康,Health > Mental Health,健康->心理健康
+route1,408,toc,10053,Finance,财务,Insurance Services,保险服务,Finance > Insurance Services,财务->保险服务
+route1,411,toc,10022,Shopping,购物,Secondhand Trading,二手交易,Shopping > Secondhand Trading,购物->二手交易
+route1,413,toc,10033,Health,健康,Diet Management,饮食管理,Health > Diet Management,健康->饮食管理
+route1,416,toc,10032,Health,健康,Fitness & Exercise,运动健身,Health > Fitness & Exercise,健康->运动健身
+route1,421,toc,10055,Finance,财务,Investment & Wealth Management,投资理财,Finance > Investment & Wealth Management,财务->投资理财
+route1,422,toc,10057,Finance,财务,Bookkeeping & Budgeting,记账理财,Finance > Bookkeeping & Budgeting,财务->记账理财
+route1,424,toc,10024,Shopping,购物,Group Buying & Flash Sales,团购秒杀,Shopping > Group Buying & Flash Sales,购物->团购秒杀
+route1,429,toc,10029,Health,健康,Rehabilitation Training,康复训练,Health > Rehabilitation Training,健康->康复训练
+route1,433,toc,10048,Business,商务,Contract Management,合同管理,Business > Contract Management,商务->合同管理
+route1,435,toc,10092,Public Service,公共服务,City Services,城市服务,Public Service > City Services,公共服务->城市服务
+route1,439,toc,10038,Education,教育,Certification Exams,证书考试,Education > Certification Exams,教育->证书考试
+route1,446,toc,10093,Public Service,公共服务,Government Services,政务办事,Public Service > Government Services,公共服务->政务办事
+route1,451,toc,10087,Medical,医疗,Health Consultation,健康咨询,Medical > Health Consultation,医疗->健康咨询
+route1,459,toc,10062,News,新闻,Financial News,财经新闻,News > Financial News,新闻->财经新闻
+route1,464,toc,10063,News,新闻,News Reading,资讯阅读,News > News Reading,新闻->资讯阅读
+route1,468,toc,10071,Photography,摄影,Video Production,视频制作,Photography > Video Production,摄影->视频制作
+route1,471,toc,10075,Navigation,导航,Navigation,出行导航,Navigation > Navigation,导航->出行导航
+route1,476,toc,10070,Photography,摄影,Photo Editing,照片编辑,Photography > Photo Editing,摄影->照片编辑
+route1,479,toc,10051,Business,商务,Job Search & Recruiting,求职招聘,Business > Job Search & Recruiting,商务->求职招聘
+route1,488,toc,10039,Education,教育,Language Learning,语言学习,Education > Language Learning,教育->语言学习
+route1,489,toc,10072,Navigation,导航,Location Services,位置服务,Navigation > Location Services,导航->位置服务
+route1,493,toc,10047,Business,商务,Office Collaboration,办公协作,Business > Office Collaboration,商务->办公协作
+route1,496,toc,10037,Education,教育,Study Abroad Services,留学服务,Education > Study Abroad Services,教育->留学服务
+route1,499,toc,10074,Navigation,导航,EV Charging Services,充电服务,Navigation > EV Charging Services,导航->充电服务
+route1,500,toc,10050,Business,商务,Customer Management,客户管理,Business > Customer Management,商务->客户管理
+route1,501,toc,10060,Entertainment,娱乐,Short Video,短视频,Entertainment > Short Video,娱乐->短视频
+route1,504,toc,10045,Productivity,效率,Automation,自动化,Productivity > Automation,效率->自动化
+route1,506,toc,10068,Music,音乐,Music Playback,音乐播放,Music > Music Playback,音乐->音乐播放
+route1,509,toc,10040,Productivity,效率,Cloud Storage,云存储,Productivity > Cloud Storage,效率->云存储
+route1,513,toc,10061,Entertainment,娱乐,Video Watching,视频观看,Entertainment > Video Watching,娱乐->视频观看
+route1,515,toc,10042,Productivity,效率,Document Processing,文档处理,Productivity > Document Processing,效率->文档处理
+route1,518,toc,10041,Productivity,效率,Task Management,任务管理,Productivity > Task Management,效率->任务管理
+route1,520,toc,10044,Productivity,效率,Note Taking,笔记记录,Productivity > Note Taking,效率->笔记记录
+route1,522,toc,10067,Music,音乐,Music Creation,音乐创作,Music > Music Creation,音乐->音乐创作
+route1,525,toc,10064,Books,图书,E-books,电子书,Books > E-books,图书->电子书
+route1,530,toc,10059,Entertainment,娱乐,Live Streaming Interaction,直播互动,Entertainment > Live Streaming Interaction,娱乐->直播互动
+route1,532,toc,10046,Productivity,效率,Email Handling,邮件处理,Productivity > Email Handling,效率->邮件处理
+route1,533,toc,10000,Social,社交,Instant Messaging,即时通讯,Social > Instant Messaging,社交->即时通讯
+route1,535,toc,10076,Weather,天气,Historical Weather,历史天气,Weather > Historical Weather,天气->历史天气
+route1,539,toc,10006,Lifestyle,生活,Beauty & Hair Salon,美容美发,Lifestyle > Beauty & Hair Salon,生活->美容美发
+route1,542,toc,10096,Smart Devices,智能设备,Wearable Devices,可穿戴设备,Smart Devices > Wearable Devices,智能设备->可穿戴设备
+route1,543,toc,10009,Lifestyle,生活,Parenting & Childcare,母婴育儿,Lifestyle > Parenting & Childcare,生活->母婴育儿
+route1,547,toc,10097,Smart Devices,智能设备,Home Security,家庭安防,Smart Devices > Home Security,智能设备->家庭安防
+route1,549,toc,10100,Smart Devices,智能设备,Car Connectivity,车机互联,Smart Devices > Car Connectivity,智能设备->车机互联
+route1,553,toc,10099,Smart Devices,智能设备,Device Interconnection,设备联动,Smart Devices > Device Interconnection,智能设备->设备联动
+route1,555,toc,10098,Smart Devices,智能设备,Smart Home,智能家居,Smart Devices > Smart Home,智能设备->智能家居
+route1,558,toc,10002,Social,社交,Location Sharing,位置共享,Social > Location Sharing,社交->位置共享
+route1,559,toc,10007,Lifestyle,生活,Auto Services,汽车服务,Lifestyle > Auto Services,生活->汽车服务
+route1,561,toc,10078,Weather,天气,Weather Alerts,气象预警,Weather > Weather Alerts,天气->气象预警
+route1,562,toc,10003,Social,社交,Social Networking,社交网络,Social > Social Networking,社交->社交网络
+route1,564,toc,10005,Lifestyle,生活,Pet Services,宠物服务,Lifestyle > Pet Services,生活->宠物服务
+route1,566,toc,10017,Travel,旅行,Travel Tools,旅行工具,Travel > Travel Tools,旅行->旅行工具
+route1,571,toc,10018,Travel,旅行,Travel Expense Tracking,旅行记账,Travel > Travel Expense Tracking,旅行->旅行记账
+route1,575,toc,10020,Travel,旅行,Itinerary Planning,行程规划,Travel > Itinerary Planning,旅行->行程规划
+route1,577,toc,10021,Travel,旅行,Hotel Booking,酒店预订,Travel > Hotel Booking,旅行->酒店预订
+route1,579,toe,30033,Approval Workflow,审批流程,Procurement Approval,采购审批,Approval Workflow > Procurement Approval,审批流程->采购审批
+route1,581,toe,30021,HR Operations,人事相关,Attendance Management,考勤管理,HR Operations > Attendance Management,人事相关->考勤管理
+route1,587,toe,30034,Approval Workflow,审批流程,Contract Approval,合同审批,Approval Workflow > Contract Approval,审批流程->合同审批
+route1,590,toe,30002,Email Communication,邮件沟通,Email Template Management,邮件模板管理,Email Communication > Email Template Management,邮件沟通->邮件模板管理
+route1,592,toe,30054,Customer Service,客户服务,Complaint Escalation Handling,投诉升级处理,Customer Service > Complaint Escalation Handling,客户服务->投诉升级处理
+route1,595,toe,30055,Customer Service,客户服务,FAQ & Reply Template Maintenance,FAQ与回复模板维护,Customer Service > FAQ & Reply Template Maintenance,客户服务->FAQ与回复模板维护
+route1,597,toe,30008,Document Handling,文档处理,Document Approval Workflow,文档审批流程,Document Handling > Document Approval Workflow,文档处理->文档审批流程
+route1,603,toe,30012,Customer Management,客户管理,Customer Information Maintenance,客户信息维护,Customer Management > Customer Information Maintenance,客户管理->客户信息维护
+route1,608,toe,30019,Travel Booking,差旅预订,Business Trip Itinerary Planning,出差行程规划,Travel Booking > Business Trip Itinerary Planning,差旅预订->出差行程规划
+route1,615,toe,30052,Legal & Compliance,法务合规,IP Management,知识产权管理,Legal & Compliance > IP Management,法务合规->知识产权管理
+route1,621,toe,30022,HR Operations,人事相关,Employee Records Management,员工档案管理,HR Operations > Employee Records Management,人事相关->员工档案管理
+route1,623,toe,30037,Recruiting & Interviews,招聘面试,Candidate Screening,候选人筛选,Recruiting & Interviews > Candidate Screening,招聘面试->候选人筛选
+route1,627,toe,30016,Project Management,项目管理,Project Risk Management,项目风险管理,Project Management > Project Risk Management,项目管理->项目风险管理
+route1,630,toe,30000,Email Communication,邮件沟通,Client Follow-up Emails,客户跟进邮件,Email Communication > Client Follow-up Emails,邮件沟通->客户跟进邮件
+route1,631,toe,30031,Task Collaboration,任务协作,Cross-department Collaboration,跨部门协作,Task Collaboration > Cross-department Collaboration,任务协作->跨部门协作
+route1,636,toe,30003,Meeting Management,会议管理,Meeting Scheduling Coordination,会议预约协调,Meeting Management > Meeting Scheduling Coordination,会议管理->会议预约协调
+route1,642,toe,30004,Meeting Management,会议管理,Meeting Agenda Preparation,会议议程准备,Meeting Management > Meeting Agenda Preparation,会议管理->会议议程准备
+route1,643,toe,30015,Project Management,项目管理,Task Assignment Management,任务分配管理,Project Management > Task Assignment Management,项目管理->任务分配管理
+route1,647,toe,30001,Email Communication,邮件沟通,Meeting Minutes Emails,会议纪要邮件,Email Communication > Meeting Minutes Emails,邮件沟通->会议纪要邮件
+route1,648,toe,30051,Legal & Compliance,法务合规,Compliance Review,合规审查,Legal & Compliance > Compliance Review,法务合规->合规审查
+route1,652,toe,30032,Task Collaboration,任务协作,Remote Collaboration Management,远程协作管理,Task Collaboration > Remote Collaboration Management,任务协作->远程协作管理
+route1,657,toe,30028,Report Writing,报告撰写,Special Report Writing,专项报告撰写,Report Writing > Special Report Writing,报告撰写->专项报告撰写
+route1,661,toe,30038,Recruiting & Interviews,招聘面试,Interview Scheduling Coordination,面试安排协调,Recruiting & Interviews > Interview Scheduling Coordination,招聘面试->面试安排协调
+route1,663,toe,30013,Customer Management,客户管理,Customer Tier Management,客户分级管理,Customer Management > Customer Tier Management,客户管理->客户分级管理
+route1,664,toe,30020,Travel Booking,差旅预订,Travel Expense Control,差旅费用控制,Travel Booking > Travel Expense Control,差旅预订->差旅费用控制
+route1,672,tob,20076,Legal Services,法律行业,Lawyer,律师,Legal Services > Lawyer,法律行业->律师
+route1,685,tob,20006,Healthcare,医疗健康,Medical Imaging Technician,医学影像技师,Healthcare > Medical Imaging Technician,医疗健康->医学影像技师
+route1,686,tob,20084,Human Resources,人力资源,Performance Specialist,绩效专员,Human Resources > Performance Specialist,人力资源->绩效专员
+route1,694,toc,10052,Business,商务,Remote Work,远程办公,Business > Remote Work,商务->远程办公
+route1,695,toc,10034,Education,教育,K12 Education,K12教育,Education > K12 Education,教育->K12教育
+route1,696,toc,10054,Finance,财务,Debt Management,债务管理,Finance > Debt Management,财务->债务管理
+route1,698,toc,10036,Education,教育,Early Childhood Education,早教启蒙,Education > Early Childhood Education,教育->早教启蒙
+route1,700,toc,10091,Public Service,公共服务,Public Utility Payments,公共缴费,Public Service > Public Utility Payments,公共服务->公共缴费
+route1,703,toc,10035,Education,教育,Online Courses,在线课程,Education > Online Courses,教育->在线课程
+route1,704,toc,10049,Business,商务,Business Networking,商务社交,Business > Business Networking,商务->商务社交
+route1,705,toc,10088,Medical,医疗,Medical Services,医疗服务,Medical > Medical Services,医疗->医疗服务
+route1,706,toc,10056,Finance,财务,Tax Services,税务服务,Finance > Tax Services,财务->税务服务
+route1,708,toe,30018,Expense Reimbursement,财务报销,Routine Expense Reimbursement,日常费用报销,Expense Reimbursement > Routine Expense Reimbursement,财务报销->日常费用报销
+route1,710,toe,30027,Report Writing,报告撰写,Weekly/Monthly Report Writing,周报月报撰写,Report Writing > Weekly/Monthly Report Writing,报告撰写->周报月报撰写
+route1,712,toe,30007,Document Handling,文档处理,Document Version Control,文档版本管理,Document Handling > Document Version Control,文档处理->文档版本管理
+route1,713,toe,30043,Contract Management,合同管理,Contract Drafting & Review,合同起草审核,Contract Management > Contract Drafting & Review,合同管理->合同起草审核
+route1,717,tob,20156,Research,科研行业,Researcher,研究员,Research > Researcher,科研行业->研究员
+route1,720,tob,20062,Manufacturing,制造业,Quality Engineer,质量工程师,Manufacturing > Quality Engineer,制造业->质量工程师
+route1,721,tob,20169,Biotech & Bioinformatics,生物科技与生物信息,Bioinformatics Analyst,生物信息分析师,Biotech & Bioinformatics > Bioinformatics Analyst,生物科技与生物信息->生物信息分析师
+route1,722,toc,10058,Finance,财务,Banking Services,银行服务,Finance > Banking Services,财务->银行服务
+route1,724,toc,10016,Travel,旅行,Transportation,交通出行,Travel > Transportation,旅行->交通出行
+route1,734,toc,10019,Travel,旅行,Visa Application,签证办理,Travel > Visa Application,旅行->签证办理
+route1,736,toc,10031,Health,健康,Sleep Management,睡眠管理,Health > Sleep Management,健康->睡眠管理
+route1,737,toc,10027,Shopping,购物,Cross-border E-commerce,跨境电商,Shopping > Cross-border E-commerce,购物->跨境电商
+route1,741,toc,10025,Shopping,购物,Fresh Grocery E-commerce,生鲜电商,Shopping > Fresh Grocery E-commerce,购物->生鲜电商
+route1,743,toc,10095,Public Service,公共服务,ID & Document Processing,证件办理,Public Service > ID & Document Processing,公共服务->证件办理
+route1,744,toc,10090,Medical,医疗,Symptom Checker,症状自查,Medical > Symptom Checker,医疗->症状自查
+route1,745,toc,10023,Shopping,购物,Price Monitoring,价格监控,Shopping > Price Monitoring,购物->价格监控
+route1,746,toc,10089,Medical,医疗,Rehabilitation Guidance,康复指导,Medical > Rehabilitation Guidance,医疗->康复指导
+route1,748,toc,10094,Public Service,公共服务,Social Security & Medical Insurance,社保医保,Public Service > Social Security & Medical Insurance,公共服务->社保医保
+route1,749,toc,10026,Shopping,购物,General E-commerce,综合电商,Shopping > General E-commerce,购物->综合电商
+route1,754,tob,20091,Media,传媒行业,Journalist,记者,Media > Journalist,传媒行业->记者
+route1,758,tob,20184,Media,传媒行业,Livestream Operations,直播运营,Media > Livestream Operations,传媒行业->直播运营
+route1,759,tob,20064,Manufacturing,制造业,Equipment Engineer,设备工程师,Manufacturing > Equipment Engineer,制造业->设备工程师
+route1,762,tob,20173,Natural Science & Mathematics,自然科学与数学,Operations Research Engineer,运筹优化工程师,Natural Science & Mathematics > Operations Research Engineer,自然科学与数学->运筹优化工程师
+route1,766,toc,10066,Music,音乐,Concerts,演唱会,Music > Concerts,音乐->演唱会
+route1,767,toc,10043,Productivity,效率,Time Management,时间管理,Productivity > Time Management,效率->时间管理
+route1,769,toc,10065,Books,图书,Reading Notes,读书笔记,Books > Reading Notes,图书->读书笔记
+route1,771,toc,10077,Weather,天气,Weather Forecast,天气预报,Weather > Weather Forecast,天气->天气预报
+route1,776,toc,10011,Lifestyle,生活,Flower Delivery,鲜花配送,Lifestyle > Flower Delivery,生活->鲜花配送
+route1,777,toc,10028,Health,健康,Health Monitoring,健康监测,Health > Health Monitoring,健康->健康监测
+route1,778,toc,10004,Lifestyle,生活,Home Services,家政服务,Lifestyle > Home Services,生活->家政服务
+route1,781,toc,10008,Lifestyle,生活,Real Estate Services,房产服务,Lifestyle > Real Estate Services,生活->房产服务
+route1,783,toc,10010,Lifestyle,生活,Laundry Services,洗衣服务,Lifestyle > Laundry Services,生活->洗衣服务
+route1,784,toc,10073,Navigation,导航,Parking Services,停车服务,Navigation > Parking Services,导航->停车服务
+route1,785,toc,10069,Photography,摄影,Photography Equipment,摄影器材,Photography > Photography Equipment,摄影->摄影器材
+route1,787,toc,10001,Social,社交,Video Calls,视频通话,Social > Video Calls,社交->视频通话
+route1,789,toe,30010,Data Analysis,数据分析,Customer Data Analysis,客户数据分析,Data Analysis > Customer Data Analysis,数据分析->客户数据分析
+route1,791,toe,30014,Project Management,项目管理,Project Progress Tracking,项目进度跟踪,Project Management > Project Progress Tracking,项目管理->项目进度跟踪
+route1,793,toe,30060,Business Material Preparation,商务材料制作,Presentation Material Preparation,汇报材料制作,Business Material Preparation > Presentation Material Preparation,商务材料制作->汇报材料制作
+route1,801,toe,30046,Vendor Management,供应商管理,Vendor Relationship Management,供应商关系维护,Vendor Management > Vendor Relationship Management,供应商管理->供应商关系维护
+route1,804,tob,20004,Finance,金融,Trader,交易员,Finance > Trader,金融->交易员
+route1,806,tob,20178,Government & Public Sector,政务与公共事业,Government Service Operations Specialist,政务服务运营专员,Government & Public Sector > Government Service Operations Specialist,政务与公共事业->政务服务运营专员
+route1,811,tob,20140,Insurance,保险行业,Insurance Customer Service,保险客服,Insurance > Insurance Customer Service,保险行业->保险客服
+route1,813,tob,20008,Healthcare,医疗健康,Medical Researcher,医学研究员,Healthcare > Medical Researcher,医疗健康->医学研究员
+route1,814,toe,30053,Customer Service,客户服务,Customer Ticket Handling,客户工单处理,Customer Service > Customer Ticket Handling,客户服务->客户工单处理
+route1,816,toe,30044,Contract Management,合同管理,Contract Performance Tracking,合同履约跟踪,Contract Management > Contract Performance Tracking,合同管理->合同履约跟踪
+route1,819,tob,20035,Publishing,出版行业,Editor,编辑,Publishing > Editor,出版行业->编辑
+route1,821,tob,20021,Agriculture,农业行业,Farm Manager,农场经理,Agriculture > Farm Manager,农业行业->农场经理
+route1,822,tob,20044,Aviation,航空行业,Maintenance Engineer,维修工程师,Aviation > Maintenance Engineer,航空行业->维修工程师
+route1,824,tob,20011,IT & Internet,IT互联网,Algorithm Engineer,算法工程师,IT & Internet > Algorithm Engineer,IT互联网->算法工程师
+route1,825,tob,20001,Finance,金融,Risk Control Specialist,风控专员,Finance > Risk Control Specialist,金融->风控专员
+route1,827,tob,20049,Sports Industry,体育行业,Athlete Agent,运动员经纪人,Sports Industry > Athlete Agent,体育行业->运动员经纪人
+route1,828,tob,20041,Aviation,航空行业,Flight Attendant,空乘人员,Aviation > Flight Attendant,航空行业->空乘人员
+route1,831,tob,20007,Healthcare,医疗健康,Pharmacist,药剂师,Healthcare > Pharmacist,医疗健康->药剂师
+route1,833,tob,20012,IT & Internet,IT互联网,Product Manager,产品经理,IT & Internet > Product Manager,IT互联网->产品经理
+route1,836,tob,20031,Hospitality,酒店行业,Front Desk Receptionist,前台接待,Hospitality > Front Desk Receptionist,酒店行业->前台接待
+route1,837,tob,20016,Construction,建筑行业,Structural Engineer,结构工程师,Construction > Structural Engineer,建筑行业->结构工程师
+route1,840,tob,20040,Aviation,航空行业,Pilot,飞行员,Aviation > Pilot,航空行业->飞行员
+route1,841,tob,20026,Tourism,旅游行业,Tour Guide,导游,Tourism > Tour Guide,旅游行业->导游
+route1,842,tob,20009,Healthcare,医疗健康,Health Manager,健康管理师,Healthcare > Health Manager,医疗健康->健康管理师
+route1,843,tob,20014,IT & Internet,IT互联网,Ops Engineer,运维工程师,IT & Internet > Ops Engineer,IT互联网->运维工程师
+route1,844,tob,20015,Construction,建筑行业,Architect,建筑设计师,Construction > Architect,建筑行业->建筑设计师
+route1,845,tob,20032,Hospitality,酒店行业,Housekeeping Staff,客房服务员,Hospitality > Housekeeping Staff,酒店行业->客房服务员
+route1,849,tob,20019,Construction,建筑行业,Construction Site Manager,施工管理员,Construction > Construction Site Manager,建筑行业->施工管理员
+route1,853,tob,20182,IT & Internet,IT互联网,Smart Contract Security Auditor,智能合约安全审计员,IT & Internet > Smart Contract Security Auditor,IT互联网->智能合约安全审计员
+route1,854,tob,20038,Publishing,出版行业,Copyright Specialist,版权专员,Publishing > Copyright Specialist,出版行业->版权专员
+route1,856,tob,20037,Publishing,出版行业,Layout Designer,排版设计师,Publishing > Layout Designer,出版行业->排版设计师
+route1,860,tob,20048,Sports Industry,体育行业,Sports Journalist,体育记者,Sports Industry > Sports Journalist,体育行业->体育记者
+route1,862,tob,20003,Finance,金融,Financial Analyst,财务分析师,Finance > Financial Analyst,金融->财务分析师
+route1,863,tob,20018,Construction,建筑行业,Cost Engineer,造价工程师,Construction > Cost Engineer,建筑行业->造价工程师
+route1,864,tob,20046,Sports Industry,体育行业,Sports Analyst,体育分析师,Sports Industry > Sports Analyst,体育行业->体育分析师
+route1,865,tob,20099,Logistics,物流行业,Supply Chain Manager,供应链经理,Logistics > Supply Chain Manager,物流行业->供应链经理
+route1,866,tob,20077,Legal Services,法律行业,Legal Specialist,法务专员,Legal Services > Legal Specialist,法律行业->法务专员
+route1,867,tob,20051,Environmental Services,环保行业,Environmental Engineer,环境工程师,Environmental Services > Environmental Engineer,环保行业->环境工程师
+route1,869,tob,20070,Education Industry,教育行业,Curriculum Designer,课程设计师,Education Industry > Curriculum Designer,教育行业->课程设计师
+route1,870,tob,20057,Beauty & Cosmetics,美妆行业,Makeup Artist,化妆师,Beauty & Cosmetics > Makeup Artist,美妆行业->化妆师
+route1,872,tob,20100,Logistics,物流行业,Delivery Courier,快递员,Logistics > Delivery Courier,物流行业->快递员
+route1,874,tob,20071,Retail,零售行业,Store Manager,店长,Retail > Store Manager,零售行业->店长
+route1,875,tob,20088,Marketing,市场营销,Event Planner,活动策划,Marketing > Event Planner,市场营销->活动策划
+route1,878,tob,20059,Beauty & Cosmetics,美妆行业,Sales Consultant,销售顾问,Beauty & Cosmetics > Sales Consultant,美妆行业->销售顾问
+route1,880,tob,20083,Human Resources,人力资源,Compensation Specialist,薪酬专员,Human Resources > Compensation Specialist,人力资源->薪酬专员
+route1,881,tob,20081,Human Resources,人力资源,Recruiter,招聘专员,Human Resources > Recruiter,人力资源->招聘专员
+route1,882,tob,20056,Beauty & Cosmetics,美妆行业,Beauty Product Manager,美妆产品经理,Beauty & Cosmetics > Beauty Product Manager,美妆行业->美妆产品经理
+route1,883,tob,20097,Logistics,物流行业,Warehouse Manager,仓储管理员,Logistics > Warehouse Manager,物流行业->仓储管理员
+route1,884,tob,20079,Legal Services,法律行业,Compliance Specialist,合规专员,Legal Services > Compliance Specialist,法律行业->合规专员
+route1,887,tob,20075,Retail,零售行业,Membership Operations,会员运营,Retail > Membership Operations,零售行业->会员运营
+route1,890,tob,20185,Marketing,市场营销,Omnichannel Operations Specialist,全域运营专员,Marketing > Omnichannel Operations Specialist,市场营销->全域运营专员
+route1,891,tob,20183,Media,传媒行业,Content Creator,自媒体主理人,Media > Content Creator,传媒行业->自媒体主理人
+route1,895,tob,20055,Environmental Services,环保行业,Technical Specialist,技术专员,Environmental Services > Technical Specialist,环保行业->技术专员
+route1,900,tob,20053,Environmental Services,环保行业,Data Analyst,数据分析师,Environmental Services > Data Analyst,环保行业->数据分析师
+route1,901,tob,20058,Beauty & Cosmetics,美妆行业,Marketing Specialist,营销专员,Beauty & Cosmetics > Marketing Specialist,美妆行业->营销专员
+route1,903,tob,20066,Education Industry,教育行业,Secondary School Teacher,中学教师,Education Industry > Secondary School Teacher,教育行业->中学教师
+route1,911,tob,20139,Insurance,保险行业,Actuary,保险精算,Insurance > Actuary,保险行业->保险精算
+route1,912,tob,20114,Real Estate,房地产行业,Land Development,土地开发,Real Estate > Land Development,房地产行业->土地开发
+route1,914,tob,20128,Consulting,咨询行业,IT Consultant,IT顾问,Consulting > IT Consultant,咨询行业->IT顾问
+route1,917,tob,20147,Pet Services,宠物行业,Pet Groomer,宠物美容师,Pet Services > Pet Groomer,宠物行业->宠物美容师
+route1,918,tob,20103,Gaming,游戏行业,Game Programmer,游戏程序,Gaming > Game Programmer,游戏行业->游戏程序
+route1,921,tob,20115,Real Estate,房地产行业,Real Estate Planner,房地产策划,Real Estate > Real Estate Planner,房地产行业->房地产策划
+route1,922,tob,20144,Telecom,电信行业,Ops Engineer,运维工程师,Telecom > Ops Engineer,电信行业->运维工程师
+route1,923,tob,20133,Automotive,汽车行业,Auto Sales,汽车销售,Automotive > Auto Sales,汽车行业->汽车销售
+route1,924,tob,20136,Insurance,保险行业,Insurance Sales,保险销售,Insurance > Insurance Sales,保险行业->保险销售
+route1,925,tob,20101,Gaming,游戏行业,Game Designer,游戏策划,Gaming > Game Designer,游戏行业->游戏策划
+route1,926,tob,20129,Consulting,咨询行业,HR Consultant,人力资源顾问,Consulting > HR Consultant,咨询行业->人力资源顾问
+route1,927,tob,20122,Design,设计行业,UI Designer,UI设计师,Design > UI Designer,设计行业->UI设计师
+route1,928,tob,20146,Pet Services,宠物行业,Veterinarian,宠物医生,Pet Services > Veterinarian,宠物行业->宠物医生
+route1,929,tob,20120,Food Service,餐饮行业,Baker,烘焙师,Food Service > Baker,餐饮行业->烘焙师
+route1,930,tob,20110,Energy,能源行业,Grid Dispatcher,电网调度,Energy > Grid Dispatcher,能源行业->电网调度
+route1,931,tob,20135,Automotive,汽车行业,Vehicle Testing,汽车测试,Automotive > Vehicle Testing,汽车行业->汽车测试
+route1,934,tob,20118,Food Service,餐饮行业,Purchaser,采购员,Food Service > Purchaser,餐饮行业->采购员
+route1,935,tob,20141,Telecom,电信行业,Network Engineer,网络工程师,Telecom > Network Engineer,电信行业->网络工程师
+route1,936,tob,20119,Food Service,餐饮行业,Bartender,调酒师,Food Service > Bartender,餐饮行业->调酒师
+route1,938,tob,20131,Automotive,汽车行业,Automotive Design,汽车设计,Automotive > Automotive Design,汽车行业->汽车设计
+route1,939,tob,20145,Telecom,电信行业,Data Analyst,数据分析师,Telecom > Data Analyst,电信行业->数据分析师
+route1,943,tob,20148,Pet Services,宠物行业,Pet Store Manager,宠物店店长,Pet Services > Pet Store Manager,宠物行业->宠物店店长
+route1,945,tob,20124,Design,设计行业,Industrial Designer,工业设计师,Design > Industrial Designer,设计行业->工业设计师
+route1,946,tob,20130,Consulting,咨询行业,Strategy Consultant,战略顾问,Consulting > Strategy Consultant,咨询行业->战略顾问
+route1,947,tob,20116,Food Service,餐饮行业,Chef,厨师,Food Service > Chef,餐饮行业->厨师
+route1,949,tob,20142,Telecom,电信行业,Product Manager,产品经理,Telecom > Product Manager,电信行业->产品经理
+route1,950,tob,20121,Design,设计行业,Graphic Designer,平面设计师,Design > Graphic Designer,设计行业->平面设计师
+route1,951,tob,20134,Automotive,汽车行业,After-sales Service,售后服务,Automotive > After-sales Service,汽车行业->售后服务
+route1,952,tob,20126,Consulting,咨询行业,Management Consultant,管理顾问,Consulting > Management Consultant,咨询行业->管理顾问
+route1,953,tob,20170,Biotech & Bioinformatics,生物科技与生物信息,Clinical Data Analyst,临床数据分析师,Biotech & Bioinformatics > Clinical Data Analyst,生物科技与生物信息->临床数据分析师
+route1,954,tob,20172,Natural Science & Mathematics,自然科学与数学,Mathematical Modeling Engineer,数学建模工程师,Natural Science & Mathematics > Mathematical Modeling Engineer,自然科学与数学->数学建模工程师
+route1,958,tob,20177,Semiconductor & Electronics,半导体与电子,Electronics Test Engineer,电子测试工程师,Semiconductor & Electronics > Electronics Test Engineer,半导体与电子->电子测试工程师
+route1,959,tob,20164,Beauty Care,美容行业,Beauty Consultant,美容顾问,Beauty Care > Beauty Consultant,美容行业->美容顾问
+route1,960,tob,20153,Security,安全行业,Fire Safety,消防安全,Security > Fire Safety,安全行业->消防安全
+route1,961,tob,20166,Robotics & Automation,机器人与自动化,Robotics Algorithm Engineer,机器人算法工程师,Robotics & Automation > Robotics Algorithm Engineer,机器人与自动化->机器人算法工程师
+route1,967,tob,20155,Security,安全行业,Security Guard,安保人员,Security > Security Guard,安全行业->安保人员
+route1,974,tob,20179,Government & Public Sector,政务与公共事业,Urban Governance Analyst,城市治理分析师,Government & Public Sector > Urban Governance Analyst,政务与公共事业->城市治理分析师
+route1,978,toc,10012,Food,美食,Food Delivery,外卖订餐,Food > Food Delivery,美食->外卖订餐
+route1,982,toc,10015,Food,美食,Dining Reviews,餐饮评价,Food > Dining Reviews,美食->餐饮评价
+route1,984,toc,10014,Food,美食,Restaurant Recommendations,餐厅推荐,Food > Restaurant Recommendations,美食->餐厅推荐
+route1,988,toc,10013,Food,美食,Grocery Shopping,食材购买,Food > Grocery Shopping,美食->食材购买
+route1,991,toc,10080,Tools,工具,Scanning & Recognition,扫描识别,Tools > Scanning & Recognition,工具->扫描识别
+route1,994,toc,10081,Tools,工具,Lifestyle Tools,生活工具,Tools > Lifestyle Tools,工具->生活工具
+route1,996,toc,10082,Tools,工具,System Optimization,系统优化,Tools > System Optimization,工具->系统优化
+route1,998,toc,10083,Tools,工具,Network Speed Test,网速测试,Tools > Network Speed Test,工具->网速测试
+route1,1003,toc,10079,Tools,工具,Password Management,密码管理,Tools > Password Management,工具->密码管理
+route1,1004,toc,10084,Sports,体育,Fitness Tutorials,健身教程,Sports > Fitness Tutorials,体育->健身教程
+route1,1007,toc,10086,Sports,体育,Sports Data Tracking,运动数据,Sports > Sports Data Tracking,体育->运动数据
+route1,1009,toc,10085,Sports,体育,Sports Event News,赛事资讯,Sports > Sports Event News,体育->赛事资讯
+route1,1010,toe,30030,Knowledge Management,知识管理,Knowledge Sharing Organization,知识分享组织,Knowledge Management > Knowledge Sharing Organization,知识管理->知识分享组织
+route1,1011,toe,30050,Sales Support,销售支持,Sales Lead Follow-up Support,商机跟进支持,Sales Support > Sales Lead Follow-up Support,销售支持->商机跟进支持
+route1,1012,toe,30005,Scheduling,日程安排,Personal Schedule Management,个人日程管理,Scheduling > Personal Schedule Management,日程安排->个人日程管理
+route1,1013,toe,30029,Knowledge Management,知识管理,Knowledge Base Maintenance,知识库维护,Knowledge Management > Knowledge Base Maintenance,知识管理->知识库维护
+route1,1014,toe,30036,Training & Learning,培训学习,Training Effectiveness Evaluation,培训效果评估,Training & Learning > Training Effectiveness Evaluation,培训学习->培训效果评估
+route1,1015,toe,30042,Administrative Affairs,行政事务,Fixed Asset Management,固定资产管理,Administrative Affairs > Fixed Asset Management,行政事务->固定资产管理
+route1,1016,toe,30061,Business Material Preparation,商务材料制作,External Proposal Updates,对外方案更新,Business Material Preparation > External Proposal Updates,商务材料制作->对外方案更新
+route1,1017,toe,30059,Business Material Preparation,商务材料制作,Client Proposal Writing,客户提案撰写,Business Material Preparation > Client Proposal Writing,商务材料制作->客户提案撰写
+route1,1018,toe,30006,Scheduling,日程安排,Team Schedule Coordination,团队日程协调,Scheduling > Team Schedule Coordination,日程安排->团队日程协调
+route1,1019,toe,30035,Training & Learning,培训学习,Training Plan Development,培训计划制定,Training & Learning > Training Plan Development,培训学习->培训计划制定
+route1,1020,toe,30049,Sales Support,销售支持,Sales Material Preparation,销售材料准备,Sales Support > Sales Material Preparation,销售支持->销售材料准备
+route1,1021,toe,30041,Administrative Affairs,行政事务,Office Supplies Management,办公用品管理,Administrative Affairs > Office Supplies Management,行政事务->办公用品管理
+route1,1023,toe,30040,Performance Review,绩效考核,Performance Evaluation Execution,绩效评估执行,Performance Review > Performance Evaluation Execution,绩效考核->绩效评估执行
+route1,1027,toe,30011,Data Analysis,数据分析,Operations Data Analysis,运营数据分析,Data Analysis > Operations Data Analysis,数据分析->运营数据分析
+route1,1033,toe,30056,Procurement & Reconciliation,采购与对账,Procurement Request Management,采购申请管理,Procurement & Reconciliation > Procurement Request Management,采购与对账->采购申请管理
+route1,1035,toe,30065,Digital Content Operations,数字内容运营,Cross-platform Content Distribution & Review,跨平台内容分发与复盘,Digital Content Operations > Cross-platform Content Distribution & Review,数字内容运营->跨平台内容分发与复盘
+route1,1041,toe,30017,Expense Reimbursement,财务报销,Travel Expense Reimbursement,差旅费用报销,Expense Reimbursement > Travel Expense Reimbursement,财务报销->差旅费用报销
+route1,1043,toe,30047,Inventory Management,库存管理,Inventory Counting,库存盘点,Inventory Management > Inventory Counting,库存管理->库存盘点
+route1,1050,toe,30062,Process Automation,流程自动化,Cross-system Data Sync,跨系统数据同步,Process Automation > Cross-system Data Sync,流程自动化->跨系统数据同步
+route1,1053,toe,30063,Process Automation,流程自动化,Periodic Process Orchestration,周期性流程编排,Process Automation > Periodic Process Orchestration,流程自动化->周期性流程编排
+route1,1060,toe,30058,Procurement & Reconciliation,采购与对账,Invoice & Payment Follow-up,发票与付款跟进,Procurement & Reconciliation > Invoice & Payment Follow-up,采购与对账->发票与付款跟进
+route1,1063,toe,30066,Digital Content Operations,数字内容运营,Livestream Event Operations,直播活动运营,Digital Content Operations > Livestream Event Operations,数字内容运营->直播活动运营
+route1,1065,toe,30009,Data Analysis,数据分析,Sales Data Analysis,销售数据分析,Data Analysis > Sales Data Analysis,数据分析->销售数据分析
+route1,1066,toe,30045,Vendor Management,供应商管理,Vendor Evaluation,供应商评估,Vendor Management > Vendor Evaluation,供应商管理->供应商评估
+route1,1069,toe,30039,Performance Review,绩效考核,Performance Goal Setting,绩效目标设定,Performance Review > Performance Goal Setting,绩效考核->绩效目标设定
+route1,1076,toe,30064,Process Automation,流程自动化,Automated Approval Trigger,审批流自动触发,Process Automation > Automated Approval Trigger,流程自动化->审批流自动触发
+route1,1079,toe,30057,Procurement & Reconciliation,采购与对账,Vendor Reconciliation,供应商对账,Procurement & Reconciliation > Vendor Reconciliation,采购与对账->供应商对账
+route1,1083,toe,30048,Inventory Management,库存管理,Inventory Alert Management,库存预警管理,Inventory Management > Inventory Alert Management,库存管理->库存预警管理
+route1,1089,toe,30025,Competitor Analysis,竞品分析,Competitor Feature Comparison,竞品功能对比,Competitor Analysis > Competitor Feature Comparison,竞品分析->竞品功能对比
+route1,1093,toe,30023,Market Research,市场调研,Industry Trend Analysis,行业趋势分析,Market Research > Industry Trend Analysis,市场调研->行业趋势分析
+route1,1101,toe,30024,Market Research,市场调研,User Needs Research,用户需求调研,Market Research > User Needs Research,市场调研->用户需求调研
+route1,1102,toe,30026,Competitor Analysis,竞品分析,Competitor Pricing Analysis,竞品定价分析,Competitor Analysis > Competitor Pricing Analysis,竞品分析->竞品定价分析
+route2,1000000,tob,20020,Agriculture,农业行业,Agricultural Technician,农业技术员,Agriculture > Agricultural Technician,农业行业->农业技术员
+route2,1000001,tob,20042,Aviation,航空行业,Ground Staff,地勤人员,Aviation > Ground Staff,航空行业->地勤人员
+route2,1000002,tob,20042,Aviation,航空行业,Ground Staff,地勤人员,Aviation > Ground Staff,航空行业->地勤人员
+route2,1000003,toc,10007,Lifestyle,生活,Auto Services,汽车服务,Lifestyle > Auto Services,生活->汽车服务
+route2,1000004,toc,10007,Lifestyle,生活,Auto Services,汽车服务,Lifestyle > Auto Services,生活->汽车服务
+route2,1000005,tob,20058,Beauty & Cosmetics,美妆行业,Marketing Specialist,营销专员,Beauty & Cosmetics > Marketing Specialist,美妆行业->营销专员
+route2,1000006,tob,20056,Beauty & Cosmetics,美妆行业,Beauty Product Manager,美妆产品经理,Beauty & Cosmetics > Beauty Product Manager,美妆行业->美妆产品经理
+route2,1000007,toe,30020,Travel Booking,差旅预订,Travel Expense Control,差旅费用控制,Travel Booking > Travel Expense Control,差旅预订->差旅费用控制
+route2,1000008,toe,30017,Expense Reimbursement,财务报销,Travel Expense Reimbursement,差旅费用报销,Expense Reimbursement > Travel Expense Reimbursement,财务报销->差旅费用报销
+route2,1000009,toc,10092,Public Service,公共服务,City Services,城市服务,Public Service > City Services,公共服务->城市服务
+route2,1000010,toc,10041,Productivity,效率,Task Management,任务管理,Productivity > Task Management,效率->任务管理
+route2,1000011,toc,10041,Productivity,效率,Task Management,任务管理,Productivity > Task Management,效率->任务管理
+route2,1000012,tob,20019,Construction,建筑行业,Construction Site Manager,施工管理员,Construction > Construction Site Manager,建筑行业->施工管理员
+route2,1000013,tob,20100,Logistics,物流行业,Delivery Courier,快递员,Logistics > Delivery Courier,物流行业->快递员
+route2,1000014,toc,10050,Business,商务,Customer Management,客户管理,Business > Customer Management,商务->客户管理
+route2,1000015,toc,10027,Shopping,购物,Cross-border E-commerce,跨境电商,Shopping > Cross-border E-commerce,购物->跨境电商
+route2,1000016,toe,30065,Digital Content Operations,数字内容运营,Cross-platform Content Distribution & Review,跨平台内容分发与复盘,Digital Content Operations > Cross-platform Content Distribution & Review,数字内容运营->跨平台内容分发与复盘
+route2,1000017,toe,30054,Customer Service,客户服务,Complaint Escalation Handling,投诉升级处理,Customer Service > Complaint Escalation Handling,客户服务->投诉升级处理
+route2,1000018,tob,20021,Agriculture,农业行业,Farm Manager,农场经理,Agriculture > Farm Manager,农业行业->农场经理
+route2,1000019,tob,20001,Finance,金融,Risk Control Specialist,风控专员,Finance > Risk Control Specialist,金融->风控专员
+route2,1000020,toc,10056,Finance,财务,Tax Services,税务服务,Finance > Tax Services,财务->税务服务
+route2,1000021,toe,30042,Administrative Affairs,行政事务,Fixed Asset Management,固定资产管理,Administrative Affairs > Fixed Asset Management,行政事务->固定资产管理
+route2,1000022,toc,10025,Shopping,购物,Fresh Grocery E-commerce,生鲜电商,Shopping > Fresh Grocery E-commerce,购物->生鲜电商
+route2,1000023,toc,10024,Shopping,购物,Group Buying & Flash Sales,团购秒杀,Shopping > Group Buying & Flash Sales,购物->团购秒杀
+route2,1000024,toc,10004,Lifestyle,生活,Home Services,家政服务,Lifestyle > Home Services,生活->家政服务
+route2,1000025,tob,20031,Hospitality,酒店行业,Front Desk Receptionist,前台接待,Hospitality > Front Desk Receptionist,酒店行业->前台接待
+route2,1000026,tob,20030,Hospitality,酒店行业,Hotel Manager,酒店经理,Hospitality > Hotel Manager,酒店行业->酒店经理
+route2,1000027,tob,20033,Hospitality,酒店行业,Sales Manager,销售经理,Hospitality > Sales Manager,酒店行业->销售经理
+route2,1000028,toc,10008,Lifestyle,生活,Real Estate Services,房产服务,Lifestyle > Real Estate Services,生活->房产服务
+route2,1000029,tob,20083,Human Resources,人力资源,Compensation Specialist,薪酬专员,Human Resources > Compensation Specialist,人力资源->薪酬专员
+route2,1000030,tob,20082,Human Resources,人力资源,Training Specialist,培训专员,Human Resources > Training Specialist,人力资源->培训专员
+route2,1000031,tob,20082,Human Resources,人力资源,Training Specialist,培训专员,Human Resources > Training Specialist,人力资源->培训专员
+route2,1000032,tob,20167,Robotics & Automation,机器人与自动化,Automation Control Engineer,自动化控制工程师,Robotics & Automation > Automation Control Engineer,机器人与自动化->自动化控制工程师
+route2,1000033,tob,20123,Design,设计行业,Interior Designer,室内设计师,Design > Interior Designer,设计行业->室内设计师
+route2,1000034,toe,30048,Inventory Management,库存管理,Inventory Alert Management,库存预警管理,Inventory Management > Inventory Alert Management,库存管理->库存预警管理
+route2,1000035,toe,30048,Inventory Management,库存管理,Inventory Alert Management,库存预警管理,Inventory Management > Inventory Alert Management,库存管理->库存预警管理
+route2,1000036,toc,10010,Lifestyle,生活,Laundry Services,洗衣服务,Lifestyle > Laundry Services,生活->洗衣服务
+route2,1000037,tob,20079,Legal Services,法律行业,Compliance Specialist,合规专员,Legal Services > Compliance Specialist,法律行业->合规专员
+route2,1000038,toc,10059,Entertainment,娱乐,Live Streaming Interaction,直播互动,Entertainment > Live Streaming Interaction,娱乐->直播互动
+route2,1000039,tob,20063,Manufacturing,制造业,Process Engineer,工艺工程师,Manufacturing > Process Engineer,制造业->工艺工程师
+route2,1000040,tob,20184,Media,传媒行业,Livestream Operations,直播运营,Media > Livestream Operations,传媒行业->直播运营
+route2,1000041,toe,30004,Meeting Management,会议管理,Meeting Agenda Preparation,会议议程准备,Meeting Management > Meeting Agenda Preparation,会议管理->会议议程准备
+route2,1000042,tob,20011,IT & Internet,IT互联网,Algorithm Engineer,算法工程师,IT & Internet > Algorithm Engineer,IT互联网->算法工程师
+route2,1000043,toc,10075,Navigation,导航,Navigation,出行导航,Navigation > Navigation,导航->出行导航
+route2,1000044,toc,10072,Navigation,导航,Location Services,位置服务,Navigation > Location Services,导航->位置服务
+route2,1000045,tob,20149,Pet Services,宠物行业,Pet Trainer,宠物训练师,Pet Services > Pet Trainer,宠物行业->宠物训练师
+route2,1000046,tob,20040,Aviation,航空行业,Pilot,飞行员,Aviation > Pilot,航空行业->飞行员
+route2,1000047,tob,20106,Energy,能源行业,Power Engineer,电力工程师,Energy > Power Engineer,能源行业->电力工程师
+route2,1000048,tob,20110,Energy,能源行业,Grid Dispatcher,电网调度,Energy > Grid Dispatcher,能源行业->电网调度
+route2,1000049,toe,30058,Procurement & Reconciliation,采购与对账,Invoice & Payment Follow-up,发票与付款跟进,Procurement & Reconciliation > Invoice & Payment Follow-up,采购与对账->发票与付款跟进
+route2,1000050,toe,30015,Project Management,项目管理,Task Assignment Management,任务分配管理,Project Management > Task Assignment Management,项目管理->任务分配管理
+route2,1000051,toc,10095,Public Service,公共服务,ID & Document Processing,证件办理,Public Service > ID & Document Processing,公共服务->证件办理
+route2,1000052,tob,20038,Publishing,出版行业,Copyright Specialist,版权专员,Publishing > Copyright Specialist,出版行业->版权专员
+route2,1000053,tob,20113,Real Estate,房地产行业,Property Management,物业管理,Real Estate > Property Management,房地产行业->物业管理
+route2,1000054,tob,20117,Food Service,餐饮行业,Restaurant Manager,餐厅经理,Food Service > Restaurant Manager,餐饮行业->餐厅经理
+route2,1000055,tob,20072,Retail,零售行业,Purchasing Specialist,采购专员,Retail > Purchasing Specialist,零售行业->采购专员
+route2,1000056,tob,20099,Logistics,物流行业,Supply Chain Manager,供应链经理,Logistics > Supply Chain Manager,物流行业->供应链经理
+route2,1000057,tob,20004,Finance,金融,Trader,交易员,Finance > Trader,金融->交易员
+route2,1000058,toc,10018,Travel,旅行,Travel Expense Tracking,旅行记账,Travel > Travel Expense Tracking,旅行->旅行记账
+route2,1000059,tob,20179,Government & Public Sector,政务与公共事业,Urban Governance Analyst,城市治理分析师,Government & Public Sector > Urban Governance Analyst,政务与公共事业->城市治理分析师
+route3,2000000,toe,30006,Scheduling,日程安排,Team Schedule Coordination,团队日程协调,Scheduling > Team Schedule Coordination,日程安排->团队日程协调
+route3,2000001,tob,20096,Logistics,物流行业,Logistics Specialist,物流专员,Logistics > Logistics Specialist,物流行业->物流专员
+route3,2000003,toc,10081,Tools,工具,Lifestyle Tools,生活工具,Tools > Lifestyle Tools,工具->生活工具
+route3,2000004,toc,10023,Shopping,购物,Price Monitoring,价格监控,Shopping > Price Monitoring,购物->价格监控
+route3,2000005,tob,20012,IT & Internet,IT互联网,Product Manager,产品经理,IT & Internet > Product Manager,IT互联网->产品经理
+route3,2000008,tob,20097,Logistics,物流行业,Warehouse Manager,仓储管理员,Logistics > Warehouse Manager,物流行业->仓储管理员
+route3,2000009,toc,10022,Shopping,购物,Secondhand Trading,二手交易,Shopping > Secondhand Trading,购物->二手交易
+route3,2000010,toc,10068,Music,音乐,Music Playback,音乐播放,Music > Music Playback,音乐->音乐播放
+route3,2000014,tob,20167,Robotics & Automation,机器人与自动化,Automation Control Engineer,自动化控制工程师,Robotics & Automation > Automation Control Engineer,机器人与自动化->自动化控制工程师
+route3,2000016,toe,30017,Expense Reimbursement,财务报销,Travel Expense Reimbursement,差旅费用报销,Expense Reimbursement > Travel Expense Reimbursement,财务报销->差旅费用报销
+route3,2000017,toc,10055,Finance,财务,Investment & Wealth Management,投资理财,Finance > Investment & Wealth Management,财务->投资理财
+route3,2000018,toc,10040,Productivity,效率,Cloud Storage,云存储,Productivity > Cloud Storage,效率->云存储
+route3,2000019,tob,20121,Design,设计行业,Graphic Designer,平面设计师,Design > Graphic Designer,设计行业->平面设计师
+route3,2000023,tob,20061,Manufacturing,制造业,Production Supervisor,生产主管,Manufacturing > Production Supervisor,制造业->生产主管
+route3,2000024,toc,10092,Public Service,公共服务,City Services,城市服务,Public Service > City Services,公共服务->城市服务
+route3,2000025,toc,10047,Business,商务,Office Collaboration,办公协作,Business > Office Collaboration,商务->办公协作
+route3,2000028,toc,10077,Weather,天气,Weather Forecast,天气预报,Weather > Weather Forecast,天气->天气预报
+route3,2000029,tob,20136,Insurance,保险行业,Insurance Sales,保险销售,Insurance > Insurance Sales,保险行业->保险销售
+route3,2000030,tob,20009,Healthcare,医疗健康,Health Manager,健康管理师,Healthcare > Health Manager,医疗健康->健康管理师
+route3,2000031,tob,20115,Real Estate,房地产行业,Real Estate Planner,房地产策划,Real Estate > Real Estate Planner,房地产行业->房地产策划
+route3,2000033,tob,20030,Hospitality,酒店行业,Hotel Manager,酒店经理,Hospitality > Hotel Manager,酒店行业->酒店经理
+route3,2000036,toc,10058,Finance,财务,Banking Services,银行服务,Finance > Banking Services,财务->银行服务
+route3,2000037,tob,20000,Finance,金融,Investment Advisor,投资顾问,Finance > Investment Advisor,金融->投资顾问
+route3,2000038,tob,20011,IT & Internet,IT互联网,Algorithm Engineer,算法工程师,IT & Internet > Algorithm Engineer,IT互联网->算法工程师
+route3,2000039,toc,10072,Navigation,导航,Location Services,位置服务,Navigation > Location Services,导航->位置服务
+route3,2000040,tob,20103,Gaming,游戏行业,Game Programmer,游戏程序,Gaming > Game Programmer,游戏行业->游戏程序
+route3,2000041,toe,30039,Performance Review,绩效考核,Performance Goal Setting,绩效目标设定,Performance Review > Performance Goal Setting,绩效考核->绩效目标设定
+route3,2000042,toe,30030,Knowledge Management,知识管理,Knowledge Sharing Organization,知识分享组织,Knowledge Management > Knowledge Sharing Organization,知识管理->知识分享组织
+route3,2000043,tob,20001,Finance,金融,Risk Control Specialist,风控专员,Finance > Risk Control Specialist,金融->风控专员
+route3,2000046,toe,30054,Customer Service,客户服务,Complaint Escalation Handling,投诉升级处理,Customer Service > Complaint Escalation Handling,客户服务->投诉升级处理
+route4,3000000,tob,20020,Agriculture,农业行业,Agricultural Technician,农业技术员,Agriculture > Agricultural Technician,农业行业->农业技术员
+route4,3000002,toc,10075,Navigation,导航,Navigation,出行导航,Navigation > Navigation,导航->出行导航
+route4,3000003,toc,10038,Education,教育,Certification Exams,证书考试,Education > Certification Exams,教育->证书考试
+route4,3000004,tob,20096,Logistics,物流行业,Logistics Specialist,物流专员,Logistics > Logistics Specialist,物流行业->物流专员
+route4,3000005,toc,10061,Entertainment,娱乐,Video Watching,视频观看,Entertainment > Video Watching,娱乐->视频观看
+route4,3000006,toc,10008,Lifestyle,生活,Real Estate Services,房产服务,Lifestyle > Real Estate Services,生活->房产服务
+route4,3000007,tob,20004,Finance,金融,Trader,交易员,Finance > Trader,金融->交易员
+route4,3000008,toe,30024,Market Research,市场调研,User Needs Research,用户需求调研,Market Research > User Needs Research,市场调研->用户需求调研
+route4,3000009,tob,20150,Pet Services,宠物行业,Pet Nutritionist,宠物营养师,Pet Services > Pet Nutritionist,宠物行业->宠物营养师
+route4,3000010,toc,10050,Business,商务,Customer Management,客户管理,Business > Customer Management,商务->客户管理
+route4,3000011,tob,20129,Consulting,咨询行业,HR Consultant,人力资源顾问,Consulting > HR Consultant,咨询行业->人力资源顾问
+route4,3000012,tob,20106,Energy,能源行业,Power Engineer,电力工程师,Energy > Power Engineer,能源行业->电力工程师
+route4,3000013,tob,20000,Finance,金融,Investment Advisor,投资顾问,Finance > Investment Advisor,金融->投资顾问
+route4,3000014,tob,20092,Media,传媒行业,Director/Producer,编导,Media > Director/Producer,传媒行业->编导
+route4,3000015,tob,20141,Telecom,电信行业,Network Engineer,网络工程师,Telecom > Network Engineer,电信行业->网络工程师
+route4,3000016,toc,10046,Productivity,效率,Email Handling,邮件处理,Productivity > Email Handling,效率->邮件处理
+route4,3000017,toc,10077,Weather,天气,Weather Forecast,天气预报,Weather > Weather Forecast,天气->天气预报
+route4,3000018,toc,10077,Weather,天气,Weather Forecast,天气预报,Weather > Weather Forecast,天气->天气预报
+route4,3000020,tob,20016,Construction,建筑行业,Structural Engineer,结构工程师,Construction > Structural Engineer,建筑行业->结构工程师
+route4,3000021,tob,20004,Finance,金融,Trader,交易员,Finance > Trader,金融->交易员
+route4,3000022,tob,20138,Insurance,保险行业,Underwriter,核保专员,Insurance > Underwriter,保险行业->核保专员
+route4,3000024,toc,10041,Productivity,效率,Task Management,任务管理,Productivity > Task Management,效率->任务管理
+route4,3000025,toe,30058,Procurement & Reconciliation,采购与对账,Invoice & Payment Follow-up,发票与付款跟进,Procurement & Reconciliation > Invoice & Payment Follow-up,采购与对账->发票与付款跟进
+route4,3000026,tob,20093,Media,传媒行业,New Media Operations,新媒体运营,Media > New Media Operations,传媒行业->新媒体运营
+route4,3000027,tob,20093,Media,传媒行业,New Media Operations,新媒体运营,Media > New Media Operations,传媒行业->新媒体运营
+route4,3000029,toc,10020,Travel,旅行,Itinerary Planning,行程规划,Travel > Itinerary Planning,旅行->行程规划
+route4,3000030,toc,10085,Sports,体育,Sports Event News,赛事资讯,Sports > Sports Event News,体育->赛事资讯
+route4,3000031,toc,10065,Books,图书,Reading Notes,读书笔记,Books > Reading Notes,图书->读书笔记
+route4,3000032,toc,10065,Books,图书,Reading Notes,读书笔记,Books > Reading Notes,图书->读书笔记
+route4,3000033,tob,20074,Retail,零售行业,E-commerce Operations,电商运营,Retail > E-commerce Operations,零售行业->电商运营
+route4,3000034,toc,10026,Shopping,购物,General E-commerce,综合电商,Shopping > General E-commerce,购物->综合电商
+route4,3000036,tob,20008,Healthcare,医疗健康,Medical Researcher,医学研究员,Healthcare > Medical Researcher,医疗健康->医学研究员
+route4,3000037,toc,10022,Shopping,购物,Secondhand Trading,二手交易,Shopping > Secondhand Trading,购物->二手交易
+route4,3000038,toe,30050,Sales Support,销售支持,Sales Lead Follow-up Support,商机跟进支持,Sales Support > Sales Lead Follow-up Support,销售支持->商机跟进支持
+route4,3000039,tob,20014,IT & Internet,IT互联网,Ops Engineer,运维工程师,IT & Internet > Ops Engineer,IT互联网->运维工程师
+route4,3000040,toe,30041,Administrative Affairs,行政事务,Office Supplies Management,办公用品管理,Administrative Affairs > Office Supplies Management,行政事务->办公用品管理
+route4,3000041,toc,10092,Public Service,公共服务,City Services,城市服务,Public Service > City Services,公共服务->城市服务
+route4,3000042,tob,20102,Gaming,游戏行业,Game Artist,游戏美术,Gaming > Game Artist,游戏行业->游戏美术
+route4,3000043,tob,20102,Gaming,游戏行业,Game Artist,游戏美术,Gaming > Game Artist,游戏行业->游戏美术
+route4,3000045,tob,20099,Logistics,物流行业,Supply Chain Manager,供应链经理,Logistics > Supply Chain Manager,物流行业->供应链经理
+route4,3000046,tob,20099,Logistics,物流行业,Supply Chain Manager,供应链经理,Logistics > Supply Chain Manager,物流行业->供应链经理
+route4,3000047,toc,10026,Shopping,购物,General E-commerce,综合电商,Shopping > General E-commerce,购物->综合电商
+route4,3000048,tob,20046,Sports Industry,体育行业,Sports Analyst,体育分析师,Sports Industry > Sports Analyst,体育行业->体育分析师
+route4,3000049,tob,20046,Sports Industry,体育行业,Sports Analyst,体育分析师,Sports Industry > Sports Analyst,体育行业->体育分析师
+route4,3000050,toe,30026,Competitor Analysis,竞品分析,Competitor Pricing Analysis,竞品定价分析,Competitor Analysis > Competitor Pricing Analysis,竞品分析->竞品定价分析
+route4,3000051,toe,30026,Competitor Analysis,竞品分析,Competitor Pricing Analysis,竞品定价分析,Competitor Analysis > Competitor Pricing Analysis,竞品分析->竞品定价分析
+route4,3000052,tob,20012,IT & Internet,IT互联网,Product Manager,产品经理,IT & Internet > Product Manager,IT互联网->产品经理
+route4,3000053,tob,20035,Publishing,出版行业,Editor,编辑,Publishing > Editor,出版行业->编辑
+route4,3000054,tob,20035,Publishing,出版行业,Editor,编辑,Publishing > Editor,出版行业->编辑
+route4,3000055,tob,20154,Security,安全行业,Production Safety,生产安全,Security > Production Safety,安全行业->生产安全
+route4,3000056,tob,20127,Consulting,咨询行业,Financial Consultant,财务顾问,Consulting > Financial Consultant,咨询行业->财务顾问
+route4,3000057,toc,10059,Entertainment,娱乐,Live Streaming Interaction,直播互动,Entertainment > Live Streaming Interaction,娱乐->直播互动
+route4,3000058,toc,10059,Entertainment,娱乐,Live Streaming Interaction,直播互动,Entertainment > Live Streaming Interaction,娱乐->直播互动
+route4,3000059,toe,30055,Customer Service,客户服务,FAQ & Reply Template Maintenance,FAQ与回复模板维护,Customer Service > FAQ & Reply Template Maintenance,客户服务->FAQ与回复模板维护
+route4,3000060,toe,30055,Customer Service,客户服务,FAQ & Reply Template Maintenance,FAQ与回复模板维护,Customer Service > FAQ & Reply Template Maintenance,客户服务->FAQ与回复模板维护
+route4,3000061,tob,20019,Construction,建筑行业,Construction Site Manager,施工管理员,Construction > Construction Site Manager,建筑行业->施工管理员
+route4,3000062,toe,30025,Competitor Analysis,竞品分析,Competitor Feature Comparison,竞品功能对比,Competitor Analysis > Competitor Feature Comparison,竞品分析->竞品功能对比
+route4,3000063,tob,20178,Government & Public Sector,政务与公共事业,Government Service Operations Specialist,政务服务运营专员,Government & Public Sector > Government Service Operations Specialist,政务与公共事业->政务服务运营专员
+route4,3000064,toc,10098,Smart Devices,智能设备,Smart Home,智能家居,Smart Devices > Smart Home,智能设备->智能家居
+route4,3000065,toc,10047,Business,商务,Office Collaboration,办公协作,Business > Office Collaboration,商务->办公协作
+route4,3000066,toc,10034,Education,教育,K12 Education,K12教育,Education > K12 Education,教育->K12教育
+route4,3000067,tob,20121,Design,设计行业,Graphic Designer,平面设计师,Design > Graphic Designer,设计行业->平面设计师
+route4,3000068,tob,20121,Design,设计行业,Graphic Designer,平面设计师,Design > Graphic Designer,设计行业->平面设计师
+route4,3000069,toc,10067,Music,音乐,Music Creation,音乐创作,Music > Music Creation,音乐->音乐创作
+route4,3000070,toc,10027,Shopping,购物,Cross-border E-commerce,跨境电商,Shopping > Cross-border E-commerce,购物->跨境电商
+route4,3000071,toc,10027,Shopping,购物,Cross-border E-commerce,跨境电商,Shopping > Cross-border E-commerce,购物->跨境电商
+route4,3000072,tob,20006,Healthcare,医疗健康,Medical Imaging Technician,医学影像技师,Healthcare > Medical Imaging Technician,医疗健康->医学影像技师
+route4,3000073,tob,20006,Healthcare,医疗健康,Medical Imaging Technician,医学影像技师,Healthcare > Medical Imaging Technician,医疗健康->医学影像技师
+route4,3000074,tob,20009,Healthcare,医疗健康,Health Manager,健康管理师,Healthcare > Health Manager,医疗健康->健康管理师
+route4,3000075,tob,20104,Gaming,游戏行业,Game Operations,游戏运营,Gaming > Game Operations,游戏行业->游戏运营
+route4,3000076,toe,30050,Sales Support,销售支持,Sales Lead Follow-up Support,商机跟进支持,Sales Support > Sales Lead Follow-up Support,销售支持->商机跟进支持
+route4,3000077,toe,30042,Administrative Affairs,行政事务,Fixed Asset Management,固定资产管理,Administrative Affairs > Fixed Asset Management,行政事务->固定资产管理
+route4,3000078,tob,20135,Automotive,汽车行业,Vehicle Testing,汽车测试,Automotive > Vehicle Testing,汽车行业->汽车测试
+route4,3000079,toc,10055,Finance,财务,Investment & Wealth Management,投资理财,Finance > Investment & Wealth Management,财务->投资理财
+route4,3000080,tob,20136,Insurance,保险行业,Insurance Sales,保险销售,Insurance > Insurance Sales,保险行业->保险销售
+route4,3000081,tob,20136,Insurance,保险行业,Insurance Sales,保险销售,Insurance > Insurance Sales,保险行业->保险销售
+route4,3000082,tob,20111,Real Estate,房地产行业,Real Estate Sales,房地产销售,Real Estate > Real Estate Sales,房地产行业->房地产销售
+route4,3000084,tob,20112,Real Estate,房地产行业,Property Appraiser,房产评估,Real Estate > Property Appraiser,房地产行业->房产评估
+route4,3000085,tob,20112,Real Estate,房地产行业,Property Appraiser,房产评估,Real Estate > Property Appraiser,房地产行业->房产评估
+route4,3000086,toc,10040,Productivity,效率,Cloud Storage,云存储,Productivity > Cloud Storage,效率->云存储
+route4,3000087,toc,10040,Productivity,效率,Cloud Storage,云存储,Productivity > Cloud Storage,效率->云存储
+route4,3000088,tob,20097,Logistics,物流行业,Warehouse Manager,仓储管理员,Logistics > Warehouse Manager,物流行业->仓储管理员
+route4,3000089,toc,10093,Public Service,公共服务,Government Services,政务办事,Public Service > Government Services,公共服务->政务办事
+route4,3000090,tob,20082,Human Resources,人力资源,Training Specialist,培训专员,Human Resources > Training Specialist,人力资源->培训专员
+route4,3000091,tob,20082,Human Resources,人力资源,Training Specialist,培训专员,Human Resources > Training Specialist,人力资源->培训专员
+route4,3000092,toc,10041,Productivity,效率,Task Management,任务管理,Productivity > Task Management,效率->任务管理
+route4,3000093,toc,10057,Finance,财务,Bookkeeping & Budgeting,记账理财,Finance > Bookkeeping & Budgeting,财务->记账理财
+route4,3000094,tob,20044,Aviation,航空行业,Maintenance Engineer,维修工程师,Aviation > Maintenance Engineer,航空行业->维修工程师
+route4,3000096,toc,10088,Medical,医疗,Medical Services,医疗服务,Medical > Medical Services,医疗->医疗服务
+route4,3000097,tob,20005,Healthcare,医疗健康,Clinical Physician,临床医生,Healthcare > Clinical Physician,医疗健康->临床医生
+route4,3000098,toc,10015,Food,美食,Dining Reviews,餐饮评价,Food > Dining Reviews,美食->餐饮评价
+route4,3000099,toc,10015,Food,美食,Dining Reviews,餐饮评价,Food > Dining Reviews,美食->餐饮评价
+route4,3000100,toe,30028,Report Writing,报告撰写,Special Report Writing,专项报告撰写,Report Writing > Special Report Writing,报告撰写->专项报告撰写
+route4,3000101,toe,30028,Report Writing,报告撰写,Special Report Writing,专项报告撰写,Report Writing > Special Report Writing,报告撰写->专项报告撰写
+route4,3000102,tob,20074,Retail,零售行业,E-commerce Operations,电商运营,Retail > E-commerce Operations,零售行业->电商运营
+route4,3000103,toc,10081,Tools,工具,Lifestyle Tools,生活工具,Tools > Lifestyle Tools,工具->生活工具
+route4,3000104,toe,30022,HR Operations,人事相关,Employee Records Management,员工档案管理,HR Operations > Employee Records Management,人事相关->员工档案管理
+route4,3000105,toe,30022,HR Operations,人事相关,Employee Records Management,员工档案管理,HR Operations > Employee Records Management,人事相关->员工档案管理
+route4,3000106,toc,10081,Tools,工具,Lifestyle Tools,生活工具,Tools > Lifestyle Tools,工具->生活工具
+route4,3000107,tob,20148,Pet Services,宠物行业,Pet Store Manager,宠物店店长,Pet Services > Pet Store Manager,宠物行业->宠物店店长
+route4,3000108,tob,20148,Pet Services,宠物行业,Pet Store Manager,宠物店店长,Pet Services > Pet Store Manager,宠物行业->宠物店店长
+route4,3000109,tob,20133,Automotive,汽车行业,Auto Sales,汽车销售,Automotive > Auto Sales,汽车行业->汽车销售
+route4,3000110,toc,10032,Health,健康,Fitness & Exercise,运动健身,Health > Fitness & Exercise,健康->运动健身
+route4,3000111,tob,20114,Real Estate,房地产行业,Land Development,土地开发,Real Estate > Land Development,房地产行业->土地开发
+route4,3000112,tob,20010,IT & Internet,IT互联网,Software Engineer,软件工程师,IT & Internet > Software Engineer,IT互联网->软件工程师
+route4,3000113,toc,10057,Finance,财务,Bookkeeping & Budgeting,记账理财,Finance > Bookkeeping & Budgeting,财务->记账理财
+route4,3000114,toc,10058,Finance,财务,Banking Services,银行服务,Finance > Banking Services,财务->银行服务
+route4,3000115,toc,10005,Lifestyle,生活,Pet Services,宠物服务,Lifestyle > Pet Services,生活->宠物服务
+route4,3000116,tob,20178,Government & Public Sector,政务与公共事业,Government Service Operations Specialist,政务服务运营专员,Government & Public Sector > Government Service Operations Specialist,政务与公共事业->政务服务运营专员
+route4,3000117,tob,20042,Aviation,航空行业,Ground Staff,地勤人员,Aviation > Ground Staff,航空行业->地勤人员
+route4,3000120,tob,20079,Legal Services,法律行业,Compliance Specialist,合规专员,Legal Services > Compliance Specialist,法律行业->合规专员
+route4,3000121,tob,20079,Legal Services,法律行业,Compliance Specialist,合规专员,Legal Services > Compliance Specialist,法律行业->合规专员
+route4,3000122,toc,10072,Navigation,导航,Location Services,位置服务,Navigation > Location Services,导航->位置服务
+route4,3000123,toe,30014,Project Management,项目管理,Project Progress Tracking,项目进度跟踪,Project Management > Project Progress Tracking,项目管理->项目进度跟踪
+route4,3000124,toe,30014,Project Management,项目管理,Project Progress Tracking,项目进度跟踪,Project Management > Project Progress Tracking,项目管理->项目进度跟踪
+route4,3000125,toc,10007,Lifestyle,生活,Auto Services,汽车服务,Lifestyle > Auto Services,生活->汽车服务
+route4,3000126,tob,20030,Hospitality,酒店行业,Hotel Manager,酒店经理,Hospitality > Hotel Manager,酒店行业->酒店经理
+route4,3000128,toe,30001,Email Communication,邮件沟通,Meeting Minutes Emails,会议纪要邮件,Email Communication > Meeting Minutes Emails,邮件沟通->会议纪要邮件
+route4,3000130,tob,20100,Logistics,物流行业,Delivery Courier,快递员,Logistics > Delivery Courier,物流行业->快递员
+route4,3000131,tob,20100,Logistics,物流行业,Delivery Courier,快递员,Logistics > Delivery Courier,物流行业->快递员
+route4,3000132,tob,20140,Insurance,保险行业,Insurance Customer Service,保险客服,Insurance > Insurance Customer Service,保险行业->保险客服
+route4,3000133,tob,20108,Energy,能源行业,New Energy Specialist,新能源专员,Energy > New Energy Specialist,能源行业->新能源专员
+route4,3000134,tob,20113,Real Estate,房地产行业,Property Management,物业管理,Real Estate > Property Management,房地产行业->物业管理
+route4,3000135,tob,20113,Real Estate,房地产行业,Property Management,物业管理,Real Estate > Property Management,房地产行业->物业管理
+route4,3000136,toe,30012,Customer Management,客户管理,Customer Information Maintenance,客户信息维护,Customer Management > Customer Information Maintenance,客户管理->客户信息维护
+route4,3000138,toc,10042,Productivity,效率,Document Processing,文档处理,Productivity > Document Processing,效率->文档处理
+route4,3000139,tob,20126,Consulting,咨询行业,Management Consultant,管理顾问,Consulting > Management Consultant,咨询行业->管理顾问
+route4,3000140,toc,10086,Sports,体育,Sports Data Tracking,运动数据,Sports > Sports Data Tracking,体育->运动数据
+route4,3000141,tob,20159,Research,科研行业,Data Analyst,数据分析师,Research > Data Analyst,科研行业->数据分析师
+route4,3000142,toc,10051,Business,商务,Job Search & Recruiting,求职招聘,Business > Job Search & Recruiting,商务->求职招聘
+route4,3000144,toc,10092,Public Service,公共服务,City Services,城市服务,Public Service > City Services,公共服务->城市服务
+route4,3000145,toc,10003,Social,社交,Social Networking,社交网络,Social > Social Networking,社交->社交网络
+route4,3000146,tob,20132,Automotive,汽车行业,Automotive Engineering,汽车工程,Automotive > Automotive Engineering,汽车行业->汽车工程
+route4,3000147,tob,20132,Automotive,汽车行业,Automotive Engineering,汽车工程,Automotive > Automotive Engineering,汽车行业->汽车工程
+route4,3000148,toc,10054,Finance,财务,Debt Management,债务管理,Finance > Debt Management,财务->债务管理
+route4,3000150,toc,10035,Education,教育,Online Courses,在线课程,Education > Online Courses,教育->在线课程
+route4,3000151,toc,10013,Food,美食,Grocery Shopping,食材购买,Food > Grocery Shopping,美食->食材购买
+route4,3000152,toc,10060,Entertainment,娱乐,Short Video,短视频,Entertainment > Short Video,娱乐->短视频
+route4,3000154,toc,10012,Food,美食,Food Delivery,外卖订餐,Food > Food Delivery,美食->外卖订餐
+route4,3000155,toc,10035,Education,教育,Online Courses,在线课程,Education > Online Courses,教育->在线课程
+route4,3000156,tob,20053,Environmental Services,环保行业,Data Analyst,数据分析师,Environmental Services > Data Analyst,环保行业->数据分析师
+route4,3000157,tob,20029,Tourism,旅游行业,Tourism Marketing Specialist,旅游营销专员,Tourism > Tourism Marketing Specialist,旅游行业->旅游营销专员
+route4,3000158,toc,10099,Smart Devices,智能设备,Device Interconnection,设备联动,Smart Devices > Device Interconnection,智能设备->设备联动
+route4,3000160,tob,20116,Food Service,餐饮行业,Chef,厨师,Food Service > Chef,餐饮行业->厨师
+route4,3000161,toc,10017,Travel,旅行,Travel Tools,旅行工具,Travel > Travel Tools,旅行->旅行工具
+route4,3000162,tob,20020,Agriculture,农业行业,Agricultural Technician,农业技术员,Agriculture > Agricultural Technician,农业行业->农业技术员
+route4,3000163,toc,10014,Food,美食,Restaurant Recommendations,餐厅推荐,Food > Restaurant Recommendations,美食->餐厅推荐
+route4,3000164,toc,10014,Food,美食,Restaurant Recommendations,餐厅推荐,Food > Restaurant Recommendations,美食->餐厅推荐
+route4,3000165,toc,10045,Productivity,效率,Automation,自动化,Productivity > Automation,效率->自动化
+route4,3000166,toc,10093,Public Service,公共服务,Government Services,政务办事,Public Service > Government Services,公共服务->政务办事
+route4,3000167,toc,10003,Social,社交,Social Networking,社交网络,Social > Social Networking,社交->社交网络
+route4,3000168,tob,20108,Energy,能源行业,New Energy Specialist,新能源专员,Energy > New Energy Specialist,能源行业->新能源专员
+route4,3000169,tob,20085,Human Resources,人力资源,HR Business Partner,HRBP,Human Resources > HR Business Partner,人力资源->HRBP
+route4,3000170,tob,20085,Human Resources,人力资源,HR Business Partner,HRBP,Human Resources > HR Business Partner,人力资源->HRBP
+route4,3000171,toc,10033,Health,健康,Diet Management,饮食管理,Health > Diet Management,健康->饮食管理
+route4,3000172,tob,20010,IT & Internet,IT互联网,Software Engineer,软件工程师,IT & Internet > Software Engineer,IT互联网->软件工程师
+route4,3000173,toc,10063,News,新闻,News Reading,资讯阅读,News > News Reading,新闻->资讯阅读
+route4,3000174,toc,10063,News,新闻,News Reading,资讯阅读,News > News Reading,新闻->资讯阅读
+route4,3000175,toc,10048,Business,商务,Contract Management,合同管理,Business > Contract Management,商务->合同管理
+route4,3000177,tob,20029,Tourism,旅游行业,Tourism Marketing Specialist,旅游营销专员,Tourism > Tourism Marketing Specialist,旅游行业->旅游营销专员
+route4,3000178,toc,10075,Navigation,导航,Navigation,出行导航,Navigation > Navigation,导航->出行导航
+route4,3000179,toc,10025,Shopping,购物,Fresh Grocery E-commerce,生鲜电商,Shopping > Fresh Grocery E-commerce,购物->生鲜电商
+route4,3000180,toc,10025,Shopping,购物,Fresh Grocery E-commerce,生鲜电商,Shopping > Fresh Grocery E-commerce,购物->生鲜电商
+route4,3000181,toc,10042,Productivity,效率,Document Processing,文档处理,Productivity > Document Processing,效率->文档处理
+route4,3000182,toc,10064,Books,图书,E-books,电子书,Books > E-books,图书->电子书
+route4,3000183,toe,30027,Report Writing,报告撰写,Weekly/Monthly Report Writing,周报月报撰写,Report Writing > Weekly/Monthly Report Writing,报告撰写->周报月报撰写
+route4,3000184,toe,30027,Report Writing,报告撰写,Weekly/Monthly Report Writing,周报月报撰写,Report Writing > Weekly/Monthly Report Writing,报告撰写->周报月报撰写
+route4,3000185,tob,20125,Design,设计行业,Fashion Designer,服装设计师,Design > Fashion Designer,设计行业->服装设计师
+route4,3000186,tob,20012,IT & Internet,IT互联网,Product Manager,产品经理,IT & Internet > Product Manager,IT互联网->产品经理
+route4,3000187,tob,20131,Automotive,汽车行业,Automotive Design,汽车设计,Automotive > Automotive Design,汽车行业->汽车设计
+route4,3000188,tob,20131,Automotive,汽车行业,Automotive Design,汽车设计,Automotive > Automotive Design,汽车行业->汽车设计
+route4,3000189,toc,10045,Productivity,效率,Automation,自动化,Productivity > Automation,效率->自动化
+route4,3000190,toc,10000,Social,社交,Instant Messaging,即时通讯,Social > Instant Messaging,社交->即时通讯
+route4,3000191,tob,20162,Beauty Care,美容行业,Hairstylist,美发师,Beauty Care > Hairstylist,美容行业->美发师
+route4,3000192,toc,10088,Medical,医疗,Medical Services,医疗服务,Medical > Medical Services,医疗->医疗服务
+route4,3000194,toc,10068,Music,音乐,Music Playback,音乐播放,Music > Music Playback,音乐->音乐播放
+route4,3000195,toc,10061,Entertainment,娱乐,Video Watching,视频观看,Entertainment > Video Watching,娱乐->视频观看
+route4,3000196,toe,30057,Procurement & Reconciliation,采购与对账,Vendor Reconciliation,供应商对账,Procurement & Reconciliation > Vendor Reconciliation,采购与对账->供应商对账
+route4,3000197,toe,30057,Procurement & Reconciliation,采购与对账,Vendor Reconciliation,供应商对账,Procurement & Reconciliation > Vendor Reconciliation,采购与对账->供应商对账
+route4,3000198,toc,10033,Health,健康,Diet Management,饮食管理,Health > Diet Management,健康->饮食管理
+route4,3000199,tob,20156,Research,科研行业,Researcher,研究员,Research > Researcher,科研行业->研究员
+route4,3000200,toc,10008,Lifestyle,生活,Real Estate Services,房产服务,Lifestyle > Real Estate Services,生活->房产服务
+route4,3000201,tob,20089,Marketing,市场营销,Digital Marketing,数字营销,Marketing > Digital Marketing,市场营销->数字营销
+route4,3000202,toc,10034,Education,教育,K12 Education,K12教育,Education > K12 Education,教育->K12教育
+route4,3000203,toc,10072,Navigation,导航,Location Services,位置服务,Navigation > Location Services,导航->位置服务
+route4,3000204,toc,10023,Shopping,购物,Price Monitoring,价格监控,Shopping > Price Monitoring,购物->价格监控
+route4,3000205,toc,10023,Shopping,购物,Price Monitoring,价格监控,Shopping > Price Monitoring,购物->价格监控
+route4,3000206,toc,10083,Tools,工具,Network Speed Test,网速测试,Tools > Network Speed Test,工具->网速测试
+route4,3000208,tob,20061,Manufacturing,制造业,Production Supervisor,生产主管,Manufacturing > Production Supervisor,制造业->生产主管
+route4,3000209,tob,20036,Publishing,出版行业,Proofreader,校对员,Publishing > Proofreader,出版行业->校对员
+route4,3000210,toc,10062,News,新闻,Financial News,财经新闻,News > Financial News,新闻->财经新闻
+route4,3000211,toe,30049,Sales Support,销售支持,Sales Material Preparation,销售材料准备,Sales Support > Sales Material Preparation,销售支持->销售材料准备
+route4,3000213,toc,10020,Travel,旅行,Itinerary Planning,行程规划,Travel > Itinerary Planning,旅行->行程规划
+route4,3000214,toc,10021,Travel,旅行,Hotel Booking,酒店预订,Travel > Hotel Booking,旅行->酒店预订
+route4,3000215,tob,20076,Legal Services,法律行业,Lawyer,律师,Legal Services > Lawyer,法律行业->律师
+route4,3000216,tob,20043,Aviation,航空行业,Dispatcher,调度员,Aviation > Dispatcher,航空行业->调度员
+route4,3000218,tob,20090,Marketing,市场营销,PR Specialist,公关专员,Marketing > PR Specialist,市场营销->公关专员
+route4,3000219,tob,20128,Consulting,咨询行业,IT Consultant,IT顾问,Consulting > IT Consultant,咨询行业->IT顾问
+route4,3000220,tob,20005,Healthcare,医疗健康,Clinical Physician,临床医生,Healthcare > Clinical Physician,医疗健康->临床医生
+route4,3000221,toc,10004,Lifestyle,生活,Home Services,家政服务,Lifestyle > Home Services,生活->家政服务

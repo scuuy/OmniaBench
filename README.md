@@ -79,6 +79,16 @@ synthesized on top of these environments through four routes:
 The challenging subset (644 tasks) is a fixed, curated slice of the full 1,431-task collection, selected to
 reduce evaluation cost and mitigate contamination risk after public release while preserving domain coverage.
 
+The full 90 level-1 / 354 level-2 domain taxonomy, with English and Chinese labels and ToB/ToC/ToE splits for
+every level-2 domain, is published at
+[`evaluation/data/taxonomy.json`](evaluation/data/taxonomy.json) /
+[`taxonomy.csv`](evaluation/data/taxonomy.csv). Per-task domain labels for all 644 tasks are published at
+[`evaluation/data/task_domain_map.json`](evaluation/data/task_domain_map.json) /
+[`task_domain_map.csv`](evaluation/data/task_domain_map.csv), keyed by `(route, global_id)` — join it against
+a task's `route` + `global_id` to recover its domain and ToB/ToC/ToE label (see
+[evaluation/README.md](evaluation/README.md#taxonomy-reference) for details). `compute_scores.py` performs
+this join automatically.
+
 ## 🚀 Quick start
 
 Requires **Python 3.10+**.

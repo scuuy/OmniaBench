@@ -66,6 +66,26 @@ If you'd rather manage the data yourself:
 
 Route 1 also requires a filesystem sandbox bundle, which *is* committed to this repo (it's small — a few hundred KB) at `evaluation/runtime_assets/fs_bundle/`. No extra download step is needed for it.
 
+## Taxonomy reference
+
+[`evaluation/data/taxonomy.json`](data/taxonomy.json) / [`taxonomy.csv`](data/taxonomy.csv) publish the full
+scenario taxonomy underlying OmniaBench: 90 level-1 domains and 354 level-2 domains, each with English and
+Chinese labels, a combined `domain_path`, and a `split` field (`tob` / `toc` / `toe`).
+
+The public task files (`route1.json`–`route4.json`) don't carry domain labels directly on each task —
+[`HF_DATASET_CARD.md`](data/HF_DATASET_CARD.md) explains why the construction-pipeline fields were stripped
+from the task JSON itself. Instead, [`evaluation/data/task_domain_map.json`](data/task_domain_map.json) /
+[`task_domain_map.csv`](data/task_domain_map.csv) give the per-task mapping: one row per `(route,
+global_id)` pair across all 644 tasks, with the matching `split`, `taxonomy_id`, and bilingual
+`domain_l1`/`domain_l2`/`domain_path` fields. Join this file against a task's `route` + `global_id` to
+recover its domain and ToB/ToC/ToE label.
+
+[`compute_scores.py`](scripts/compute_scores.py) does this join automatically: pass `--domain-map
+data/task_domain_map.json` (or point `--result-dir` at a directory alongside the default path) to populate
+the `by_level1_domain` and `by_tob_toc_toe` breakdowns from this file, matched by `global_id`. Without a
+domain map, those two breakdowns fall back to `unknown`; `by_route` and `by_capability` are unaffected
+either way.
+
 ## Run
 
 Run all four routes:

@@ -6,8 +6,13 @@ __pycache__/
 *.py[cod]
 .venv/
 venv/
-evaluation/data/
+evaluation/data/*
 !evaluation/data/.gitkeep
+!evaluation/data/HF_DATASET_CARD.md
+!evaluation/data/taxonomy.json
+!evaluation/data/taxonomy.csv
+!evaluation/data/task_domain_map.json
+!evaluation/data/task_domain_map.csv
 evaluation/results/
 evaluation/runtime/tmp/
 evaluation/configs/profiles.json

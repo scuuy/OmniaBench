@@ -65,6 +65,7 @@ def plot_tob_toc_toe(scores: Dict, output_dir: Path):
     # 过滤unknown
     valid_categories = {k: v for k, v in category_stats.items() if k != 'unknown'}
     if not valid_categories:
+        print("⚠ No ToB/ToC/ToE category labels found, skipping tob_toc_toe plot (see evaluation/README.md#taxonomy-reference)")
         return
 
     categories = sorted(valid_categories.keys())
@@ -102,6 +103,7 @@ def plot_domain_heatmap(scores: Dict, output_dir: Path, top_n: int = 30):
     # 过滤unknown并排序
     valid_domains = {k: v for k, v in domain_stats.items() if k != 'unknown'}
     if not valid_domains:
+        print("⚠ No level-1 domain labels found, skipping domain_heatmap plot (see evaluation/README.md#taxonomy-reference)")
         return
 
     # 取top N

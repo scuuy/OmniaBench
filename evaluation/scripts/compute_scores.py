@@ -9,12 +9,18 @@
 用法:
     python compute_scores.py --result-dir results/your_model_run/
     python compute_scores.py --route1 results/model/route1.json --route2 results/model/route2.json ...
+
+按route+global_id关联domain标签:
+    默认自动加载 evaluation/data/task_domain_map.json（若存在），可用 --domain-map 指定其他路径，
+    或用 --no-domain-map 关闭关联（此时by_level1_domain/by_tob_toc_toe回退为unknown）。
 """
 import json
 import argparse
 from pathlib import Path
 from collections import defaultdict
-from typing import Dict, List, Any
+from typing import Dict, List, Any, Optional, Tuple
+
+DEFAULT_DOMAIN_MAP_PATH = Path(__file__).resolve().parent.parent / "data" / "task_domain_map.json"
 
 
 # 10维能力分类
@@ -53,31 +59,53 @@ def compute_avg_score(items: List[Dict[str, Any]]) -> float:
     return sum(item.get('score', 0) for item in items) / len(items) * 100
 
 
-def extract_level1_domain(task_info: Dict) -> str:
-    """从task_info中提取level-1 domain"""
-    # 优先从domain字段提取
+def load_domain_map(path: Optional[Path]) -> Dict[Tuple[str, int], Dict[str, Any]]:
+    """加载 task_domain_map.json，返回以(route, global_id)为key的映射"""
+    if not path or not Path(path).exists():
+        return {}
+    with open(path, 'r', encoding='utf-8') as f:
+        rows = json.load(f)
+    domain_map = {}
+    for row in rows:
+        try:
+            gid = int(row['global_id'])
+        except (KeyError, TypeError, ValueError):
+            continue
+        domain_map[(row.get('route'), gid)] = row
+    return domain_map
+
+
+def extract_level1_domain(task_info: Dict, route_id: str = '', domain_map: Optional[Dict] = None) -> str:
+    """从domain_map（按route+global_id关联）或task_info中提取level-1 domain（英文名）"""
+    domain_map = domain_map or {}
+    global_id = task_info.get('global_id')
+    if global_id is not None:
+        row = domain_map.get((route_id, int(global_id)))
+        if row:
+            return row.get('domain_l1_en', 'unknown')
+
+    # 回退：task_info自带domain字段（自定义结果文件可能携带）
     domain = task_info.get('domain', '')
     if domain:
         # 格式: "level1_domain > level2_domain" 或 "level1_domain"
         return domain.split('>')[0].strip()
 
-    # 回退：从env_name提取
-    env_name = task_info.get('env_name', '')
-    # 格式: env_{id}_{domain}
-    if env_name:
-        parts = env_name.split('_')
-        if len(parts) >= 3:
-            return '_'.join(parts[2:])
-
     return 'unknown'
 
 
-def extract_tob_toc_toe(task_info: Dict) -> str:
-    """提取ToB/ToC/ToE分类"""
+def extract_tob_toc_toe(task_info: Dict, route_id: str = '', domain_map: Optional[Dict] = None) -> str:
+    """从domain_map（按route+global_id关联）或task_info中提取ToB/ToC/ToE分类"""
+    domain_map = domain_map or {}
+    global_id = task_info.get('global_id')
+    if global_id is not None:
+        row = domain_map.get((route_id, int(global_id)))
+        if row and row.get('split'):
+            return row['split'].upper()
+
+    # 回退：task_info自带category字段（自定义结果文件可能携带）
     category = task_info.get('category', '').upper()
     if category in ['TOB', 'TOC', 'TOE']:
         return category
-    # 回退方案：从domain推断（根据实际数据调整）
     return 'unknown'
 
 
@@ -95,13 +123,14 @@ def extract_capabilities(result: Dict) -> Dict[str, float]:
     return cap_scores
 
 
-def aggregate_by_level1_domain(results: List[Dict]) -> Dict[str, Dict]:
+def aggregate_by_level1_domain(results: List[Dict], domain_map: Optional[Dict] = None) -> Dict[str, Dict]:
     """按level-1 domain聚合"""
     domain_items = defaultdict(list)
 
     for item in results:
         task_info = item.get('task_info', {})
-        domain = extract_level1_domain(task_info)
+        route_id = item.get('_route_id', '')
+        domain = extract_level1_domain(task_info, route_id, domain_map)
         domain_items[domain].append(item)
 
     domain_stats = {}
@@ -115,13 +144,14 @@ def aggregate_by_level1_domain(results: List[Dict]) -> Dict[str, Dict]:
     return domain_stats
 
 
-def aggregate_by_tob_toc_toe(results: List[Dict]) -> Dict[str, Dict]:
+def aggregate_by_tob_toc_toe(results: List[Dict], domain_map: Optional[Dict] = None) -> Dict[str, Dict]:
     """按ToB/ToC/ToE聚合"""
     category_items = defaultdict(list)
 
     for item in results:
         task_info = item.get('task_info', {})
-        category = extract_tob_toc_toe(task_info)
+        route_id = item.get('_route_id', '')
+        category = extract_tob_toc_toe(task_info, route_id, domain_map)
         category_items[category].append(item)
 
     category_stats = {}
@@ -152,8 +182,10 @@ def aggregate_by_capability(results: List[Dict]) -> Dict[str, float]:
     return cap_stats
 
 
-def compute_all_scores(route_files: Dict[str, str]) -> Dict:
+def compute_all_scores(route_files: Dict[str, str], domain_map_path: Optional[Path] = DEFAULT_DOMAIN_MAP_PATH) -> Dict:
     """计算所有维度的分数"""
+    domain_map = load_domain_map(domain_map_path)
+
     all_results = []
     route_stats = {}
 
@@ -163,6 +195,9 @@ def compute_all_scores(route_files: Dict[str, str]) -> Dict:
             continue
 
         items = load_route_data(path)
+        for item in items:
+            # 记录route_id，供按route+global_id关联domain_map时使用
+            item['_route_id'] = route_id
         all_results.extend(items)
 
         route_stats[route_id] = {
@@ -179,8 +214,8 @@ def compute_all_scores(route_files: Dict[str, str]) -> Dict:
     }
 
     # 各维度聚合
-    domain_stats = aggregate_by_level1_domain(all_results)
-    tob_toc_toe_stats = aggregate_by_tob_toc_toe(all_results)
+    domain_stats = aggregate_by_level1_domain(all_results, domain_map)
+    tob_toc_toe_stats = aggregate_by_tob_toc_toe(all_results, domain_map)
     capability_stats = aggregate_by_capability(all_results)
 
     return {
@@ -212,17 +247,24 @@ def print_report(scores: Dict):
 
     # By ToB/ToC/ToE
     print("\n[By ToB/ToC/ToE]")
-    for category, stats in sorted(scores['by_tob_toc_toe'].items()):
-        if category != 'unknown':
-            print(f"  {category}: {stats['count']} tasks, Pass@1={stats['pass_rate']:.2f}%, Score={stats['avg_score']:.2f}")
+    tob_toc_toe = scores['by_tob_toc_toe']
+    if set(tob_toc_toe.keys()) <= {'unknown'}:
+        print("  (no category labels found on these tasks — see evaluation/README.md#taxonomy-reference)")
+    else:
+        for category, stats in sorted(tob_toc_toe.items()):
+            if category != 'unknown':
+                print(f"  {category}: {stats['count']} tasks, Pass@1={stats['pass_rate']:.2f}%, Score={stats['avg_score']:.2f}")
 
     # By Level-1 Domain (top 10)
     print("\n[Top 10 Level-1 Domains by Pass Rate]")
     domains = scores['by_level1_domain']
-    top10 = sorted(domains.items(), key=lambda x: x[1]['pass_rate'], reverse=True)[:10]
-    for domain, stats in top10:
-        if domain != 'unknown':
-            print(f"  {domain}: {stats['count']} tasks, Pass@1={stats['pass_rate']:.2f}%, Score={stats['avg_score']:.2f}")
+    if set(domains.keys()) <= {'unknown'}:
+        print("  (no domain labels found on these tasks — see evaluation/README.md#taxonomy-reference)")
+    else:
+        top10 = sorted(domains.items(), key=lambda x: x[1]['pass_rate'], reverse=True)[:10]
+        for domain, stats in top10:
+            if domain != 'unknown':
+                print(f"  {domain}: {stats['count']} tasks, Pass@1={stats['pass_rate']:.2f}%, Score={stats['avg_score']:.2f}")
 
     # By Capability
     if scores['by_capability']:
@@ -241,6 +283,10 @@ def main():
     parser.add_argument('--route3', type=str, help='Path to route3.json')
     parser.add_argument('--route4', type=str, help='Path to route4.json')
     parser.add_argument('--output', type=str, help='Save JSON report to this file')
+    parser.add_argument('--domain-map', type=str, default=None,
+                         help='Path to task_domain_map.json (default: evaluation/data/task_domain_map.json)')
+    parser.add_argument('--no-domain-map', action='store_true',
+                         help='Disable domain-map lookup; by_level1_domain/by_tob_toc_toe fall back to unknown')
 
     args = parser.parse_args()
 
@@ -263,7 +309,13 @@ def main():
         return
 
     # 计算分数
-    scores = compute_all_scores(route_files)
+    if args.no_domain_map:
+        domain_map_path = None
+    elif args.domain_map:
+        domain_map_path = Path(args.domain_map)
+    else:
+        domain_map_path = DEFAULT_DOMAIN_MAP_PATH
+    scores = compute_all_scores(route_files, domain_map_path=domain_map_path)
 
     # 打印报告
     print_report(scores)
